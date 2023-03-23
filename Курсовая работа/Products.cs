@@ -44,7 +44,9 @@ namespace Курсовая_работа
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            EditProducts hg = new EditProducts();
+            hg.Show();
+            this.Close();   
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -57,6 +59,11 @@ namespace Курсовая_работа
         private void button5_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

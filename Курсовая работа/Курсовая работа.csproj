@@ -180,5 +180,11 @@
   <ItemGroup>
     <None Include="Resources\Green-Add-Button-PNG1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\поиск.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\поиск 1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
