@@ -45,7 +45,7 @@ namespace Курсовая_работа
 
             if (dataTable.Rows.Count == 1)
             {
-                if (Convert.ToBoolean(dataTable.Rows[0].ItemArray[1]) == true)
+                if (Convert.ToBoolean(dataTable.Rows[0].ItemArray[3]) == true)
                 {
                     AdminPanel adminPanel = new AdminPanel();
                     adminPanel.Show();
