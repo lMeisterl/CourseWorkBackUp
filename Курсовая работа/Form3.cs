@@ -14,6 +14,7 @@ namespace Курсовая_работа
 {
     public partial class Form3 : Form
     {
+        
         public Form3()
         {
             InitializeComponent();
@@ -23,10 +24,10 @@ namespace Курсовая_работа
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.Employees". При необходимости она может быть перемещена или удалена.
             this.employeesTableAdapter.Fill(this.kursDataSet.Employees);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.Employees". При необходимости она может быть перемещена или удалена.
+            this.employeesTableAdapter.Fill(this.kursDataSet.Employees);
 
         }
-
-
 
         private void button1_Click(object sender, EventArgs e)
         {
