@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.kursDataSet = new Курсовая_работа.KursDataSet();
-            this.salesidBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sales_idTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.Sales_idTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.клиентDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.продуктDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,9 +39,12 @@
             this.количествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ценаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.способОплатыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salesidBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kursDataSet = new Курсовая_работа.KursDataSet();
+            this.sales_idTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.Sales_idTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesidBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,23 +73,9 @@
             this.dataGridView1.DataSource = this.salesidBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(16, 43);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(849, 331);
+            this.dataGridView1.Size = new System.Drawing.Size(843, 331);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // kursDataSet
-            // 
-            this.kursDataSet.DataSetName = "KursDataSet";
-            this.kursDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // salesidBindingSource
-            // 
-            this.salesidBindingSource.DataMember = "Sales+id";
-            this.salesidBindingSource.DataSource = this.kursDataSet;
-            // 
-            // sales_idTableAdapter
-            // 
-            this.sales_idTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -139,11 +125,25 @@
             this.способОплатыDataGridViewTextBoxColumn.HeaderText = "Способ оплаты";
             this.способОплатыDataGridViewTextBoxColumn.Name = "способОплатыDataGridViewTextBoxColumn";
             // 
+            // salesidBindingSource
+            // 
+            this.salesidBindingSource.DataMember = "Sales+id";
+            this.salesidBindingSource.DataSource = this.kursDataSet;
+            // 
+            // kursDataSet
+            // 
+            this.kursDataSet.DataSetName = "KursDataSet";
+            this.kursDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sales_idTableAdapter
+            // 
+            this.sales_idTableAdapter.ClearBeforeFill = true;
+            // 
             // Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 665);
+            this.ClientSize = new System.Drawing.Size(985, 473);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -152,8 +152,8 @@
             this.Text = "Sales";
             this.Load += new System.EventHandler(this.Sales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesidBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

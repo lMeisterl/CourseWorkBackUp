@@ -58,6 +58,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.employeesTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.EmployeesTableAdapter();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
@@ -92,68 +93,68 @@
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Код";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
             this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First_Name";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First_Name";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "Имя";
             this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
             // 
             // surnameDataGridViewTextBoxColumn
             // 
             this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
             this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
             // 
             // middleNameDataGridViewTextBoxColumn
             // 
             this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "Middle_Name";
-            this.middleNameDataGridViewTextBoxColumn.HeaderText = "Middle_Name";
+            this.middleNameDataGridViewTextBoxColumn.HeaderText = "Отчество";
             this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
             // 
             // telephoneDataGridViewTextBoxColumn
             // 
             this.telephoneDataGridViewTextBoxColumn.DataPropertyName = "Telephone";
-            this.telephoneDataGridViewTextBoxColumn.HeaderText = "Telephone";
+            this.telephoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
             this.telephoneDataGridViewTextBoxColumn.Name = "telephoneDataGridViewTextBoxColumn";
             // 
             // passportDataGridViewTextBoxColumn
             // 
             this.passportDataGridViewTextBoxColumn.DataPropertyName = "Passport";
-            this.passportDataGridViewTextBoxColumn.HeaderText = "Passport";
+            this.passportDataGridViewTextBoxColumn.HeaderText = "Паспорт";
             this.passportDataGridViewTextBoxColumn.Name = "passportDataGridViewTextBoxColumn";
             // 
             // genderDataGridViewTextBoxColumn
             // 
             this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
-            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Пол";
             this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
             // 
             // dateofBirthDataGridViewTextBoxColumn
             // 
             this.dateofBirthDataGridViewTextBoxColumn.DataPropertyName = "Date_of_Birth";
-            this.dateofBirthDataGridViewTextBoxColumn.HeaderText = "Date_of_Birth";
+            this.dateofBirthDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
             this.dateofBirthDataGridViewTextBoxColumn.Name = "dateofBirthDataGridViewTextBoxColumn";
             // 
             // jobTitleDataGridViewTextBoxColumn
             // 
             this.jobTitleDataGridViewTextBoxColumn.DataPropertyName = "Job_Title";
-            this.jobTitleDataGridViewTextBoxColumn.HeaderText = "Job_Title";
+            this.jobTitleDataGridViewTextBoxColumn.HeaderText = "Должность";
             this.jobTitleDataGridViewTextBoxColumn.Name = "jobTitleDataGridViewTextBoxColumn";
             // 
             // educationDataGridViewTextBoxColumn
             // 
             this.educationDataGridViewTextBoxColumn.DataPropertyName = "Education";
-            this.educationDataGridViewTextBoxColumn.HeaderText = "Education";
+            this.educationDataGridViewTextBoxColumn.HeaderText = "Образование";
             this.educationDataGridViewTextBoxColumn.Name = "educationDataGridViewTextBoxColumn";
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Experience";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Experience";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Опыт работы";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // loginDataGridViewTextBoxColumn
@@ -251,7 +252,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(163, 420);
+            this.button2.Location = new System.Drawing.Point(361, 420);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(145, 51);
             this.button2.TabIndex = 3;
@@ -262,7 +263,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(314, 420);
+            this.button3.Location = new System.Drawing.Point(512, 420);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(145, 51);
             this.button3.TabIndex = 4;
@@ -273,7 +274,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(465, 420);
+            this.button4.Location = new System.Drawing.Point(663, 420);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(145, 51);
             this.button4.TabIndex = 5;
@@ -284,7 +285,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(616, 420);
+            this.button5.Location = new System.Drawing.Point(814, 420);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(145, 51);
             this.button5.TabIndex = 6;
@@ -296,11 +297,23 @@
             // 
             this.employeesTableAdapter.ClearBeforeFill = true;
             // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.Location = new System.Drawing.Point(163, 420);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(145, 51);
+            this.button6.TabIndex = 7;
+            this.button6.Text = "Создать логин";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1157, 496);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -356,5 +369,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isadminDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.Button button6;
     }
 }

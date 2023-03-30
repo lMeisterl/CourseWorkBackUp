@@ -13,8 +13,7 @@ using System.Xml.Linq;
 namespace Курсовая_работа
 {
     public partial class Form3 : Form
-    {
-        
+    {        
         public Form3()
         {
             InitializeComponent();
@@ -113,6 +112,13 @@ namespace Курсовая_работа
         private void button3_Click_1(object sender, EventArgs e)
         {
             EditProducts hf = new EditProducts();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AddLogin addLogin = new AddLogin();
+            addLogin.Show();
+            this.Close();
         }
     }
 }
