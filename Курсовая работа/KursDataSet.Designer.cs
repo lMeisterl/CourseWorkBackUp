@@ -1741,7 +1741,7 @@ namespace Курсовая_работа {
                 this.columnSurname.MaxLength = 50;
                 this.columnMiddle_Name.MaxLength = 50;
                 this.columnTelephone.AllowDBNull = false;
-                this.columnTelephone.MaxLength = 17;
+                this.columnTelephone.MaxLength = 20;
                 this.columnPassport.AllowDBNull = false;
                 this.columnPassport.MaxLength = 11;
                 this.columnGender.AllowDBNull = false;

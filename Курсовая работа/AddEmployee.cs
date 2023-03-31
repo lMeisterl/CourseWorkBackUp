@@ -36,13 +36,12 @@ namespace Курсовая_работа
             sqlCommand.Parameters.AddWithValue("@name", tbName.Text);
             sqlCommand.Parameters.AddWithValue("@surname", tbSurname.Text);
             sqlCommand.Parameters.AddWithValue("@MidleName", tbMidleName.Text);
-            sqlCommand.Parameters.AddWithValue("@Telephone", tbTelephone.Text);
+            sqlCommand.Parameters.AddWithValue("@Telephone", maskedTextBox1.Text);
             sqlCommand.Parameters.AddWithValue("@Passport", tbPassport.Text);
             sqlCommand.Parameters.AddWithValue("@Gender", tbGender.Text);
             sqlCommand.Parameters.AddWithValue("@DataBirth", tbDataBirth.Value);
             sqlCommand.Parameters.AddWithValue("@Post", tbPost.Text);
             sqlCommand.Parameters.AddWithValue("@Education", tbEducation.Text);
-            sqlCommand.Parameters.AddWithValue("@Experience", tbExperience.Text);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
             Form3 sf = new Form3();          

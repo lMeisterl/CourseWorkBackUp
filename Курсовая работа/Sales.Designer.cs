@@ -42,6 +42,8 @@
             this.salesidBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kursDataSet = new Курсовая_работа.KursDataSet();
             this.sales_idTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.Sales_idTableAdapter();
+            this.labelCount = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesidBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
@@ -139,11 +141,31 @@
             // 
             this.sales_idTableAdapter.ClearBeforeFill = true;
             // 
+            // labelCount
+            // 
+            this.labelCount.AutoSize = true;
+            this.labelCount.Location = new System.Drawing.Point(887, 43);
+            this.labelCount.Name = "labelCount";
+            this.labelCount.Size = new System.Drawing.Size(35, 13);
+            this.labelCount.TabIndex = 2;
+            this.labelCount.Text = "label2";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(640, 381);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 473);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.labelCount);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -174,5 +196,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn количествоDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ценаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn способОплатыDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label labelCount;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -22,11 +22,6 @@ namespace Курсовая_работа
         {
             InitializeComponent();
         }
-    
-        private void ReadSingleRow(DataGridView dgw, IDataRecord record)
-        {
-            dgw.Rows.Add(record.GetInt32(0), record.GetBoolean(1), record.GetString(2), record.GetString(3), record.GetString(4), record.GetString(5), record.GetString(6), record.GetInt32(7));
-        }
 
         private void Products_Load(object sender, EventArgs e)
         {
@@ -51,43 +46,25 @@ namespace Курсовая_работа
                 productsTableAdapter.Update(kursDataSet);
             }
         }
-
-        private void Change()
-        {
-            var selectedRowIndex = dataGridView1.CurrentCell.RowIndex;
-            var id = textBox2.Text;
-            var Name = textBox3.Text;
-            var Type = textBox5.Text;
-            var Manufacturer = textBox6.Text;
-            var Producing_Сountry = textBox7.Text;
-            var Date_of_Manufacture = textBox8.Text;
-            int price;
-
-
-            if (dataGridView1.Rows[selectedRowIndex].Cells[0].Value.ToString() != string.Empty)
-            {
-                if(int.TryParse(textBox4.Text, out price))
-                {
-                    dataGridView1.Rows[selectedRowIndex].SetValues(id, Name, Type, Manufacturer, Producing_Сountry, Date_of_Manufacture, price);
-                }
-                else
-                {
-                    MessageBox.Show("");
-                }
-            }
-        }
         
         private void button3_Click(object sender, EventArgs e)
         {
             //Change();
-            DataGridViewRow row = this.dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex];
+            /*DataGridViewRow row = this.dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex];
             row.Cells[1].Value = textBox3.Text;
             row.Cells[2].Value = textBox4.Text;
             row.Cells[3].Value = textBox5.Text;
             row.Cells[4].Value = textBox6.Text;
             row.Cells[5].Value = textBox7.Text;
             row.Cells[6].Value = textBox8.Text;
-            row.Cells[7].Value = textBox9.Text;
+            row.Cells[7].Value = textBox9.Text;*/
+            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            connection_new.Open();
+            string insertQuery = "UPDATE Products SET Name = '"+textBox3.Text+"', Price = '"+maskedTextBox1.Text+"', Type = '"+textBox5.Text+"', Manufacturer = '"+textBox6.Text+"', Producing_Сountry = '"+textBox7.Text+"', Date_of_Manufacture = '"+ textBox8.Text+ "', Count = '"+textBox9.Text+"' WHERE Id = '"+textBox2.Text+"'";
+            SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
+            sqlCommand.ExecuteNonQuery();
+            this.productsTableAdapter.Fill(this.kursDataSet.Products);
+            connection_new.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -144,7 +121,7 @@ namespace Курсовая_работа
 
                 textBox2.Text = row.Cells[0].Value.ToString();
                 textBox3.Text = row.Cells[1].Value.ToString();
-                textBox4.Text = row.Cells[2].Value.ToString();
+                maskedTextBox1.Text = row.Cells[2].Value.ToString();
                 textBox5.Text = row.Cells[3].Value.ToString();
                 textBox6.Text = row.Cells[4].Value.ToString();
                 textBox7.Text = row.Cells[5].Value.ToString();

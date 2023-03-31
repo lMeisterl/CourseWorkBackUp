@@ -22,7 +22,7 @@ namespace Курсовая_работа
         {
             textBox2.UseSystemPasswordChar = true;
             textBox2.PasswordChar = '*';
-            pictureBox2.Visible = false;
+            pictureBox2.Visible = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -86,6 +86,11 @@ namespace Курсовая_работа
                 v.Show();
             }
             else MessageBox.Show(text: "Неверный логин или пароль");*/
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
 
         }
     }

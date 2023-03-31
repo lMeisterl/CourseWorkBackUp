@@ -47,5 +47,11 @@ namespace Курсовая_работа
             df.Show();
             this.Close();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Sales sales = new Sales();
+            sales.Show();
+        }
     }
 }
