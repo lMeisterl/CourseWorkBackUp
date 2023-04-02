@@ -3564,6 +3564,8 @@ namespace Курсовая_работа {
             
             private global::System.Data.DataColumn columnСотрудник;
             
+            private global::System.Data.DataColumn columnКод_продажи;
+            
             private global::System.Data.DataColumn columnДата_доставки;
             
             private global::System.Data.DataColumn columnАдрес;
@@ -3628,6 +3630,14 @@ namespace Курсовая_работа {
             public global::System.Data.DataColumn СотрудникColumn {
                 get {
                     return this.columnСотрудник;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Код_продажиColumn {
+                get {
+                    return this.columnКод_продажи;
                 }
             }
             
@@ -3708,12 +3718,13 @@ namespace Курсовая_работа {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public _Delivery_IdRow Add_Delivery_IdRow(int Id, string Покупатель, string Сотрудник, System.DateTime Дата_доставки, string Адрес, string Тип, decimal Цена, string Способ_оплаты) {
+            public _Delivery_IdRow Add_Delivery_IdRow(int Id, string Покупатель, string Сотрудник, int Код_продажи, System.DateTime Дата_доставки, string Адрес, string Тип, decimal Цена, string Способ_оплаты) {
                 _Delivery_IdRow row_Delivery_IdRow = ((_Delivery_IdRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
                         Покупатель,
                         Сотрудник,
+                        Код_продажи,
                         Дата_доставки,
                         Адрес,
                         Тип,
@@ -3722,13 +3733,6 @@ namespace Курсовая_работа {
                 row_Delivery_IdRow.ItemArray = columnValuesArray;
                 this.Rows.Add(row_Delivery_IdRow);
                 return row_Delivery_IdRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public _Delivery_IdRow FindById(int Id) {
-                return ((_Delivery_IdRow)(this.Rows.Find(new object[] {
-                            Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3751,6 +3755,7 @@ namespace Курсовая_работа {
                 this.columnId = base.Columns["Id"];
                 this.columnПокупатель = base.Columns["Покупатель"];
                 this.columnСотрудник = base.Columns["Сотрудник"];
+                this.columnКод_продажи = base.Columns["Код продажи"];
                 this.columnДата_доставки = base.Columns["Дата доставки"];
                 this.columnАдрес = base.Columns["Адрес"];
                 this.columnТип = base.Columns["Тип"];
@@ -3767,6 +3772,8 @@ namespace Курсовая_работа {
                 base.Columns.Add(this.columnПокупатель);
                 this.columnСотрудник = new global::System.Data.DataColumn("Сотрудник", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnСотрудник);
+                this.columnКод_продажи = new global::System.Data.DataColumn("Код продажи", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnКод_продажи);
                 this.columnДата_доставки = new global::System.Data.DataColumn("Дата доставки", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnДата_доставки);
                 this.columnАдрес = new global::System.Data.DataColumn("Адрес", typeof(string), null, global::System.Data.MappingType.Element);
@@ -3777,14 +3784,12 @@ namespace Курсовая_работа {
                 base.Columns.Add(this.columnЦена);
                 this.columnСпособ_оплаты = new global::System.Data.DataColumn("Способ оплаты", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnСпособ_оплаты);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnId}, true));
                 this.columnId.AllowDBNull = false;
-                this.columnId.Unique = true;
                 this.columnПокупатель.AllowDBNull = false;
                 this.columnПокупатель.MaxLength = 50;
                 this.columnСотрудник.AllowDBNull = false;
                 this.columnСотрудник.MaxLength = 50;
+                this.columnКод_продажи.AllowDBNull = false;
                 this.columnДата_доставки.AllowDBNull = false;
                 this.columnАдрес.MaxLength = 50;
                 this.columnТип.AllowDBNull = false;
@@ -6282,6 +6287,17 @@ namespace Курсовая_работа {
                 }
                 set {
                     this[this._tableDelivery_Id.СотрудникColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Код_продажи {
+                get {
+                    return ((int)(this[this._tableDelivery_Id.Код_продажиColumn]));
+                }
+                set {
+                    this[this._tableDelivery_Id.Код_продажиColumn] = value;
                 }
             }
             
@@ -11136,6 +11152,7 @@ SELECT Id, First_Name, Surname, Middle_Name, Telephone, [E-mail], Adress, Compan
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Покупатель", "Покупатель");
             tableMapping.ColumnMappings.Add("Сотрудник", "Сотрудник");
+            tableMapping.ColumnMappings.Add("Код продажи", "Код продажи");
             tableMapping.ColumnMappings.Add("Дата доставки", "Дата доставки");
             tableMapping.ColumnMappings.Add("Адрес", "Адрес");
             tableMapping.ColumnMappings.Add("Тип", "Тип");
@@ -11157,8 +11174,8 @@ SELECT Id, First_Name, Surname, Middle_Name, Telephone, [E-mail], Adress, Compan
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Покупатель, Сотрудник, [Дата доставки], Адрес, Тип, Цена, [Способ опла" +
-                "ты] FROM dbo.[Delivery+Id]";
+            this._commandCollection[0].CommandText = "SELECT Id, Покупатель, Сотрудник, [Код продажи], [Дата доставки], Адрес, Тип, Цен" +
+                "а, [Способ оплаты] FROM dbo.[Delivery+Id]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -677,7 +677,7 @@ SELECT Id, First_Name, Surname, Middle_Name, Telephone, [E-mail], Adress, Compan
               <DbSource ConnectionRef="KursConnectionString (Settings)" DbObjectName="Kurs.dbo.[Delivery+Id]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Id, Покупатель, Сотрудник, [Дата доставки], Адрес, Тип, Цена, [Способ оплаты] FROM dbo.[Delivery+Id]</CommandText>
+                    <CommandText>SELECT Id, Покупатель, Сотрудник, [Код продажи], [Дата доставки], Адрес, Тип, Цена, [Способ оплаты] FROM dbo.[Delivery+Id]</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -687,6 +687,7 @@ SELECT Id, First_Name, Surname, Middle_Name, Telephone, [E-mail], Adress, Compan
               <Mapping SourceColumn="Id" DataSetColumn="Id" />
               <Mapping SourceColumn="Покупатель" DataSetColumn="Покупатель" />
               <Mapping SourceColumn="Сотрудник" DataSetColumn="Сотрудник" />
+              <Mapping SourceColumn="Код продажи" DataSetColumn="Код продажи" />
               <Mapping SourceColumn="Дата доставки" DataSetColumn="Дата доставки" />
               <Mapping SourceColumn="Адрес" DataSetColumn="Адрес" />
               <Mapping SourceColumn="Тип" DataSetColumn="Тип" />
@@ -1105,6 +1106,7 @@ SELECT Id, First_Name, Surname, Middle_Name, Telephone, [E-mail], Adress, Compan
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Код_x0020_продажи" msprop:Generator_ColumnPropNameInRow="Код_продажи" msprop:Generator_ColumnPropNameInTable="Код_продажиColumn" msprop:Generator_ColumnVarNameInTable="columnКод_продажи" msprop:Generator_UserColumnName="Код продажи" type="xs:int" />
               <xs:element name="Дата_x0020_доставки" msprop:Generator_ColumnPropNameInRow="Дата_доставки" msprop:Generator_ColumnPropNameInTable="Дата_доставкиColumn" msprop:Generator_ColumnVarNameInTable="columnДата_доставки" msprop:Generator_UserColumnName="Дата доставки" type="xs:dateTime" />
               <xs:element name="Адрес" msprop:Generator_ColumnPropNameInRow="Адрес" msprop:Generator_ColumnPropNameInTable="АдресColumn" msprop:Generator_ColumnVarNameInTable="columnАдрес" msprop:Generator_UserColumnName="Адрес" minOccurs="0">
                 <xs:simpleType>
@@ -1259,10 +1261,6 @@ SELECT Id, First_Name, Surname, Middle_Name, Telephone, [E-mail], Adress, Compan
     </xs:unique>
     <xs:unique name="Suppliers_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Suppliers" />
-      <xs:field xpath="mstns:Id" />
-    </xs:unique>
-    <xs:unique name="Delivery_x002B_Id_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Delivery_x002B_Id" />
       <xs:field xpath="mstns:Id" />
     </xs:unique>
     <xs:unique name="Orders_x002B_id_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">

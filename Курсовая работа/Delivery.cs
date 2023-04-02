@@ -25,6 +25,8 @@ namespace Курсовая_работа
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Delivery_Id". При необходимости она может быть перемещена или удалена.
             this.delivery_IdTableAdapter.Fill(this.kursDataSet._Delivery_Id);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Delivery_Id". При необходимости она может быть перемещена или удалена.
+            this.delivery_IdTableAdapter.Fill(this.kursDataSet._Delivery_Id);
 
         }
 
@@ -35,15 +37,9 @@ namespace Курсовая_работа
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
-            connection_new.Open();
-            string insertQuery = $"INSERT INTO _Delivery_Id (Id_Client, Id_Employee, Id_Sale, Date, Type, Price, Payment) VALUES ({textBox2.Text}, {textBox3.Text}, {textBox4.Text}, '{textBox5.Text}', {textBox6.Text}, {textBox7.Text}, '{comboBox1.Text}')";
-            SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
-            sqlCommand.ExecuteNonQuery();
-            connection_new.Close();
-            /*AddDelivey addDelivey = new AddDelivey();
+            AddDelivey addDelivey = new AddDelivey();
             addDelivey.Show();
-            addDelivey.change(dataGridView1);*/
+            addDelivey.change(dataGridView1);
 
         }
 
@@ -51,7 +47,7 @@ namespace Курсовая_работа
         {
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = "UPDATE Employees SET Id_Client = '" + textBox2.Text + "', Id_Employee = '" + textBox3.Text + "', Id_Sale = '" + textBox4.Text + "', Date = '" + textBox5.Text + "', Type = '" + textBox6.Text + "', Price = '" + textBox7.Text + "', Payment = '"+comboBox1.Text+"' WHERE id = '"+textBox1.Text+"'";
+            string insertQuery = "UPDATE Employees SET Id_Client = '" + textBox2.Text + "', Id_Employee = '" + textBox3.Text + "', Id_Sale = '" + textBox9.Text + "', Date = '" + textBox4.Text + "',Adress = '"+textBox5.Text+"' Type = '" + textBox6.Text + "', Price = '" + textBox7.Text + "', Payment = '"+comboBox1.Text+"' WHERE id = '"+textBox1.Text+"'";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
@@ -78,11 +74,12 @@ namespace Курсовая_работа
                 textBox1.Text = row.Cells[0].Value.ToString();
                 textBox2.Text = row.Cells[1].Value.ToString();
                 textBox3.Text = row.Cells[2].Value.ToString();
-                textBox4.Text = row.Cells[3].Value.ToString();
-                textBox5.Text = row.Cells[4].Value.ToString();
-                textBox6.Text = row.Cells[5].Value.ToString();
-                textBox7.Text = row.Cells[6].Value.ToString();
-                comboBox1.Text = row.Cells[7].Value.ToString();
+                textBox9.Text = row.Cells[3].Value.ToString();
+                textBox4.Text = row.Cells[4].Value.ToString();
+                textBox5.Text = row.Cells[5].Value.ToString();
+                textBox6.Text = row.Cells[6].Value.ToString();
+                textBox7.Text = row.Cells[7].Value.ToString();
+                comboBox1.Text = row.Cells[8].Value.ToString();
 
             }
         }
