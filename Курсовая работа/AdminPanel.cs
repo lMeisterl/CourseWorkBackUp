@@ -53,5 +53,17 @@ namespace Курсовая_работа
             Sales sales = new Sales();
             sales.Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Delivery delivery = new Delivery();
+            delivery.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            PurchaseOrders purchaseOrders = new PurchaseOrders();  
+            purchaseOrders.Show();
+        }
     }
 }

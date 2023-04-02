@@ -21,9 +21,18 @@ namespace Курсовая_работа
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Orders_id". При необходимости она может быть перемещена или удалена.
             this.orders_idTableAdapter.Fill(this.kursDataSet._Orders_id);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Orders_id". При необходимости она может быть перемещена или удалена.
+            this.orders_idTableAdapter.Fill(this.kursDataSet._Orders_id);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Orders_id". При необходимости она может быть перемещена или удалена.
+            this.orders_idTableAdapter.Fill(this.kursDataSet._Orders_id);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.Purchase_Orders". При необходимости она может быть перемещена или удалена.
-            this.purchase_OrdersTableAdapter.Fill(this.kursDataSet.Purchase_Orders);
+            
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

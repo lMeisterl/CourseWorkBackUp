@@ -29,55 +29,68 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.kursDataSet = new Курсовая_работа.KursDataSet();
+            this.salesidBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sales_idTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.Sales_idTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.клиентDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.продуктDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.сотрудникDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.датаПродажиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.количествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ценаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.продукт1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.количество1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.продукт2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.количество2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.продукт3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.количество3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.продукт4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.количество4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.итогоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.способОплатыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salesidBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kursDataSet = new Курсовая_работа.KursDataSet();
-            this.sales_idTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.Sales_idTableAdapter();
-            this.labelCount = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesidBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesidBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ПРОДАЖА";
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.клиентDataGridViewTextBoxColumn,
-            this.продуктDataGridViewTextBoxColumn,
             this.сотрудникDataGridViewTextBoxColumn,
             this.датаПродажиDataGridViewTextBoxColumn,
-            this.количествоDataGridViewTextBoxColumn,
-            this.ценаDataGridViewTextBoxColumn,
+            this.продукт1DataGridViewTextBoxColumn,
+            this.количество1DataGridViewTextBoxColumn,
+            this.продукт2DataGridViewTextBoxColumn,
+            this.количество2DataGridViewTextBoxColumn,
+            this.продукт3DataGridViewTextBoxColumn,
+            this.количество3DataGridViewTextBoxColumn,
+            this.продукт4DataGridViewTextBoxColumn,
+            this.количество4DataGridViewTextBoxColumn,
+            this.итогоDataGridViewTextBoxColumn,
             this.способОплатыDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.salesidBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 43);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 21);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(843, 331);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.Size = new System.Drawing.Size(1052, 232);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // kursDataSet
+            // 
+            this.kursDataSet.DataSetName = "KursDataSet";
+            this.kursDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // salesidBindingSource
+            // 
+            this.salesidBindingSource.DataMember = "Sales+id";
+            this.salesidBindingSource.DataSource = this.kursDataSet;
+            // 
+            // sales_idTableAdapter
+            // 
+            this.sales_idTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -91,12 +104,6 @@
             this.клиентDataGridViewTextBoxColumn.HeaderText = "Клиент";
             this.клиентDataGridViewTextBoxColumn.Name = "клиентDataGridViewTextBoxColumn";
             // 
-            // продуктDataGridViewTextBoxColumn
-            // 
-            this.продуктDataGridViewTextBoxColumn.DataPropertyName = "Продукт";
-            this.продуктDataGridViewTextBoxColumn.HeaderText = "Продукт";
-            this.продуктDataGridViewTextBoxColumn.Name = "продуктDataGridViewTextBoxColumn";
-            // 
             // сотрудникDataGridViewTextBoxColumn
             // 
             this.сотрудникDataGridViewTextBoxColumn.DataPropertyName = "Сотрудник";
@@ -109,17 +116,59 @@
             this.датаПродажиDataGridViewTextBoxColumn.HeaderText = "Дата продажи";
             this.датаПродажиDataGridViewTextBoxColumn.Name = "датаПродажиDataGridViewTextBoxColumn";
             // 
-            // количествоDataGridViewTextBoxColumn
+            // продукт1DataGridViewTextBoxColumn
             // 
-            this.количествоDataGridViewTextBoxColumn.DataPropertyName = "Количество";
-            this.количествоDataGridViewTextBoxColumn.HeaderText = "Количество";
-            this.количествоDataGridViewTextBoxColumn.Name = "количествоDataGridViewTextBoxColumn";
+            this.продукт1DataGridViewTextBoxColumn.DataPropertyName = "Продукт1";
+            this.продукт1DataGridViewTextBoxColumn.HeaderText = "Продукт1";
+            this.продукт1DataGridViewTextBoxColumn.Name = "продукт1DataGridViewTextBoxColumn";
             // 
-            // ценаDataGridViewTextBoxColumn
+            // количество1DataGridViewTextBoxColumn
             // 
-            this.ценаDataGridViewTextBoxColumn.DataPropertyName = "Цена";
-            this.ценаDataGridViewTextBoxColumn.HeaderText = "Цена";
-            this.ценаDataGridViewTextBoxColumn.Name = "ценаDataGridViewTextBoxColumn";
+            this.количество1DataGridViewTextBoxColumn.DataPropertyName = "Количество1";
+            this.количество1DataGridViewTextBoxColumn.HeaderText = "Количество1";
+            this.количество1DataGridViewTextBoxColumn.Name = "количество1DataGridViewTextBoxColumn";
+            // 
+            // продукт2DataGridViewTextBoxColumn
+            // 
+            this.продукт2DataGridViewTextBoxColumn.DataPropertyName = "Продукт2";
+            this.продукт2DataGridViewTextBoxColumn.HeaderText = "Продукт2";
+            this.продукт2DataGridViewTextBoxColumn.Name = "продукт2DataGridViewTextBoxColumn";
+            // 
+            // количество2DataGridViewTextBoxColumn
+            // 
+            this.количество2DataGridViewTextBoxColumn.DataPropertyName = "Количество2";
+            this.количество2DataGridViewTextBoxColumn.HeaderText = "Количество2";
+            this.количество2DataGridViewTextBoxColumn.Name = "количество2DataGridViewTextBoxColumn";
+            // 
+            // продукт3DataGridViewTextBoxColumn
+            // 
+            this.продукт3DataGridViewTextBoxColumn.DataPropertyName = "Продукт3";
+            this.продукт3DataGridViewTextBoxColumn.HeaderText = "Продукт3";
+            this.продукт3DataGridViewTextBoxColumn.Name = "продукт3DataGridViewTextBoxColumn";
+            // 
+            // количество3DataGridViewTextBoxColumn
+            // 
+            this.количество3DataGridViewTextBoxColumn.DataPropertyName = "Количество3";
+            this.количество3DataGridViewTextBoxColumn.HeaderText = "Количество3";
+            this.количество3DataGridViewTextBoxColumn.Name = "количество3DataGridViewTextBoxColumn";
+            // 
+            // продукт4DataGridViewTextBoxColumn
+            // 
+            this.продукт4DataGridViewTextBoxColumn.DataPropertyName = "Продукт4";
+            this.продукт4DataGridViewTextBoxColumn.HeaderText = "Продукт4";
+            this.продукт4DataGridViewTextBoxColumn.Name = "продукт4DataGridViewTextBoxColumn";
+            // 
+            // количество4DataGridViewTextBoxColumn
+            // 
+            this.количество4DataGridViewTextBoxColumn.DataPropertyName = "Количество4";
+            this.количество4DataGridViewTextBoxColumn.HeaderText = "Количество4";
+            this.количество4DataGridViewTextBoxColumn.Name = "количество4DataGridViewTextBoxColumn";
+            // 
+            // итогоDataGridViewTextBoxColumn
+            // 
+            this.итогоDataGridViewTextBoxColumn.DataPropertyName = "Итого";
+            this.итогоDataGridViewTextBoxColumn.HeaderText = "Итого";
+            this.итогоDataGridViewTextBoxColumn.Name = "итогоDataGridViewTextBoxColumn";
             // 
             // способОплатыDataGridViewTextBoxColumn
             // 
@@ -127,76 +176,41 @@
             this.способОплатыDataGridViewTextBoxColumn.HeaderText = "Способ оплаты";
             this.способОплатыDataGridViewTextBoxColumn.Name = "способОплатыDataGridViewTextBoxColumn";
             // 
-            // salesidBindingSource
-            // 
-            this.salesidBindingSource.DataMember = "Sales+id";
-            this.salesidBindingSource.DataSource = this.kursDataSet;
-            // 
-            // kursDataSet
-            // 
-            this.kursDataSet.DataSetName = "KursDataSet";
-            this.kursDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sales_idTableAdapter
-            // 
-            this.sales_idTableAdapter.ClearBeforeFill = true;
-            // 
-            // labelCount
-            // 
-            this.labelCount.AutoSize = true;
-            this.labelCount.Location = new System.Drawing.Point(887, 43);
-            this.labelCount.Name = "labelCount";
-            this.labelCount.Size = new System.Drawing.Size(35, 13);
-            this.labelCount.TabIndex = 2;
-            this.labelCount.Text = "label2";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(640, 381);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 473);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.labelCount);
+            this.ClientSize = new System.Drawing.Size(1076, 450);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Sales";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sales";
             this.Load += new System.EventHandler(this.Sales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesidBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesidBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private KursDataSet kursDataSet;
         private System.Windows.Forms.BindingSource salesidBindingSource;
         private KursDataSetTableAdapters.Sales_idTableAdapter sales_idTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn клиентDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn продуктDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn сотрудникDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn датаПродажиDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn количествоDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ценаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn продукт1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn количество1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn продукт2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn количество2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn продукт3DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn количество3DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn продукт4DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn количество4DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn итогоDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn способОплатыDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label labelCount;
-        private System.Windows.Forms.Button button1;
     }
 }
