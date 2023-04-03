@@ -102,5 +102,10 @@ namespace Курсовая_работа
                 }
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.delivery_IdTableAdapter.Fill(this.kursDataSet._Delivery_Id);
+        }
     }
 }

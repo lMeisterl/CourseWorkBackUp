@@ -38,6 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -56,9 +58,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.kursDataSet = new Курсовая_работа.KursDataSet();
-            this.deliveryIdBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.delivery_IdTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.Delivery_IdTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.покупательDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.сотрудникDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,14 +67,16 @@
             this.типDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ценаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.способОплатыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.deliveryIdBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kursDataSet = new Курсовая_работа.KursDataSet();
+            this.delivery_IdTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.Delivery_IdTableAdapter();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliveryIdBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -96,7 +97,7 @@
             this.dataGridView1.DataSource = this.deliveryIdBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 27);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(925, 336);
+            this.dataGridView1.Size = new System.Drawing.Size(884, 305);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -105,7 +106,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(157, 68);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 50);
+            this.button1.Size = new System.Drawing.Size(136, 50);
             this.button1.TabIndex = 1;
             this.button1.Text = "Назад";
             this.button1.UseVisualStyleBackColor = true;
@@ -147,7 +148,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(293, 68);
+            this.button5.Location = new System.Drawing.Point(299, 69);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(136, 49);
             this.button5.TabIndex = 5;
@@ -166,6 +167,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button5);
@@ -200,6 +202,23 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(479, 144);
             this.panel2.TabIndex = 8;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(129, 115);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 20);
+            this.textBox9.TabIndex = 25;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(12, 113);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(101, 18);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Код продажи";
             // 
             // comboBox1
             // 
@@ -354,20 +373,6 @@
             this.textBox8.Size = new System.Drawing.Size(139, 20);
             this.textBox8.TabIndex = 13;
             // 
-            // kursDataSet
-            // 
-            this.kursDataSet.DataSetName = "KursDataSet";
-            this.kursDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // deliveryIdBindingSource
-            // 
-            this.deliveryIdBindingSource.DataMember = "Delivery+Id";
-            this.deliveryIdBindingSource.DataSource = this.kursDataSet;
-            // 
-            // delivery_IdTableAdapter
-            // 
-            this.delivery_IdTableAdapter.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -422,22 +427,29 @@
             this.способОплатыDataGridViewTextBoxColumn.HeaderText = "Способ оплаты";
             this.способОплатыDataGridViewTextBoxColumn.Name = "способОплатыDataGridViewTextBoxColumn";
             // 
-            // label9
+            // deliveryIdBindingSource
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(12, 113);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(101, 18);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "Код продажи";
+            this.deliveryIdBindingSource.DataMember = "Delivery+Id";
+            this.deliveryIdBindingSource.DataSource = this.kursDataSet;
             // 
-            // textBox9
+            // kursDataSet
             // 
-            this.textBox9.Location = new System.Drawing.Point(129, 115);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 25;
+            this.kursDataSet.DataSetName = "KursDataSet";
+            this.kursDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // delivery_IdTableAdapter
+            // 
+            this.delivery_IdTableAdapter.ClearBeforeFill = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(299, 13);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(136, 50);
+            this.button6.TabIndex = 6;
+            this.button6.Text = "Обновить";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Delivery
             // 
@@ -459,8 +471,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliveryIdBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -509,5 +521,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn способОплатыDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button6;
     }
 }
