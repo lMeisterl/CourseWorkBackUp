@@ -126,16 +126,6 @@ namespace Курсовая_работа
             connection_new.Open();
             string insertQuery = "UPDATE Employees SET First_Name = '"+textBox3.Text+"', Surname = '"+textBox4.Text+"', Middle_Name = '"+textBox5.Text+"', Telephone = '"+maskedTextBox1.Text+"', Passport = '"+maskedTextBox2.Text+"', Gender = '"+comboBox1.Text+"', Date_of_Birth = '"+dateTimePicker1.Value+"', Job_Title = '"+textBox10.Text+"', Education = '"+textBox11.Text+"'WHERE Id = '"+textBox2.Text+"'";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
-            sqlCommand.Parameters.AddWithValue("@name", textBox3.Text);
-            sqlCommand.Parameters.AddWithValue("@surname", textBox4.Text);
-            sqlCommand.Parameters.AddWithValue("@MidleName", textBox5.Text);
-            sqlCommand.Parameters.AddWithValue("@Telephone", maskedTextBox1.Text);
-            sqlCommand.Parameters.AddWithValue("@Passport", maskedTextBox2.Text);
-            sqlCommand.Parameters.AddWithValue("@Gender", comboBox1.Text);
-            sqlCommand.Parameters.AddWithValue("@DataBirth", dateTimePicker1.Value);
-            sqlCommand.Parameters.AddWithValue("@Post", textBox10.Text);
-            sqlCommand.Parameters.AddWithValue("@Education", textBox11.Text);
-            sqlCommand.Parameters.AddWithValue("@Experience", textBox12.Text);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
             this.employeesTableAdapter.Fill(this.kursDataSet.Employees);
@@ -169,10 +159,27 @@ namespace Курсовая_работа
 
             }
         }
+        private void Search(DataGridView dgw)
+        {
+            /*SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
 
+            string searchString = $"select * from Employees where concat (Id, First_Name, Surname, Middle_Name, Passport, Gender, Job_Title, Education, ) like '%" + textBox1.Text + "%'";
+            SqlCommand com = new SqlCommand(searchString, connection_new);
+
+            connection_new.Open();
+
+            SqlDataReader read = com.ExecuteReader();
+
+            while (read.Read())
+            {
+                //ReadSingleRow(dgw, read);
+            }
+            read.Close();
+            connection_new.Close();*/
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            Search(dataGridView1);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

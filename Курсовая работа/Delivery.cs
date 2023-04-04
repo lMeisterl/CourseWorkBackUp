@@ -25,8 +25,8 @@ namespace Курсовая_работа
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Delivery_Id". При необходимости она может быть перемещена или удалена.
             this.delivery_IdTableAdapter.Fill(this.kursDataSet._Delivery_Id);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Delivery_Id". При необходимости она может быть перемещена или удалена.
-            this.delivery_IdTableAdapter.Fill(this.kursDataSet._Delivery_Id);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.Delivery". При необходимости она может быть перемещена или удалена.
+            this.deliveryTableAdapter.Fill(this.kursDataSet.Delivery);
 
         }
 

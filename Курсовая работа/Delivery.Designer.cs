@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.deliveryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kursDataSet = new Курсовая_работа.KursDataSet();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -37,6 +39,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -58,7 +61,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deliveryTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.DeliveryTableAdapter();
+            this.deliveryIdBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.delivery_IdTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.Delivery_IdTableAdapter();
             this.покупательDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.сотрудникDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.кодПродажиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,16 +72,14 @@
             this.типDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ценаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.способОплатыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deliveryIdBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kursDataSet = new Курсовая_работа.KursDataSet();
-            this.delivery_IdTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.Delivery_IdTableAdapter();
-            this.button6 = new System.Windows.Forms.Button();
+            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deliveryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliveryIdBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -85,7 +88,6 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
             this.покупательDataGridViewTextBoxColumn,
             this.сотрудникDataGridViewTextBoxColumn,
             this.кодПродажиDataGridViewTextBoxColumn,
@@ -93,13 +95,24 @@
             this.адресDataGridViewTextBoxColumn,
             this.типDataGridViewTextBoxColumn,
             this.ценаDataGridViewTextBoxColumn,
-            this.способОплатыDataGridViewTextBoxColumn});
+            this.способОплатыDataGridViewTextBoxColumn,
+            this.кодDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.deliveryIdBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 27);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(884, 305);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // deliveryBindingSource
+            // 
+            this.deliveryBindingSource.DataMember = "Delivery";
+            this.deliveryBindingSource.DataSource = this.kursDataSet;
+            // 
+            // kursDataSet
+            // 
+            this.kursDataSet.DataSetName = "KursDataSet";
+            this.kursDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -177,6 +190,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(440, 132);
             this.panel1.TabIndex = 7;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(299, 13);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(136, 50);
+            this.button6.TabIndex = 6;
+            this.button6.Text = "Обновить";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // panel2
             // 
@@ -373,11 +396,18 @@
             this.textBox8.Size = new System.Drawing.Size(139, 20);
             this.textBox8.TabIndex = 13;
             // 
-            // idDataGridViewTextBoxColumn
+            // deliveryTableAdapter
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.deliveryTableAdapter.ClearBeforeFill = true;
+            // 
+            // deliveryIdBindingSource
+            // 
+            this.deliveryIdBindingSource.DataMember = "Delivery+Id";
+            this.deliveryIdBindingSource.DataSource = this.kursDataSet;
+            // 
+            // delivery_IdTableAdapter
+            // 
+            this.delivery_IdTableAdapter.ClearBeforeFill = true;
             // 
             // покупательDataGridViewTextBoxColumn
             // 
@@ -427,29 +457,11 @@
             this.способОплатыDataGridViewTextBoxColumn.HeaderText = "Способ оплаты";
             this.способОплатыDataGridViewTextBoxColumn.Name = "способОплатыDataGridViewTextBoxColumn";
             // 
-            // deliveryIdBindingSource
+            // кодDataGridViewTextBoxColumn
             // 
-            this.deliveryIdBindingSource.DataMember = "Delivery+Id";
-            this.deliveryIdBindingSource.DataSource = this.kursDataSet;
-            // 
-            // kursDataSet
-            // 
-            this.kursDataSet.DataSetName = "KursDataSet";
-            this.kursDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // delivery_IdTableAdapter
-            // 
-            this.delivery_IdTableAdapter.ClearBeforeFill = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(299, 13);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(136, 50);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Обновить";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
             // 
             // Delivery
             // 
@@ -467,12 +479,13 @@
             this.Text = "Delivery";
             this.Load += new System.EventHandler(this.Delivery_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deliveryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliveryIdBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -508,9 +521,14 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox8;
         private KursDataSet kursDataSet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.BindingSource deliveryBindingSource;
+        private KursDataSetTableAdapters.DeliveryTableAdapter deliveryTableAdapter;
         private System.Windows.Forms.BindingSource deliveryIdBindingSource;
         private KursDataSetTableAdapters.Delivery_IdTableAdapter delivery_IdTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn покупательDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn сотрудникDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn кодПродажиDataGridViewTextBoxColumn;
@@ -519,8 +537,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn типDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ценаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn способОплатыDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
     }
 }
