@@ -111,5 +111,15 @@ namespace Курсовая_работа
                 }
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.suppliersTableAdapter.Fill(this.kursDataSet.Suppliers);
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

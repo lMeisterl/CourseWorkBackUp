@@ -172,5 +172,103 @@ namespace Курсовая_работа
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            connection_new.Open();
+            string insertQuery = $"INSERT INTO Sales (Id_Employees, Data_of_Sale, Id_Product, Count, Id_Products1, Count1, Id_Products2, Count2, Id_Products3, Count3, Sale_Amount, Payment) VALUES ('" + textBox2.Text + "','" + dateTimePicker1.Value+ "', '" + productComboBox1.Text + "',  '" + textCount1.Text + "', '" + productComboBox2.Text + "', '" + textCount2.Text + "', '" + productComboBox3.Text+ "', '"+textCount3.Text+"', '"+productComboBox4.Text+"', '"+textCount4.Text+"', '"+textFinishCost.Text+"', '"+textBox17.Text+"')";
+            SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
+            sqlCommand.ExecuteNonQuery();
+            Int32 countProduct1 = getCountProduct(Convert.ToInt32(productComboBox1.Text));
+            Int32 countProduct2 = getCountProduct(Convert.ToInt32(productComboBox2.Text));
+            Int32 countProduct3 = getCountProduct(Convert.ToInt32(productComboBox3.Text));
+            Int32 countProduct4 = getCountProduct(Convert.ToInt32(productComboBox4.Text));
+            Int32 newCountProduct = countProduct1 - Convert.ToInt32(textCount1.Text);
+            setCountproduct(newCountProduct, Convert.ToInt32(productComboBox1.Text));
+            MessageBox.Show("Доставка успешно добавлена!");
+        }
+        private int getCountProduct(Int32 Id)
+        {
+            SqlConnection connection = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            connection.Open();
+            string query = "SELECT Price FROM Products WHERE Id = @id";
+            SqlCommand sqlCommand = new SqlCommand(query, connection);
+            sqlCommand.Parameters.AddWithValue("@Id", Id);
+            Int32 resultCount = Convert.ToInt32(sqlCommand.ExecuteScalar());
+
+            return resultCount;
+        }
+        private void setCountproduct(Int32 count, Int32 Id)
+        {
+            SqlConnection connection = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            connection.Open();
+            string query = "UPDATE Products SET Count = @count WHERE Id = @Id";
+            SqlCommand sqlCommand = new SqlCommand(query, connection);
+            sqlCommand.Parameters.AddWithValue("@Id", Id);
+            sqlCommand.Parameters.AddWithValue("@count", count);
+            sqlCommand.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string item = comboBox1.SelectedText.ToString();
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    // Действия, если выбрано значение "1"
+                    break;
+                case 1:
+                    labelProduct2.Visible = true;
+                    productComboBox2.Visible = true;
+                    labelPrice2.Visible = true;
+                    textCount2.Visible = true;
+                    priceLabel2.Visible = true;
+                    labelCount2.Visible = true;
+
+                    break;
+                case 2:
+                    labelProduct2.Visible = true;
+                    productComboBox2.Visible = true;
+                    labelPrice2.Visible = true;
+                    textCount2.Visible = true;
+                    priceLabel2.Visible = true;
+                    labelCount2.Visible = true;
+
+                    labelProduct3.Visible = true;
+                    productComboBox3.Visible = true;
+                    labelPrice3.Visible = true;
+                    textCount3.Visible = true;
+                    priceLabel3.Visible = true;
+                    labelCount3.Visible = true;
+                    break;
+                case 3:
+                    labelProduct2.Visible = true;
+                    productComboBox2.Visible = true;
+                    labelPrice2.Visible = true;
+                    textCount2.Visible = true;
+                    priceLabel2.Visible = true;
+                    labelCount2.Visible = true;
+
+                    labelProduct3.Visible = true;
+                    productComboBox3.Visible = true;
+                    labelPrice3.Visible = true;
+                    textCount3.Visible = true;
+                    priceLabel3.Visible = true;
+                    labelCount3.Visible = true;
+
+                    labelProduct4.Visible = true;
+                    productComboBox4.Visible = true;
+                    labelPrice4.Visible = true;
+                    textCount4.Visible = true;
+                    priceLabel4.Visible = true;
+                    labelCount4.Visible = true;
+                    break;
+                default:
+                    // Действия по умолчанию, если выбрано неизвестное значение
+                    break;
+            }
+        }
     }
 }

@@ -188,5 +188,15 @@ namespace Курсовая_работа
             if (!found) // если значение не найдено
                 MessageBox.Show("Значение не найдено");*/
         }
+
+        private void button5_Click_2(object sender, EventArgs e)
+        {
+            this.productsTableAdapter.Fill(this.kursDataSet.Products);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

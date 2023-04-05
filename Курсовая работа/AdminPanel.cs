@@ -65,5 +65,18 @@ namespace Курсовая_работа
             PurchaseOrders purchaseOrders = new PurchaseOrders();  
             purchaseOrders.Show();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            ReportPremium reportPremium = new ReportPremium();
+            reportPremium.Show();
+            this.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            ReportOtpuck report = new ReportOtpuck();
+            report.Show();
+        }
     }
 }

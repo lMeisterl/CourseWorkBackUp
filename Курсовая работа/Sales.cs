@@ -69,5 +69,15 @@ namespace Курсовая_работа
 
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            this.sales_idTableAdapter.Fill(this.kursDataSet._Sales_id);
+        }
     }
 }

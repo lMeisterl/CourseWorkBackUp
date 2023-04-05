@@ -60,7 +60,7 @@ namespace Курсовая_работа
             if (CurMan.Count > 0)
             {
                 CurMan.RemoveAt(CurMan.Position);
-                //delivery_IdTableAdapter.Update(kursDataSet);
+                deliveryTableAdapter.Update(kursDataSet);
             }
         }
 
@@ -106,6 +106,11 @@ namespace Курсовая_работа
         private void button6_Click(object sender, EventArgs e)
         {
             this.delivery_IdTableAdapter.Fill(this.kursDataSet._Delivery_Id);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
