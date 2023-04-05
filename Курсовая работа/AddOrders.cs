@@ -53,6 +53,7 @@ namespace Курсовая_работа
             
             return resultCount;
         }
+        
         private void setCountproduct(Int32 count, Int32 Id) 
         {
             SqlConnection connection = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
