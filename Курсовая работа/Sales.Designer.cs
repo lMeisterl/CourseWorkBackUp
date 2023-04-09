@@ -47,9 +47,10 @@
             this.количество4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.итогоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.способОплатыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salesidBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.salesidBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kursDataSet = new Курсовая_работа.KursDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
@@ -91,23 +93,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.salesidBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sales_idTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.Sales_idTableAdapter();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.изменитьСтрокуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.закрытьПриложениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.назадToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.закрытьПриложениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label19 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
+            this.sales_idTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.Sales_idTableAdapter();
+            this.экспортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesidBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesidBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.salesidBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,7 +142,7 @@
             this.количество4DataGridViewTextBoxColumn,
             this.итогоDataGridViewTextBoxColumn,
             this.способОплатыDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.salesidBindingSource1;
+            this.dataGridView1.DataSource = this.salesidBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 38);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -271,10 +270,10 @@
             this.способОплатыDataGridViewTextBoxColumn.Name = "способОплатыDataGridViewTextBoxColumn";
             this.способОплатыDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // salesidBindingSource1
+            // salesidBindingSource
             // 
-            this.salesidBindingSource1.DataMember = "Sales+id";
-            this.salesidBindingSource1.DataSource = this.kursDataSet;
+            this.salesidBindingSource.DataMember = "Sales+id";
+            this.salesidBindingSource.DataSource = this.kursDataSet;
             // 
             // kursDataSet
             // 
@@ -295,6 +294,21 @@
             this.panel1.Size = new System.Drawing.Size(476, 197);
             this.panel1.TabIndex = 9;
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(137)))), ((int)(((byte)(131)))));
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(233)))), ((int)(((byte)(210)))));
+            this.button6.Location = new System.Drawing.Point(15, 98);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(145, 51);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "Обновить";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -304,7 +318,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(160, 20);
             this.label12.TabIndex = 8;
-            this.label12.Text = "Панель управление";
+            this.label12.Text = "Панель управления";
             // 
             // button5
             // 
@@ -419,6 +433,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(839, 210);
             this.panel2.TabIndex = 10;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(233)))), ((int)(((byte)(210)))));
+            this.label20.Location = new System.Drawing.Point(12, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(177, 20);
+            this.label20.TabIndex = 10;
+            this.label20.Text = "Управление записями";
             // 
             // textBox17
             // 
@@ -760,15 +785,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Код";
             // 
-            // salesidBindingSource
-            // 
-            this.salesidBindingSource.DataMember = "Sales+id";
-            this.salesidBindingSource.DataSource = this.kursDataSet;
-            // 
-            // sales_idTableAdapter
-            // 
-            this.sales_idTableAdapter.ClearBeforeFill = true;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(29)))), ((int)(((byte)(49)))));
@@ -777,6 +793,7 @@
             this.добавитьToolStripMenuItem,
             this.изменитьСтрокуToolStripMenuItem,
             this.удалитьToolStripMenuItem,
+            this.экспортToolStripMenuItem,
             this.назадToolStripMenuItem,
             this.закрытьПриложениеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -808,19 +825,19 @@
             this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             // 
-            // закрытьПриложениеToolStripMenuItem
-            // 
-            this.закрытьПриложениеToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(221)))), ((int)(((byte)(196)))));
-            this.закрытьПриложениеToolStripMenuItem.Name = "закрытьПриложениеToolStripMenuItem";
-            this.закрытьПриложениеToolStripMenuItem.Size = new System.Drawing.Size(171, 24);
-            this.закрытьПриложениеToolStripMenuItem.Text = "Закрыть приложение";
-            // 
             // назадToolStripMenuItem
             // 
             this.назадToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(221)))), ((int)(((byte)(196)))));
             this.назадToolStripMenuItem.Name = "назадToolStripMenuItem";
             this.назадToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.назадToolStripMenuItem.Text = "Назад";
+            // 
+            // закрытьПриложениеToolStripMenuItem
+            // 
+            this.закрытьПриложениеToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(221)))), ((int)(((byte)(196)))));
+            this.закрытьПриложениеToolStripMenuItem.Name = "закрытьПриложениеToolStripMenuItem";
+            this.закрытьПриложениеToolStripMenuItem.Size = new System.Drawing.Size(171, 24);
+            this.закрытьПриложениеToolStripMenuItem.Text = "Закрыть приложение";
             // 
             // label19
             // 
@@ -833,31 +850,16 @@
             this.label19.TabIndex = 12;
             this.label19.Text = "Продажи";
             // 
-            // button6
+            // sales_idTableAdapter
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(137)))), ((int)(((byte)(131)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(233)))), ((int)(((byte)(210)))));
-            this.button6.Location = new System.Drawing.Point(15, 98);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(145, 51);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "Обновить";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            this.sales_idTableAdapter.ClearBeforeFill = true;
             // 
-            // label20
+            // экспортToolStripMenuItem
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(233)))), ((int)(((byte)(210)))));
-            this.label20.Location = new System.Drawing.Point(12, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(177, 20);
-            this.label20.TabIndex = 10;
-            this.label20.Text = "Управление записями";
+            this.экспортToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(221)))), ((int)(((byte)(196)))));
+            this.экспортToolStripMenuItem.Name = "экспортToolStripMenuItem";
+            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.экспортToolStripMenuItem.Text = "Экспорт";
             // 
             // Sales
             // 
@@ -872,16 +874,16 @@
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Sales";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sales";
             this.Load += new System.EventHandler(this.Sales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesidBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesidBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.salesidBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -891,8 +893,6 @@
 
         #endregion
         private KursDataSet kursDataSet;
-        private System.Windows.Forms.BindingSource salesidBindingSource;
-        private KursDataSetTableAdapters.Sales_idTableAdapter sales_idTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn клиентDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel panel1;
@@ -904,24 +904,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn сотрудникDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn датаПродажиDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn продукт1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ценаПродукта1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn количество1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn продукт2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ценаПродукта2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn количество2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn продукт3DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ценаПродукта3DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn количество3DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn продукт4DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ценаПродукта4DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn количество4DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn итогоDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn способОплатыDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource salesidBindingSource1;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.TextBox textBox15;
@@ -965,5 +947,25 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.BindingSource salesidBindingSource;
+        private KursDataSetTableAdapters.Sales_idTableAdapter sales_idTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn сотрудникDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn датаПродажиDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn продукт1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ценаПродукта1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn количество1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn продукт2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ценаПродукта2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn количество2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn продукт3DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ценаПродукта3DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn количество3DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn продукт4DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ценаПродукта4DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn количество4DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn итогоDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn способОплатыDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem экспортToolStripMenuItem;
     }
 }

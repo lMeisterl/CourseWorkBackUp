@@ -22,12 +22,6 @@ namespace Курсовая_работа
         private void Sales_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Sales_id". При необходимости она может быть перемещена или удалена.
-            this.sales_idTableAdapter.Fill(this.kursDataSet._Sales_id);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Sales_id". При необходимости она может быть перемещена или удалена.
-            this.sales_idTableAdapter.Fill(this.kursDataSet._Sales_id);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Sales_id". При необходимости она может быть перемещена или удалена.
-            this.sales_idTableAdapter.Fill(this.kursDataSet._Sales_id);
-
         }
 
         private void button4_Click(object sender, EventArgs e)

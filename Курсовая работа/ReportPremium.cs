@@ -19,7 +19,7 @@ namespace Курсовая_работа
 {
     public partial class ReportPremium : Form
     {
-        public readonly string TemplateFileName = @"C:\Users\Meister\Desktop\CourseWorkBackUp\premia.docx";
+        public readonly string TemplateFileName = @"\Resources\premia.docx";
         public ReportPremium()
         {
             InitializeComponent();
@@ -70,9 +70,9 @@ namespace Курсовая_работа
                 ReplaceWordStub("{osnov}", osnov, wordDocument);
 
 
-                wordDocument.SaveAs(@"C:\Users\Meister\Desktop\CourseWorkBackUp\premia2.docx");
+                wordDocument.SaveAs(@"C:\Users\shtok\OneDrive\Рабочий стол\'" + textBox8+"'.docx");
                 wordDocument.Close();
-                Process.Start(@"C:\Users\Meister\Desktop\CourseWorkBackUp\premia2.docx");
+                Process.Start(@"C:\Users\shtok\OneDrive\Рабочий стол\'" + textBox8+"'.docx");
 
             }
             catch
@@ -85,6 +85,13 @@ namespace Курсовая_работа
             {
                 wordApp.Quit();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AdminPanel adminPanel = new AdminPanel();
+            adminPanel.Show();
+            this.Close();
         }
     }
 }
