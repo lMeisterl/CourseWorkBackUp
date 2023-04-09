@@ -585,7 +585,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Курсовая_работа.Properties.Resources.поиск_1;
             this.pictureBox1.Location = new System.Drawing.Point(826, 37);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(27, 20);

@@ -20,9 +20,9 @@ namespace Курсовая_работа
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            textBox2.UseSystemPasswordChar = true;
+           /* textBox2.UseSystemPasswordChar = true;
             textBox2.PasswordChar = '*';
-            pictureBox2.Visible = true;
+            pictureBox2.Visible = true;*/
         }
 
         private void button2_Click(object sender, EventArgs e)

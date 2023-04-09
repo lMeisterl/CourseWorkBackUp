@@ -71,11 +71,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.kursDataSet1 = new Курсовая_работа.KursDataSet();
             this.label11 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
@@ -276,11 +276,11 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(233)))), ((int)(((byte)(210)))));
-            this.button3.Location = new System.Drawing.Point(154, 78);
+            this.button3.Location = new System.Drawing.Point(460, 143);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(134, 45);
             this.button3.TabIndex = 4;
-            this.button3.Text = "Изменить";
+            this.button3.Text = "Сохранить";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -310,7 +310,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Курсовая_работа.Properties.Resources.поиск_1;
             this.pictureBox1.Location = new System.Drawing.Point(1014, 31);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(27, 20);
@@ -381,6 +380,7 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -515,11 +515,25 @@
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button3);
             this.panel2.Location = new System.Drawing.Point(12, 325);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(445, 136);
             this.panel2.TabIndex = 18;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(137)))), ((int)(((byte)(131)))));
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(233)))), ((int)(((byte)(210)))));
+            this.button6.Location = new System.Drawing.Point(294, 78);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(134, 45);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "Закрыть приложение";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -563,21 +577,6 @@
             this.label11.Size = new System.Drawing.Size(78, 18);
             this.label11.TabIndex = 28;
             this.label11.Text = "Продукты";
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(137)))), ((int)(((byte)(131)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(233)))), ((int)(((byte)(210)))));
-            this.button6.Location = new System.Drawing.Point(294, 78);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(134, 45);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "Закрыть приложение";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Products
             // 

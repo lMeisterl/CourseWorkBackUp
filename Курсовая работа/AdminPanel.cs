@@ -12,6 +12,8 @@ namespace Курсовая_работа
 {
     public partial class AdminPanel : Form
     {
+        private const string V = "186; 231; 96";
+
         public AdminPanel()
         {
             InitializeComponent();
@@ -77,6 +79,11 @@ namespace Курсовая_работа
         {
             ReportOtpuck report = new ReportOtpuck();
             report.Show();
+        }
+
+        private void button8_MouseHover(object sender, EventArgs e)
+        {
+            //button8.BackColor = V;
         }
     }
 }
