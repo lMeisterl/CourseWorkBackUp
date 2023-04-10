@@ -28,146 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPanel));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.drawing6 = new Курсовая_работа.Drawing();
+            this.drawing5 = new Курсовая_работа.Drawing();
+            this.drawing4 = new Курсовая_работа.Drawing();
+            this.drawing3 = new Курсовая_работа.Drawing();
+            this.drawing2 = new Курсовая_работа.Drawing();
+            this.drawing1 = new Курсовая_работа.Drawing();
+            this.drawing8 = new Курсовая_работа.Drawing();
+            this.drawing7 = new Курсовая_работа.Drawing();
             this.button10 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(138, 617);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(269, 51);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Сотрудники";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(138, 339);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(269, 51);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Продукты";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(138, 542);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(269, 51);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Поставщики";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(138, 475);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(269, 51);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Доставка";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button5.Location = new System.Drawing.Point(138, 271);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(269, 51);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Продажи";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(138, 408);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(269, 51);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Поставка";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(278, 684);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(129, 51);
-            this.button9.TabIndex = 2;
-            this.button9.Text = "Отпуск";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(138, 684);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(122, 51);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "Премия";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            this.button8.MouseHover += new System.EventHandler(this.button8_MouseHover);
             // 
             // panel1
             // 
@@ -179,6 +54,170 @@
             this.panel1.Size = new System.Drawing.Size(550, 37);
             this.panel1.TabIndex = 7;
             // 
+            // drawing6
+            // 
+            this.drawing6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing6.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing6.BorderRadius = 20;
+            this.drawing6.BorderSize = 2;
+            this.drawing6.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing6.FlatAppearance.BorderSize = 0;
+            this.drawing6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing6.Location = new System.Drawing.Point(138, 629);
+            this.drawing6.Name = "drawing6";
+            this.drawing6.Size = new System.Drawing.Size(269, 51);
+            this.drawing6.TabIndex = 13;
+            this.drawing6.Text = "Сотрудники";
+            this.drawing6.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing6.UseVisualStyleBackColor = false;
+            this.drawing6.Click += new System.EventHandler(this.drawing6_Click);
+            // 
+            // drawing5
+            // 
+            this.drawing5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing5.BorderRadius = 20;
+            this.drawing5.BorderSize = 0;
+            this.drawing5.BortderColor = System.Drawing.Color.PaleVioletRed;
+            this.drawing5.FlatAppearance.BorderSize = 0;
+            this.drawing5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing5.Location = new System.Drawing.Point(138, 543);
+            this.drawing5.Name = "drawing5";
+            this.drawing5.Size = new System.Drawing.Size(269, 51);
+            this.drawing5.TabIndex = 12;
+            this.drawing5.Text = "Поставщики";
+            this.drawing5.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing5.UseVisualStyleBackColor = false;
+            this.drawing5.Click += new System.EventHandler(this.drawing5_Click);
+            // 
+            // drawing4
+            // 
+            this.drawing4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing4.BorderRadius = 20;
+            this.drawing4.BorderSize = 0;
+            this.drawing4.BortderColor = System.Drawing.Color.PaleVioletRed;
+            this.drawing4.FlatAppearance.BorderSize = 0;
+            this.drawing4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing4.Location = new System.Drawing.Point(138, 473);
+            this.drawing4.Name = "drawing4";
+            this.drawing4.Size = new System.Drawing.Size(269, 51);
+            this.drawing4.TabIndex = 11;
+            this.drawing4.Text = "Доставка";
+            this.drawing4.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing4.UseVisualStyleBackColor = false;
+            this.drawing4.Click += new System.EventHandler(this.drawing4_Click);
+            // 
+            // drawing3
+            // 
+            this.drawing3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing3.BorderRadius = 20;
+            this.drawing3.BorderSize = 0;
+            this.drawing3.BortderColor = System.Drawing.Color.PaleVioletRed;
+            this.drawing3.FlatAppearance.BorderSize = 0;
+            this.drawing3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing3.Location = new System.Drawing.Point(138, 405);
+            this.drawing3.Name = "drawing3";
+            this.drawing3.Size = new System.Drawing.Size(269, 51);
+            this.drawing3.TabIndex = 10;
+            this.drawing3.Text = "Поставка";
+            this.drawing3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing3.UseVisualStyleBackColor = false;
+            this.drawing3.Click += new System.EventHandler(this.drawing3_Click);
+            // 
+            // drawing2
+            // 
+            this.drawing2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing2.BorderRadius = 20;
+            this.drawing2.BorderSize = 0;
+            this.drawing2.BortderColor = System.Drawing.Color.PaleVioletRed;
+            this.drawing2.FlatAppearance.BorderSize = 0;
+            this.drawing2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing2.Location = new System.Drawing.Point(138, 335);
+            this.drawing2.Name = "drawing2";
+            this.drawing2.Size = new System.Drawing.Size(269, 51);
+            this.drawing2.TabIndex = 9;
+            this.drawing2.Text = "Продукты";
+            this.drawing2.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing2.UseVisualStyleBackColor = false;
+            this.drawing2.Click += new System.EventHandler(this.drawing2_Click);
+            // 
+            // drawing1
+            // 
+            this.drawing1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing1.BorderRadius = 20;
+            this.drawing1.BorderSize = 0;
+            this.drawing1.BortderColor = System.Drawing.Color.PaleVioletRed;
+            this.drawing1.FlatAppearance.BorderSize = 0;
+            this.drawing1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing1.Location = new System.Drawing.Point(138, 262);
+            this.drawing1.Name = "drawing1";
+            this.drawing1.Size = new System.Drawing.Size(269, 51);
+            this.drawing1.TabIndex = 8;
+            this.drawing1.Text = "Продажи";
+            this.drawing1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing1.UseVisualStyleBackColor = false;
+            this.drawing1.Click += new System.EventHandler(this.drawing1_Click);
+            // 
+            // drawing8
+            // 
+            this.drawing8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing8.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing8.BorderRadius = 20;
+            this.drawing8.BorderSize = 2;
+            this.drawing8.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing8.FlatAppearance.BorderSize = 0;
+            this.drawing8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing8.Image = global::Курсовая_работа.Properties.Resources.trusted;
+            this.drawing8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.drawing8.Location = new System.Drawing.Point(138, 699);
+            this.drawing8.Name = "drawing8";
+            this.drawing8.Size = new System.Drawing.Size(122, 51);
+            this.drawing8.TabIndex = 15;
+            this.drawing8.Text = "Премия";
+            this.drawing8.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing8.UseVisualStyleBackColor = false;
+            this.drawing8.Click += new System.EventHandler(this.drawing8_Click);
+            // 
+            // drawing7
+            // 
+            this.drawing7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing7.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing7.BorderRadius = 20;
+            this.drawing7.BorderSize = 2;
+            this.drawing7.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing7.FlatAppearance.BorderSize = 0;
+            this.drawing7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing7.Image = global::Курсовая_работа.Properties.Resources.calendar;
+            this.drawing7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.drawing7.Location = new System.Drawing.Point(278, 699);
+            this.drawing7.Name = "drawing7";
+            this.drawing7.Size = new System.Drawing.Size(129, 51);
+            this.drawing7.TabIndex = 14;
+            this.drawing7.Text = "Отпуск";
+            this.drawing7.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing7.UseVisualStyleBackColor = false;
+            this.drawing7.Click += new System.EventHandler(this.drawing7_Click);
+            // 
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
@@ -186,7 +225,7 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(233)))), ((int)(((byte)(210)))));
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.Image = global::Курсовая_работа.Properties.Resources.question;
             this.button10.Location = new System.Drawing.Point(480, 2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(31, 30);
@@ -200,7 +239,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(233)))), ((int)(((byte)(210)))));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Image = global::Курсовая_работа.Properties.Resources.remove;
             this.button4.Location = new System.Drawing.Point(515, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(31, 31);
@@ -210,10 +249,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::Курсовая_работа.Properties.Resources._1;
             this.pictureBox1.Location = new System.Drawing.Point(0, 37);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(550, 176);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -223,16 +263,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(550, 789);
+            this.Controls.Add(this.drawing8);
+            this.Controls.Add(this.drawing7);
+            this.Controls.Add(this.drawing6);
+            this.Controls.Add(this.drawing5);
+            this.Controls.Add(this.drawing4);
+            this.Controls.Add(this.drawing3);
+            this.Controls.Add(this.drawing2);
+            this.Controls.Add(this.drawing1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button7);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -241,22 +281,22 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
+        private Drawing drawing1;
+        private Drawing drawing2;
+        private Drawing drawing3;
+        private Drawing drawing4;
+        private Drawing drawing5;
+        private Drawing drawing6;
+        private Drawing drawing7;
+        private Drawing drawing8;
     }
 }

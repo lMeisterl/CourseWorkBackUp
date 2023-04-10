@@ -19,13 +19,6 @@ namespace Курсовая_работа
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form3 f = new Form3();
-            f.Show();
-            this.Close();
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -36,54 +29,52 @@ namespace Курсовая_работа
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Products gf = new Products();
-            gf.Show();
-            this.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Suppliers df = new Suppliers();
-            df.Show();
-            this.Close();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
+        private void drawing1_Click(object sender, EventArgs e)
         {
             Sales sales = new Sales();
             sales.Show();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void drawing2_Click(object sender, EventArgs e)
+        {
+            Products products = new Products();
+            products.Show();
+        }
+
+        private void drawing3_Click(object sender, EventArgs e)
+        {
+            PurchaseOrders purchaseOrders = new PurchaseOrders();
+            purchaseOrders.Show();
+        }
+
+        private void drawing4_Click(object sender, EventArgs e)
         {
             Delivery delivery = new Delivery();
             delivery.Show();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void drawing5_Click(object sender, EventArgs e)
         {
-            PurchaseOrders purchaseOrders = new PurchaseOrders();  
-            purchaseOrders.Show();
+            Suppliers suppliers = new Suppliers();
+            suppliers.Show();
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void drawing6_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
+        }
+
+        private void drawing8_Click(object sender, EventArgs e)
         {
             ReportPremium reportPremium = new ReportPremium();
             reportPremium.Show();
-            this.Close();
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void drawing7_Click(object sender, EventArgs e)
         {
-            ReportOtpuck report = new ReportOtpuck();
-            report.Show();
-        }
-
-        private void button8_MouseHover(object sender, EventArgs e)
-        {
-            //button8.BackColor = V;
+            ReportOtpuck reportOtpuck = new ReportOtpuck();
+            reportOtpuck.Show();
         }
     }
 }

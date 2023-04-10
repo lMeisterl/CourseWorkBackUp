@@ -22,6 +22,8 @@ namespace Курсовая_работа
         private void Sales_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Sales_id". При необходимости она может быть перемещена или удалена.
+            this.sales_idTableAdapter.Fill(this.kursDataSet._Sales_id);
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -38,7 +40,7 @@ namespace Курсовая_работа
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selectedRow = e.RowIndex;
+            /*selectedRow = e.RowIndex;
             if (selectedRow >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[selectedRow];
@@ -61,7 +63,7 @@ namespace Курсовая_работа
                 textBox16.Text = row.Cells[15].Value.ToString();
                 textBox17.Text = row.Cells[16].Value.ToString();
 
-            }
+            }*/
         }
 
         private void button6_Click(object sender, EventArgs e)

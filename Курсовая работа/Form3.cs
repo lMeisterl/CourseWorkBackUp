@@ -26,7 +26,11 @@ namespace Курсовая_работа
             this.employeesTableAdapter.Fill(this.kursDataSet.Employees);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.Employees". При необходимости она может быть перемещена или удалена.
             this.employeesTableAdapter.Fill(this.kursDataSet.Employees);
-
+            ToolTip d = new ToolTip();
+            d.SetToolTip(drawing2, "Удалить");
+            ToolTip v = new ToolTip();
+            v.SetToolTip(drawing1, "Добавить");
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -203,6 +207,60 @@ namespace Курсовая_работа
 
         private void button7_Click(object sender, EventArgs e)
         {
+            this.employeesTableAdapter.Fill(this.kursDataSet.Employees);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string searchValue = textBox1.Text.Trim();
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value.ToString().Equals(searchValue, StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Highlight the matching row and scroll to it
+                        row.Selected = true;
+                        dataGridView1.FirstDisplayedScrollingRowIndex = row.Index;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void drawing1_Click(object sender, EventArgs e)
+        {
+            AddEmployee sa = new AddEmployee();
+            sa.Show();
+            this.Close();
+        }
+
+        private void drawing2_Click(object sender, EventArgs e)
+        {
+            CurrencyManager CurMan = (CurrencyManager)dataGridView1.BindingContext[dataGridView1.DataSource];
+            if (CurMan.Count > 0)
+            {
+                CurMan.RemoveAt(CurMan.Position);
+                employeesTableAdapter.Update(kursDataSet);
+            }
+        }
+
+        private void drawing3_Click(object sender, EventArgs e)
+        {
+            AddLogin addLogin = new AddLogin();
+            addLogin.Show();
+            this.Close();
+        }
+
+        private void drawing4_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            connection_new.Open();
+            string insertQuery = "UPDATE Employees SET First_Name = '" + textBox3.Text + "', Surname = '" + textBox4.Text + "', Middle_Name = '" + textBox5.Text + "', Telephone = '" + maskedTextBox1.Text + "', Passport = '" + maskedTextBox2.Text + "', Gender = '" + comboBox1.Text + "', Date_of_Birth = '" + dateTimePicker1.Value + "', Job_Title = '" + textBox10.Text + "', Education = '" + textBox11.Text + "'WHERE Id = '" + textBox2.Text + "'";
+            SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
+            sqlCommand.ExecuteNonQuery();
+            connection_new.Close();
             this.employeesTableAdapter.Fill(this.kursDataSet.Employees);
         }
     }
