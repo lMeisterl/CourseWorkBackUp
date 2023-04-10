@@ -28,46 +28,6 @@ namespace Курсовая_работа
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddSuppliers jg = new AddSuppliers();
-            jg.Show();
-            this.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            CurrencyManager CurMan = (CurrencyManager)dataGridView1.BindingContext[dataGridView1.DataSource];
-            if (CurMan.Count > 0)
-            {
-                CurMan.RemoveAt(CurMan.Position);
-                suppliersTableAdapter.Update(kursDataSet);
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            AdminPanel tg = new AdminPanel();
-            tg.Show();
-            this.Close();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
-            connection_new.Open();
-            string insertQuery = "UPDATE Suppliers SET First_Name = '" + textBox2.Text + "', Surname = '" + textBox3.Text + "', Middle_Name = '" + textBox4.Text + "', Telephone = '" + maskedTextBox1.Text + "', [E-mail] = '" + textBox6.Text + "', Adress = '" + textBox7.Text + "', Company = '" + textBox8.Text + "', Notes = '" + textBox9.Text + "' WHERE id = '"+textBox1.Text+"'";
-            SqlCommand command = new SqlCommand(insertQuery, connection_new);
-            command.ExecuteNonQuery();
-            connection_new.Close();
-            this.suppliersTableAdapter.Fill(this.kursDataSet.Suppliers);
-        }
-
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -93,7 +53,24 @@ namespace Курсовая_работа
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.suppliersTableAdapter.Fill(this.kursDataSet.Suppliers);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            AdminPanel tg = new AdminPanel();
+            tg.Show();
+            this.Close();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
         {
             string searchValue = textBox5.Text.Trim();
 
@@ -112,12 +89,35 @@ namespace Курсовая_работа
             }
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void drawing4_Click(object sender, EventArgs e)
         {
+            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            connection_new.Open();
+            string insertQuery = "UPDATE Suppliers SET First_Name = '" + textBox2.Text + "', Surname = '" + textBox3.Text + "', Middle_Name = '" + textBox4.Text + "', Telephone = '" + maskedTextBox1.Text + "', [E-mail] = '" + textBox6.Text + "', Adress = '" + textBox7.Text + "', Company = '" + textBox8.Text + "', Notes = '" + textBox9.Text + "' WHERE id = '" + textBox1.Text + "'";
+            SqlCommand command = new SqlCommand(insertQuery, connection_new);
+            command.ExecuteNonQuery();
+            connection_new.Close();
             this.suppliersTableAdapter.Fill(this.kursDataSet.Suppliers);
         }
 
-        private void button5_Click_1(object sender, EventArgs e)
+        private void drawing2_Click(object sender, EventArgs e)
+        {
+            CurrencyManager CurMan = (CurrencyManager)dataGridView1.BindingContext[dataGridView1.DataSource];
+            if (CurMan.Count > 0)
+            {
+                CurMan.RemoveAt(CurMan.Position);
+                suppliersTableAdapter.Update(kursDataSet);
+            }
+        }
+
+        private void drawing1_Click(object sender, EventArgs e)
+        {
+            AddSuppliers jg = new AddSuppliers();
+            jg.Show();
+            this.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

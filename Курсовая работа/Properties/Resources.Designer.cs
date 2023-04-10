@@ -293,6 +293,16 @@ namespace Курсовая_работа.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap search11 {
+            get {
+                object obj = ResourceManager.GetObject("search11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap trusted {
             get {
                 object obj = ResourceManager.GetObject("trusted", resourceCulture);
