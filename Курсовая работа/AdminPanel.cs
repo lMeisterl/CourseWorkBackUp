@@ -26,7 +26,7 @@ namespace Курсовая_работа
 
         private void AdminPanel_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void drawing1_Click(object sender, EventArgs e)
@@ -68,13 +68,13 @@ namespace Курсовая_работа
         private void drawing8_Click(object sender, EventArgs e)
         {
             ReportPremium reportPremium = new ReportPremium();
-            reportPremium.Show();
+            reportPremium.ShowDialog();
         }
 
         private void drawing7_Click(object sender, EventArgs e)
         {
             ReportOtpuck reportOtpuck = new ReportOtpuck();
-            reportOtpuck.Show();
+            reportOtpuck.ShowDialog();
         }
     }
 }

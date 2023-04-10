@@ -673,6 +673,7 @@
             this.Controls.Add(this.dateTimePicker3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReportOtpuck";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ReportOtpuck";
             this.Load += new System.EventHandler(this.ReportOtpuck_Load);
             this.ResumeLayout(false);
