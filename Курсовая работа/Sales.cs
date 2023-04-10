@@ -10,7 +10,6 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using Курсовая_работа.KursDataSetTableAdapters;
 using System.Xml.Linq;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using DocumentFormat.OpenXml.Office.CustomUI;
 
 namespace Курсовая_работа
@@ -30,6 +29,16 @@ namespace Курсовая_работа
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Sales_id". При необходимости она может быть перемещена или удалена.
             this.sales_idTableAdapter.Fill(this.kursDataSet._Sales_id);
 
+            ToolTip d = new ToolTip();
+            d.SetToolTip(drawing2, "Удалить");
+            ToolTip v = new ToolTip();
+            v.SetToolTip(drawing3, "Добавить");
+            ToolTip f = new ToolTip();
+            f.SetToolTip(button10, "Закрыть");
+            ToolTip r = new ToolTip();
+            r.SetToolTip(button8, "Обновить");
+            ToolTip back = new ToolTip();
+            back.SetToolTip(button9, "Назад");
         }
 
         private void button4_Click(object sender, EventArgs e)

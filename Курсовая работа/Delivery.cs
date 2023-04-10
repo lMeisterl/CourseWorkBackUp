@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Курсовая_работа.KursDataSetTableAdapters;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Курсовая_работа
 {
@@ -28,6 +27,14 @@ namespace Курсовая_работа
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.Delivery". При необходимости она может быть перемещена или удалена.
             this.deliveryTableAdapter.Fill(this.kursDataSet.Delivery);
 
+            ToolTip d = new ToolTip();
+            d.SetToolTip(drawing2, "Удалить");
+            ToolTip f = new ToolTip();
+            f.SetToolTip(button9, "Закрыть");
+            ToolTip r = new ToolTip();
+            r.SetToolTip(button7, "Обновить");
+            ToolTip back = new ToolTip();
+            back.SetToolTip(button8, "Назад");
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -28,7 +28,15 @@ namespace Курсовая_работа
             this.orders_idTableAdapter.Fill(this.kursDataSet._Orders_id);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Orders_id". При необходимости она может быть перемещена или удалена.
             this.orders_idTableAdapter.Fill(this.kursDataSet._Orders_id);
-            
+
+            ToolTip d = new ToolTip();
+            d.SetToolTip(drawing2, "Удалить");
+            ToolTip f = new ToolTip();
+            f.SetToolTip(button9, "Закрыть");
+            ToolTip r = new ToolTip();
+            r.SetToolTip(button6, "Обновить");
+            ToolTip back = new ToolTip();
+            back.SetToolTip(button8, "Назад");
 
         }
 

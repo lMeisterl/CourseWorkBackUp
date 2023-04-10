@@ -30,9 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.kursDataSet = new Курсовая_работа.KursDataSet();
+            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.сотрудникDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датаПродажиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.продукт1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ценаПродукта1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.количество1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.продукт2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ценаПродукта2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.количество2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.продукт3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ценаПродукта3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.количество3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.продукт4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ценаПродукта4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.количество4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.итогоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.способОплатыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salesidBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kursDataSet = new Курсовая_работа.KursDataSet();
+            this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -73,35 +90,18 @@
             this.sales_idTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.Sales_idTableAdapter();
             this.salesTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.SalesTableAdapter();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.drawing1 = new Курсовая_работа.Drawing();
             this.drawing2 = new Курсовая_работа.Drawing();
             this.drawing3 = new Курсовая_работа.Drawing();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.drawing1 = new Курсовая_работа.Drawing();
-            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.сотрудникDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.датаПродажиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.продукт1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ценаПродукта1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.количество1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.продукт2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ценаПродукта2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.количество2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.продукт3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ценаПродукта3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.количество3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.продукт4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ценаПродукта4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.количество4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.итогоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.способОплатыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesidBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -147,20 +147,139 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // salesBindingSource
+            // кодDataGridViewTextBoxColumn
             // 
-            this.salesBindingSource.DataMember = "Sales";
-            this.salesBindingSource.DataSource = this.kursDataSet;
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
+            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // сотрудникDataGridViewTextBoxColumn
+            // 
+            this.сотрудникDataGridViewTextBoxColumn.DataPropertyName = "Сотрудник";
+            this.сотрудникDataGridViewTextBoxColumn.HeaderText = "Сотрудник";
+            this.сотрудникDataGridViewTextBoxColumn.Name = "сотрудникDataGridViewTextBoxColumn";
+            this.сотрудникDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // датаПродажиDataGridViewTextBoxColumn
+            // 
+            this.датаПродажиDataGridViewTextBoxColumn.DataPropertyName = "Дата продажи";
+            this.датаПродажиDataGridViewTextBoxColumn.HeaderText = "Дата продажи";
+            this.датаПродажиDataGridViewTextBoxColumn.Name = "датаПродажиDataGridViewTextBoxColumn";
+            this.датаПродажиDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // продукт1DataGridViewTextBoxColumn
+            // 
+            this.продукт1DataGridViewTextBoxColumn.DataPropertyName = "Продукт1";
+            this.продукт1DataGridViewTextBoxColumn.HeaderText = "Продукт1";
+            this.продукт1DataGridViewTextBoxColumn.Name = "продукт1DataGridViewTextBoxColumn";
+            this.продукт1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ценаПродукта1DataGridViewTextBoxColumn
+            // 
+            this.ценаПродукта1DataGridViewTextBoxColumn.DataPropertyName = "Цена продукта1";
+            this.ценаПродукта1DataGridViewTextBoxColumn.HeaderText = "Цена продукта1";
+            this.ценаПродукта1DataGridViewTextBoxColumn.Name = "ценаПродукта1DataGridViewTextBoxColumn";
+            this.ценаПродукта1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // количество1DataGridViewTextBoxColumn
+            // 
+            this.количество1DataGridViewTextBoxColumn.DataPropertyName = "Количество1";
+            this.количество1DataGridViewTextBoxColumn.HeaderText = "Количество1";
+            this.количество1DataGridViewTextBoxColumn.Name = "количество1DataGridViewTextBoxColumn";
+            this.количество1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // продукт2DataGridViewTextBoxColumn
+            // 
+            this.продукт2DataGridViewTextBoxColumn.DataPropertyName = "Продукт2";
+            this.продукт2DataGridViewTextBoxColumn.HeaderText = "Продукт2";
+            this.продукт2DataGridViewTextBoxColumn.Name = "продукт2DataGridViewTextBoxColumn";
+            this.продукт2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ценаПродукта2DataGridViewTextBoxColumn
+            // 
+            this.ценаПродукта2DataGridViewTextBoxColumn.DataPropertyName = "Цена продукта2";
+            this.ценаПродукта2DataGridViewTextBoxColumn.HeaderText = "Цена продукта2";
+            this.ценаПродукта2DataGridViewTextBoxColumn.Name = "ценаПродукта2DataGridViewTextBoxColumn";
+            this.ценаПродукта2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // количество2DataGridViewTextBoxColumn
+            // 
+            this.количество2DataGridViewTextBoxColumn.DataPropertyName = "Количество2";
+            this.количество2DataGridViewTextBoxColumn.HeaderText = "Количество2";
+            this.количество2DataGridViewTextBoxColumn.Name = "количество2DataGridViewTextBoxColumn";
+            this.количество2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // продукт3DataGridViewTextBoxColumn
+            // 
+            this.продукт3DataGridViewTextBoxColumn.DataPropertyName = "Продукт3";
+            this.продукт3DataGridViewTextBoxColumn.HeaderText = "Продукт3";
+            this.продукт3DataGridViewTextBoxColumn.Name = "продукт3DataGridViewTextBoxColumn";
+            this.продукт3DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ценаПродукта3DataGridViewTextBoxColumn
+            // 
+            this.ценаПродукта3DataGridViewTextBoxColumn.DataPropertyName = "Цена продукта3";
+            this.ценаПродукта3DataGridViewTextBoxColumn.HeaderText = "Цена продукта3";
+            this.ценаПродукта3DataGridViewTextBoxColumn.Name = "ценаПродукта3DataGridViewTextBoxColumn";
+            this.ценаПродукта3DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // количество3DataGridViewTextBoxColumn
+            // 
+            this.количество3DataGridViewTextBoxColumn.DataPropertyName = "Количество3";
+            this.количество3DataGridViewTextBoxColumn.HeaderText = "Количество3";
+            this.количество3DataGridViewTextBoxColumn.Name = "количество3DataGridViewTextBoxColumn";
+            this.количество3DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // продукт4DataGridViewTextBoxColumn
+            // 
+            this.продукт4DataGridViewTextBoxColumn.DataPropertyName = "Продукт4";
+            this.продукт4DataGridViewTextBoxColumn.HeaderText = "Продукт4";
+            this.продукт4DataGridViewTextBoxColumn.Name = "продукт4DataGridViewTextBoxColumn";
+            this.продукт4DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ценаПродукта4DataGridViewTextBoxColumn
+            // 
+            this.ценаПродукта4DataGridViewTextBoxColumn.DataPropertyName = "Цена продукта4";
+            this.ценаПродукта4DataGridViewTextBoxColumn.HeaderText = "Цена продукта4";
+            this.ценаПродукта4DataGridViewTextBoxColumn.Name = "ценаПродукта4DataGridViewTextBoxColumn";
+            this.ценаПродукта4DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // количество4DataGridViewTextBoxColumn
+            // 
+            this.количество4DataGridViewTextBoxColumn.DataPropertyName = "Количество4";
+            this.количество4DataGridViewTextBoxColumn.HeaderText = "Количество4";
+            this.количество4DataGridViewTextBoxColumn.Name = "количество4DataGridViewTextBoxColumn";
+            this.количество4DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // итогоDataGridViewTextBoxColumn
+            // 
+            this.итогоDataGridViewTextBoxColumn.DataPropertyName = "Итого";
+            this.итогоDataGridViewTextBoxColumn.HeaderText = "Итого";
+            this.итогоDataGridViewTextBoxColumn.Name = "итогоDataGridViewTextBoxColumn";
+            this.итогоDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // способОплатыDataGridViewTextBoxColumn
+            // 
+            this.способОплатыDataGridViewTextBoxColumn.DataPropertyName = "Способ оплаты";
+            this.способОплатыDataGridViewTextBoxColumn.HeaderText = "Способ оплаты";
+            this.способОплатыDataGridViewTextBoxColumn.Name = "способОплатыDataGridViewTextBoxColumn";
+            this.способОплатыDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // salesidBindingSource
+            // 
+            this.salesidBindingSource.DataMember = "Sales+id";
+            this.salesidBindingSource.DataSource = this.kursDataSet;
             // 
             // kursDataSet
             // 
             this.kursDataSet.DataSetName = "KursDataSet";
             this.kursDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // salesidBindingSource
+            // salesBindingSource
             // 
-            this.salesidBindingSource.DataMember = "Sales+id";
-            this.salesidBindingSource.DataSource = this.kursDataSet;
+            this.salesBindingSource.DataMember = "Sales";
+            this.salesBindingSource.DataSource = this.kursDataSet;
             // 
             // label1
             // 
@@ -614,6 +733,88 @@
             this.panel3.Size = new System.Drawing.Size(1435, 33);
             this.panel3.TabIndex = 68;
             // 
+            // textBox18
+            // 
+            this.textBox18.BackColor = System.Drawing.Color.White;
+            this.textBox18.ForeColor = System.Drawing.Color.Black;
+            this.textBox18.Location = new System.Drawing.Point(62, 327);
+            this.textBox18.Multiline = true;
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(284, 31);
+            this.textBox18.TabIndex = 70;
+            // 
+            // drawing1
+            // 
+            this.drawing1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing1.BorderRadius = 40;
+            this.drawing1.BorderSize = 2;
+            this.drawing1.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.drawing1.FlatAppearance.BorderSize = 0;
+            this.drawing1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing1.Location = new System.Drawing.Point(932, 322);
+            this.drawing1.Name = "drawing1";
+            this.drawing1.Size = new System.Drawing.Size(150, 40);
+            this.drawing1.TabIndex = 53;
+            this.drawing1.Text = "Экспорт";
+            this.drawing1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing1.UseVisualStyleBackColor = false;
+            // 
+            // drawing2
+            // 
+            this.drawing2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.drawing2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.drawing2.BorderRadius = 40;
+            this.drawing2.BorderSize = 0;
+            this.drawing2.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing2.FlatAppearance.BorderSize = 0;
+            this.drawing2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing2.ForeColor = System.Drawing.Color.White;
+            this.drawing2.Image = global::Курсовая_работа.Properties.Resources.bin1;
+            this.drawing2.Location = new System.Drawing.Point(1167, 322);
+            this.drawing2.Name = "drawing2";
+            this.drawing2.Size = new System.Drawing.Size(43, 40);
+            this.drawing2.TabIndex = 73;
+            this.drawing2.TextColor = System.Drawing.Color.White;
+            this.drawing2.UseVisualStyleBackColor = false;
+            this.drawing2.Click += new System.EventHandler(this.drawing2_Click);
+            // 
+            // drawing3
+            // 
+            this.drawing3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.drawing3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.drawing3.BorderRadius = 40;
+            this.drawing3.BorderSize = 0;
+            this.drawing3.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing3.FlatAppearance.BorderSize = 0;
+            this.drawing3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing3.ForeColor = System.Drawing.Color.White;
+            this.drawing3.Image = global::Курсовая_работа.Properties.Resources.groceries1;
+            this.drawing3.Location = new System.Drawing.Point(1109, 322);
+            this.drawing3.Name = "drawing3";
+            this.drawing3.Size = new System.Drawing.Size(43, 40);
+            this.drawing3.TabIndex = 72;
+            this.drawing3.TextColor = System.Drawing.Color.White;
+            this.drawing3.UseVisualStyleBackColor = false;
+            this.drawing3.Click += new System.EventHandler(this.drawing3_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Image = global::Курсовая_работа.Properties.Resources.search1;
+            this.button3.Location = new System.Drawing.Point(352, 327);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(37, 31);
+            this.button3.TabIndex = 69;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
@@ -659,207 +860,6 @@
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
-            // drawing2
-            // 
-            this.drawing2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.drawing2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.drawing2.BorderRadius = 40;
-            this.drawing2.BorderSize = 0;
-            this.drawing2.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing2.FlatAppearance.BorderSize = 0;
-            this.drawing2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.drawing2.ForeColor = System.Drawing.Color.White;
-            this.drawing2.Image = global::Курсовая_работа.Properties.Resources.bin1;
-            this.drawing2.Location = new System.Drawing.Point(1167, 322);
-            this.drawing2.Name = "drawing2";
-            this.drawing2.Size = new System.Drawing.Size(43, 40);
-            this.drawing2.TabIndex = 73;
-            this.drawing2.TextColor = System.Drawing.Color.White;
-            this.drawing2.UseVisualStyleBackColor = false;
-            this.drawing2.Click += new System.EventHandler(this.drawing2_Click);
-            // 
-            // drawing3
-            // 
-            this.drawing3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.drawing3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.drawing3.BorderRadius = 40;
-            this.drawing3.BorderSize = 0;
-            this.drawing3.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing3.FlatAppearance.BorderSize = 0;
-            this.drawing3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.drawing3.ForeColor = System.Drawing.Color.White;
-            this.drawing3.Image = global::Курсовая_работа.Properties.Resources.add_user1;
-            this.drawing3.Location = new System.Drawing.Point(1109, 322);
-            this.drawing3.Name = "drawing3";
-            this.drawing3.Size = new System.Drawing.Size(43, 40);
-            this.drawing3.TabIndex = 72;
-            this.drawing3.TextColor = System.Drawing.Color.White;
-            this.drawing3.UseVisualStyleBackColor = false;
-            this.drawing3.Click += new System.EventHandler(this.drawing3_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Image = global::Курсовая_работа.Properties.Resources.search1;
-            this.button3.Location = new System.Drawing.Point(352, 327);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(37, 31);
-            this.button3.TabIndex = 69;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // textBox18
-            // 
-            this.textBox18.BackColor = System.Drawing.Color.White;
-            this.textBox18.ForeColor = System.Drawing.Color.Black;
-            this.textBox18.Location = new System.Drawing.Point(62, 327);
-            this.textBox18.Multiline = true;
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(284, 31);
-            this.textBox18.TabIndex = 70;
-            // 
-            // drawing1
-            // 
-            this.drawing1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.drawing1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.drawing1.BorderRadius = 40;
-            this.drawing1.BorderSize = 2;
-            this.drawing1.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.drawing1.FlatAppearance.BorderSize = 0;
-            this.drawing1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.drawing1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.drawing1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing1.Location = new System.Drawing.Point(932, 322);
-            this.drawing1.Name = "drawing1";
-            this.drawing1.Size = new System.Drawing.Size(150, 40);
-            this.drawing1.TabIndex = 53;
-            this.drawing1.Text = "Экспорт";
-            this.drawing1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing1.UseVisualStyleBackColor = false;
-            // 
-            // кодDataGridViewTextBoxColumn
-            // 
-            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
-            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
-            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
-            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // сотрудникDataGridViewTextBoxColumn
-            // 
-            this.сотрудникDataGridViewTextBoxColumn.DataPropertyName = "Сотрудник";
-            this.сотрудникDataGridViewTextBoxColumn.HeaderText = "Сотрудник";
-            this.сотрудникDataGridViewTextBoxColumn.Name = "сотрудникDataGridViewTextBoxColumn";
-            this.сотрудникDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // датаПродажиDataGridViewTextBoxColumn
-            // 
-            this.датаПродажиDataGridViewTextBoxColumn.DataPropertyName = "Дата продажи";
-            this.датаПродажиDataGridViewTextBoxColumn.HeaderText = "Дата продажи";
-            this.датаПродажиDataGridViewTextBoxColumn.Name = "датаПродажиDataGridViewTextBoxColumn";
-            this.датаПродажиDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // продукт1DataGridViewTextBoxColumn
-            // 
-            this.продукт1DataGridViewTextBoxColumn.DataPropertyName = "Продукт1";
-            this.продукт1DataGridViewTextBoxColumn.HeaderText = "Продукт1";
-            this.продукт1DataGridViewTextBoxColumn.Name = "продукт1DataGridViewTextBoxColumn";
-            this.продукт1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ценаПродукта1DataGridViewTextBoxColumn
-            // 
-            this.ценаПродукта1DataGridViewTextBoxColumn.DataPropertyName = "Цена продукта1";
-            this.ценаПродукта1DataGridViewTextBoxColumn.HeaderText = "Цена продукта1";
-            this.ценаПродукта1DataGridViewTextBoxColumn.Name = "ценаПродукта1DataGridViewTextBoxColumn";
-            this.ценаПродукта1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // количество1DataGridViewTextBoxColumn
-            // 
-            this.количество1DataGridViewTextBoxColumn.DataPropertyName = "Количество1";
-            this.количество1DataGridViewTextBoxColumn.HeaderText = "Количество1";
-            this.количество1DataGridViewTextBoxColumn.Name = "количество1DataGridViewTextBoxColumn";
-            this.количество1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // продукт2DataGridViewTextBoxColumn
-            // 
-            this.продукт2DataGridViewTextBoxColumn.DataPropertyName = "Продукт2";
-            this.продукт2DataGridViewTextBoxColumn.HeaderText = "Продукт2";
-            this.продукт2DataGridViewTextBoxColumn.Name = "продукт2DataGridViewTextBoxColumn";
-            this.продукт2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ценаПродукта2DataGridViewTextBoxColumn
-            // 
-            this.ценаПродукта2DataGridViewTextBoxColumn.DataPropertyName = "Цена продукта2";
-            this.ценаПродукта2DataGridViewTextBoxColumn.HeaderText = "Цена продукта2";
-            this.ценаПродукта2DataGridViewTextBoxColumn.Name = "ценаПродукта2DataGridViewTextBoxColumn";
-            this.ценаПродукта2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // количество2DataGridViewTextBoxColumn
-            // 
-            this.количество2DataGridViewTextBoxColumn.DataPropertyName = "Количество2";
-            this.количество2DataGridViewTextBoxColumn.HeaderText = "Количество2";
-            this.количество2DataGridViewTextBoxColumn.Name = "количество2DataGridViewTextBoxColumn";
-            this.количество2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // продукт3DataGridViewTextBoxColumn
-            // 
-            this.продукт3DataGridViewTextBoxColumn.DataPropertyName = "Продукт3";
-            this.продукт3DataGridViewTextBoxColumn.HeaderText = "Продукт3";
-            this.продукт3DataGridViewTextBoxColumn.Name = "продукт3DataGridViewTextBoxColumn";
-            this.продукт3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ценаПродукта3DataGridViewTextBoxColumn
-            // 
-            this.ценаПродукта3DataGridViewTextBoxColumn.DataPropertyName = "Цена продукта3";
-            this.ценаПродукта3DataGridViewTextBoxColumn.HeaderText = "Цена продукта3";
-            this.ценаПродукта3DataGridViewTextBoxColumn.Name = "ценаПродукта3DataGridViewTextBoxColumn";
-            this.ценаПродукта3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // количество3DataGridViewTextBoxColumn
-            // 
-            this.количество3DataGridViewTextBoxColumn.DataPropertyName = "Количество3";
-            this.количество3DataGridViewTextBoxColumn.HeaderText = "Количество3";
-            this.количество3DataGridViewTextBoxColumn.Name = "количество3DataGridViewTextBoxColumn";
-            this.количество3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // продукт4DataGridViewTextBoxColumn
-            // 
-            this.продукт4DataGridViewTextBoxColumn.DataPropertyName = "Продукт4";
-            this.продукт4DataGridViewTextBoxColumn.HeaderText = "Продукт4";
-            this.продукт4DataGridViewTextBoxColumn.Name = "продукт4DataGridViewTextBoxColumn";
-            this.продукт4DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ценаПродукта4DataGridViewTextBoxColumn
-            // 
-            this.ценаПродукта4DataGridViewTextBoxColumn.DataPropertyName = "Цена продукта4";
-            this.ценаПродукта4DataGridViewTextBoxColumn.HeaderText = "Цена продукта4";
-            this.ценаПродукта4DataGridViewTextBoxColumn.Name = "ценаПродукта4DataGridViewTextBoxColumn";
-            this.ценаПродукта4DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // количество4DataGridViewTextBoxColumn
-            // 
-            this.количество4DataGridViewTextBoxColumn.DataPropertyName = "Количество4";
-            this.количество4DataGridViewTextBoxColumn.HeaderText = "Количество4";
-            this.количество4DataGridViewTextBoxColumn.Name = "количество4DataGridViewTextBoxColumn";
-            this.количество4DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // итогоDataGridViewTextBoxColumn
-            // 
-            this.итогоDataGridViewTextBoxColumn.DataPropertyName = "Итого";
-            this.итогоDataGridViewTextBoxColumn.HeaderText = "Итого";
-            this.итогоDataGridViewTextBoxColumn.Name = "итогоDataGridViewTextBoxColumn";
-            this.итогоDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // способОплатыDataGridViewTextBoxColumn
-            // 
-            this.способОплатыDataGridViewTextBoxColumn.DataPropertyName = "Способ оплаты";
-            this.способОплатыDataGridViewTextBoxColumn.HeaderText = "Способ оплаты";
-            this.способОплатыDataGridViewTextBoxColumn.Name = "способОплатыDataGridViewTextBoxColumn";
-            this.способОплатыDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -881,9 +881,9 @@
             this.Text = "Sales";
             this.Load += new System.EventHandler(this.Sales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesidBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);

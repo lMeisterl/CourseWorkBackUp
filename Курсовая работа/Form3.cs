@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
+
 namespace Курсовая_работа
 {
     public partial class Form3 : Form
@@ -30,7 +31,12 @@ namespace Курсовая_работа
             d.SetToolTip(drawing2, "Удалить");
             ToolTip v = new ToolTip();
             v.SetToolTip(drawing1, "Добавить");
-            
+            ToolTip f = new ToolTip();
+            f.SetToolTip(button5, "Закрыть");
+            ToolTip r = new ToolTip();
+            r.SetToolTip(button7, "Обновить");
+            ToolTip back = new ToolTip();
+            back.SetToolTip(button4, "Назад");
         }
 
         private void button1_Click(object sender, EventArgs e)

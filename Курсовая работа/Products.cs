@@ -28,6 +28,14 @@ namespace Курсовая_работа
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.Products". При необходимости она может быть перемещена или удалена.
             this.productsTableAdapter.Fill(this.kursDataSet.Products);
 
+            ToolTip d = new ToolTip();
+            d.SetToolTip(drawing2, "Удалить");
+            ToolTip f = new ToolTip();
+            f.SetToolTip(button9, "Закрыть");
+            ToolTip r = new ToolTip();
+            r.SetToolTip(button7, "Обновить");
+            ToolTip back = new ToolTip();
+            back.SetToolTip(button8, "Назад");
         }
 
         private void button1_Click(object sender, EventArgs e)
