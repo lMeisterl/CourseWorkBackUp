@@ -22,6 +22,8 @@ namespace Курсовая_работа
 
         private void PurchaseOrders_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.PurchaseOrders". При необходимости она может быть перемещена или удалена.
+            this.purchaseOrdersTableAdapter.Fill(this.kursDataSet.PurchaseOrders);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Orders_id". При необходимости она может быть перемещена или удалена.
             this.orders_idTableAdapter.Fill(this.kursDataSet._Orders_id);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Orders_id". При необходимости она может быть перемещена или удалена.
@@ -84,6 +86,48 @@ namespace Курсовая_работа
         private void button5_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.orders_idTableAdapter.Fill(this.kursDataSet._Orders_id);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void drawing2_Click(object sender, EventArgs e)
+        {
+            CurrencyManager CurMan = (CurrencyManager)dataGridView1.BindingContext[dataGridView1.DataSource];
+            if (CurMan.Count > 0)
+            {
+                CurMan.RemoveAt(CurMan.Position);
+                purchaseOrdersTableAdapter.Update(kursDataSet);
+            }
+        }
+
+        private void drawing3_Click(object sender, EventArgs e)
+        {
+            AddOrders addOrders = new AddOrders();
+            addOrders.Show();
+        }
+
+        private void drawing1_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            connection_new.Open();
+            string insertQuery = "UPDATE PurchaseOrders SET Id_Provider = '" + textSupl.Text + "', Id_Product = '" + textProd.Text + "', Id_Employee = '" + textEmp.Text + "', Count = '" + textCount.Text + "', Cost = '" + textPrice.Text + "', Delivery_Date = '" + textDate.Text + "', Status = '" + textStatus.Text + "'";
+            SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
+            sqlCommand.ExecuteNonQuery();
+            connection_new.Close();
+            this.purchaseOrdersTableAdapter.Fill(this.kursDataSet.PurchaseOrders);
         }
     }
 }

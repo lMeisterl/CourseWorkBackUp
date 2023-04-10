@@ -609,38 +609,6 @@ SELECT Id, First_Name, Surname, Middle_Name, Telephone, [E-mail], Adress, Compan
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Sales+idTableAdapter" GeneratorDataComponentClassName="Sales_idTableAdapter" Name="Sales+id" UserDataComponentName="Sales+idTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="KursConnectionString (Settings)" DbObjectName="Kurs.dbo.[Sales+id]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Сотрудник, [Дата продажи], Продукт1, Количество1, Продукт2, Количество2, Продукт3, Количество3, Продукт4, Количество4, Итого, [Способ оплаты], Код, [Цена продукта1], [Цена продукта2], [Цена продукта3], [Цена продукта4] FROM [Sales+id]</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Сотрудник" DataSetColumn="Сотрудник" />
-              <Mapping SourceColumn="Дата продажи" DataSetColumn="Дата продажи" />
-              <Mapping SourceColumn="Продукт1" DataSetColumn="Продукт1" />
-              <Mapping SourceColumn="Количество1" DataSetColumn="Количество1" />
-              <Mapping SourceColumn="Продукт2" DataSetColumn="Продукт2" />
-              <Mapping SourceColumn="Количество2" DataSetColumn="Количество2" />
-              <Mapping SourceColumn="Продукт3" DataSetColumn="Продукт3" />
-              <Mapping SourceColumn="Количество3" DataSetColumn="Количество3" />
-              <Mapping SourceColumn="Продукт4" DataSetColumn="Продукт4" />
-              <Mapping SourceColumn="Количество4" DataSetColumn="Количество4" />
-              <Mapping SourceColumn="Итого" DataSetColumn="Итого" />
-              <Mapping SourceColumn="Способ оплаты" DataSetColumn="Способ оплаты" />
-              <Mapping SourceColumn="Код" DataSetColumn="Код" />
-              <Mapping SourceColumn="Цена продукта1" DataSetColumn="Цена продукта1" />
-              <Mapping SourceColumn="Цена продукта2" DataSetColumn="Цена продукта2" />
-              <Mapping SourceColumn="Цена продукта3" DataSetColumn="Цена продукта3" />
-              <Mapping SourceColumn="Цена продукта4" DataSetColumn="Цена продукта4" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PurchaseOrdersTableAdapter" GeneratorDataComponentClassName="PurchaseOrdersTableAdapter" Name="PurchaseOrders" UserDataComponentName="PurchaseOrdersTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="KursConnectionString (Settings)" DbObjectName="Kurs.dbo.PurchaseOrders" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -715,6 +683,38 @@ SELECT Id, Id_Provider, Id_Product, Id_Employee, Count, Cost, Delivery_Date, Sta
               <Mapping SourceColumn="Cost" DataSetColumn="Cost" />
               <Mapping SourceColumn="Delivery_Date" DataSetColumn="Delivery_Date" />
               <Mapping SourceColumn="Status" DataSetColumn="Status" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Sales+idTableAdapter" GeneratorDataComponentClassName="Sales_idTableAdapter" Name="Sales+id" UserDataComponentName="Sales+idTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="KursConnectionString (Settings)" DbObjectName="Kurs.dbo.[Sales+id]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Код, Сотрудник, [Дата продажи], Продукт1, [Цена продукта1], Количество1, Продукт2, [Цена продукта2], Количество2, Продукт3, [Цена продукта3], Количество3, Продукт4, [Цена продукта4], Количество4, Итого, [Способ оплаты] FROM dbo.[Sales+id]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Код" DataSetColumn="Код" />
+              <Mapping SourceColumn="Сотрудник" DataSetColumn="Сотрудник" />
+              <Mapping SourceColumn="Дата продажи" DataSetColumn="Дата продажи" />
+              <Mapping SourceColumn="Продукт1" DataSetColumn="Продукт1" />
+              <Mapping SourceColumn="Цена продукта1" DataSetColumn="Цена продукта1" />
+              <Mapping SourceColumn="Количество1" DataSetColumn="Количество1" />
+              <Mapping SourceColumn="Продукт2" DataSetColumn="Продукт2" />
+              <Mapping SourceColumn="Цена продукта2" DataSetColumn="Цена продукта2" />
+              <Mapping SourceColumn="Количество2" DataSetColumn="Количество2" />
+              <Mapping SourceColumn="Продукт3" DataSetColumn="Продукт3" />
+              <Mapping SourceColumn="Цена продукта3" DataSetColumn="Цена продукта3" />
+              <Mapping SourceColumn="Количество3" DataSetColumn="Количество3" />
+              <Mapping SourceColumn="Продукт4" DataSetColumn="Продукт4" />
+              <Mapping SourceColumn="Цена продукта4" DataSetColumn="Цена продукта4" />
+              <Mapping SourceColumn="Количество4" DataSetColumn="Количество4" />
+              <Mapping SourceColumn="Итого" DataSetColumn="Итого" />
+              <Mapping SourceColumn="Способ оплаты" DataSetColumn="Способ оплаты" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1116,76 +1116,76 @@ SELECT Id, Id_Provider, Id_Product, Id_Employee, Count, Cost, Delivery_Date, Sta
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Sales_x002B_id" msprop:Generator_RowEvHandlerName="_Sales_idRowChangeEventHandler" msprop:Generator_RowDeletedName="_Sales_idRowDeleted" msprop:Generator_RowDeletingName="_Sales_idRowDeleting" msprop:Generator_RowEvArgName="_Sales_idRowChangeEvent" msprop:Generator_TablePropName="_Sales_id" msprop:Generator_RowChangedName="_Sales_idRowChanged" msprop:Generator_UserTableName="Sales+id" msprop:Generator_RowChangingName="_Sales_idRowChanging" msprop:Generator_RowClassName="_Sales_idRow" msprop:Generator_TableClassName="_Sales_idDataTable" msprop:Generator_TableVarName="_tableSales_id">
+        <xs:element name="PurchaseOrders" msprop:Generator_RowClassName="PurchaseOrdersRow" msprop:Generator_RowEvHandlerName="PurchaseOrdersRowChangeEventHandler" msprop:Generator_RowDeletedName="PurchaseOrdersRowDeleted" msprop:Generator_RowDeletingName="PurchaseOrdersRowDeleting" msprop:Generator_RowEvArgName="PurchaseOrdersRowChangeEvent" msprop:Generator_TablePropName="PurchaseOrders" msprop:Generator_RowChangedName="PurchaseOrdersRowChanged" msprop:Generator_UserTableName="PurchaseOrders" msprop:Generator_RowChangingName="PurchaseOrdersRowChanging" msprop:Generator_TableClassName="PurchaseOrdersDataTable" msprop:Generator_TableVarName="tablePurchaseOrders">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Сотрудник" msprop:Generator_ColumnPropNameInTable="СотрудникColumn" msprop:Generator_ColumnPropNameInRow="Сотрудник" msprop:Generator_UserColumnName="Сотрудник" msprop:Generator_ColumnVarNameInTable="columnСотрудник">
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" />
+              <xs:element name="Id_Provider" msprop:Generator_UserColumnName="Id_Provider" msprop:Generator_ColumnPropNameInTable="Id_ProviderColumn" msprop:Generator_ColumnPropNameInRow="Id_Provider" msprop:Generator_ColumnVarNameInTable="columnId_Provider" type="xs:int" />
+              <xs:element name="Id_Product" msprop:Generator_UserColumnName="Id_Product" msprop:Generator_ColumnPropNameInTable="Id_ProductColumn" msprop:Generator_ColumnPropNameInRow="Id_Product" msprop:Generator_ColumnVarNameInTable="columnId_Product" type="xs:int" />
+              <xs:element name="Id_Employee" msprop:Generator_UserColumnName="Id_Employee" msprop:Generator_ColumnPropNameInTable="Id_EmployeeColumn" msprop:Generator_ColumnPropNameInRow="Id_Employee" msprop:Generator_ColumnVarNameInTable="columnId_Employee" type="xs:int" />
+              <xs:element name="Count" msprop:Generator_UserColumnName="Count" msprop:Generator_ColumnPropNameInTable="CountColumn" msprop:Generator_ColumnPropNameInRow="Count" msprop:Generator_ColumnVarNameInTable="columnCount" type="xs:int" />
+              <xs:element name="Cost" msprop:Generator_UserColumnName="Cost" msprop:Generator_ColumnPropNameInTable="CostColumn" msprop:Generator_ColumnPropNameInRow="Cost" msprop:Generator_ColumnVarNameInTable="columnCost" type="xs:decimal" />
+              <xs:element name="Delivery_Date" msprop:Generator_UserColumnName="Delivery_Date" msprop:Generator_ColumnPropNameInTable="Delivery_DateColumn" msprop:Generator_ColumnPropNameInRow="Delivery_Date" msprop:Generator_ColumnVarNameInTable="columnDelivery_Date" type="xs:dateTime" />
+              <xs:element name="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnVarNameInTable="columnStatus">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Дата_x0020_продажи" msprop:Generator_ColumnPropNameInTable="Дата_продажиColumn" msprop:Generator_ColumnPropNameInRow="Дата_продажи" msprop:Generator_UserColumnName="Дата продажи" msprop:Generator_ColumnVarNameInTable="columnДата_продажи" type="xs:dateTime" />
-              <xs:element name="Продукт1" msprop:Generator_ColumnPropNameInTable="Продукт1Column" msprop:Generator_ColumnPropNameInRow="Продукт1" msprop:Generator_UserColumnName="Продукт1" msprop:Generator_ColumnVarNameInTable="columnПродукт1">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Количество1" msprop:Generator_ColumnPropNameInTable="Количество1Column" msprop:Generator_ColumnPropNameInRow="Количество1" msprop:Generator_UserColumnName="Количество1" msprop:Generator_ColumnVarNameInTable="columnКоличество1" type="xs:int" />
-              <xs:element name="Продукт2" msprop:Generator_ColumnPropNameInTable="Продукт2Column" msprop:Generator_ColumnPropNameInRow="Продукт2" msprop:Generator_UserColumnName="Продукт2" msprop:Generator_ColumnVarNameInTable="columnПродукт2">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Количество2" msprop:Generator_ColumnPropNameInTable="Количество2Column" msprop:Generator_ColumnPropNameInRow="Количество2" msprop:Generator_UserColumnName="Количество2" msprop:Generator_ColumnVarNameInTable="columnКоличество2" type="xs:int" minOccurs="0" />
-              <xs:element name="Продукт3" msprop:Generator_ColumnPropNameInTable="Продукт3Column" msprop:Generator_ColumnPropNameInRow="Продукт3" msprop:Generator_UserColumnName="Продукт3" msprop:Generator_ColumnVarNameInTable="columnПродукт3">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Количество3" msprop:Generator_ColumnPropNameInTable="Количество3Column" msprop:Generator_ColumnPropNameInRow="Количество3" msprop:Generator_UserColumnName="Количество3" msprop:Generator_ColumnVarNameInTable="columnКоличество3" type="xs:int" minOccurs="0" />
-              <xs:element name="Продукт4" msprop:Generator_ColumnPropNameInTable="Продукт4Column" msprop:Generator_ColumnPropNameInRow="Продукт4" msprop:Generator_UserColumnName="Продукт4" msprop:Generator_ColumnVarNameInTable="columnПродукт4">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Количество4" msprop:Generator_ColumnPropNameInTable="Количество4Column" msprop:Generator_ColumnPropNameInRow="Количество4" msprop:Generator_UserColumnName="Количество4" msprop:Generator_ColumnVarNameInTable="columnКоличество4" type="xs:int" minOccurs="0" />
-              <xs:element name="Итого" msprop:Generator_ColumnPropNameInTable="ИтогоColumn" msprop:Generator_ColumnPropNameInRow="Итого" msprop:Generator_UserColumnName="Итого" msprop:Generator_ColumnVarNameInTable="columnИтого" type="xs:decimal" />
-              <xs:element name="Способ_x0020_оплаты" msprop:Generator_ColumnPropNameInTable="Способ_оплатыColumn" msprop:Generator_ColumnPropNameInRow="Способ_оплаты" msprop:Generator_UserColumnName="Способ оплаты" msprop:Generator_ColumnVarNameInTable="columnСпособ_оплаты">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Код" msprop:Generator_ColumnPropNameInTable="КодColumn" msprop:Generator_ColumnPropNameInRow="Код" msprop:Generator_UserColumnName="Код" msprop:Generator_ColumnVarNameInTable="columnКод" type="xs:int" />
-              <xs:element name="Цена_x0020_продукта1" msprop:Generator_ColumnPropNameInTable="Цена_продукта1Column" msprop:Generator_ColumnPropNameInRow="Цена_продукта1" msprop:Generator_UserColumnName="Цена продукта1" msprop:Generator_ColumnVarNameInTable="columnЦена_продукта1" type="xs:decimal" />
-              <xs:element name="Цена_x0020_продукта2" msprop:Generator_ColumnPropNameInTable="Цена_продукта2Column" msprop:Generator_ColumnPropNameInRow="Цена_продукта2" msprop:Generator_UserColumnName="Цена продукта2" msprop:Generator_ColumnVarNameInTable="columnЦена_продукта2" type="xs:decimal" />
-              <xs:element name="Цена_x0020_продукта3" msprop:Generator_ColumnPropNameInTable="Цена_продукта3Column" msprop:Generator_ColumnPropNameInRow="Цена_продукта3" msprop:Generator_UserColumnName="Цена продукта3" msprop:Generator_ColumnVarNameInTable="columnЦена_продукта3" type="xs:decimal" />
-              <xs:element name="Цена_x0020_продукта4" msprop:Generator_ColumnPropNameInTable="Цена_продукта4Column" msprop:Generator_ColumnPropNameInRow="Цена_продукта4" msprop:Generator_UserColumnName="Цена продукта4" msprop:Generator_ColumnVarNameInTable="columnЦена_продукта4" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PurchaseOrders" msprop:Generator_RowEvHandlerName="PurchaseOrdersRowChangeEventHandler" msprop:Generator_RowDeletedName="PurchaseOrdersRowDeleted" msprop:Generator_RowDeletingName="PurchaseOrdersRowDeleting" msprop:Generator_RowEvArgName="PurchaseOrdersRowChangeEvent" msprop:Generator_TablePropName="PurchaseOrders" msprop:Generator_RowChangedName="PurchaseOrdersRowChanged" msprop:Generator_RowChangingName="PurchaseOrdersRowChanging" msprop:Generator_TableClassName="PurchaseOrdersDataTable" msprop:Generator_RowClassName="PurchaseOrdersRow" msprop:Generator_TableVarName="tablePurchaseOrders" msprop:Generator_UserTableName="PurchaseOrders">
+        <xs:element name="Sales_x002B_id" msprop:Generator_RowEvHandlerName="_Sales_idRowChangeEventHandler" msprop:Generator_RowDeletedName="_Sales_idRowDeleted" msprop:Generator_RowDeletingName="_Sales_idRowDeleting" msprop:Generator_RowEvArgName="_Sales_idRowChangeEvent" msprop:Generator_TablePropName="_Sales_id" msprop:Generator_RowChangedName="_Sales_idRowChanged" msprop:Generator_RowChangingName="_Sales_idRowChanging" msprop:Generator_TableClassName="_Sales_idDataTable" msprop:Generator_RowClassName="_Sales_idRow" msprop:Generator_TableVarName="_tableSales_id" msprop:Generator_UserTableName="Sales+id">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_UserColumnName="Id" type="xs:int" />
-              <xs:element name="Id_Provider" msprop:Generator_ColumnPropNameInRow="Id_Provider" msprop:Generator_ColumnPropNameInTable="Id_ProviderColumn" msprop:Generator_ColumnVarNameInTable="columnId_Provider" msprop:Generator_UserColumnName="Id_Provider" type="xs:int" />
-              <xs:element name="Id_Product" msprop:Generator_ColumnPropNameInRow="Id_Product" msprop:Generator_ColumnPropNameInTable="Id_ProductColumn" msprop:Generator_ColumnVarNameInTable="columnId_Product" msprop:Generator_UserColumnName="Id_Product" type="xs:int" />
-              <xs:element name="Id_Employee" msprop:Generator_ColumnPropNameInRow="Id_Employee" msprop:Generator_ColumnPropNameInTable="Id_EmployeeColumn" msprop:Generator_ColumnVarNameInTable="columnId_Employee" msprop:Generator_UserColumnName="Id_Employee" type="xs:int" />
-              <xs:element name="Count" msprop:Generator_ColumnPropNameInRow="Count" msprop:Generator_ColumnPropNameInTable="CountColumn" msprop:Generator_ColumnVarNameInTable="columnCount" msprop:Generator_UserColumnName="Count" type="xs:int" />
-              <xs:element name="Cost" msprop:Generator_ColumnPropNameInRow="Cost" msprop:Generator_ColumnPropNameInTable="CostColumn" msprop:Generator_ColumnVarNameInTable="columnCost" msprop:Generator_UserColumnName="Cost" type="xs:decimal" />
-              <xs:element name="Delivery_Date" msprop:Generator_ColumnPropNameInRow="Delivery_Date" msprop:Generator_ColumnPropNameInTable="Delivery_DateColumn" msprop:Generator_ColumnVarNameInTable="columnDelivery_Date" msprop:Generator_UserColumnName="Delivery_Date" type="xs:dateTime" />
-              <xs:element name="Status" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_UserColumnName="Status">
+              <xs:element name="Код" msprop:Generator_ColumnPropNameInRow="Код" msprop:Generator_ColumnPropNameInTable="КодColumn" msprop:Generator_ColumnVarNameInTable="columnКод" msprop:Generator_UserColumnName="Код" type="xs:int" minOccurs="0" />
+              <xs:element name="Сотрудник" msprop:Generator_ColumnPropNameInRow="Сотрудник" msprop:Generator_ColumnPropNameInTable="СотрудникColumn" msprop:Generator_ColumnVarNameInTable="columnСотрудник" msprop:Generator_UserColumnName="Сотрудник">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Дата_x0020_продажи" msprop:Generator_ColumnPropNameInRow="Дата_продажи" msprop:Generator_ColumnPropNameInTable="Дата_продажиColumn" msprop:Generator_ColumnVarNameInTable="columnДата_продажи" msprop:Generator_UserColumnName="Дата продажи" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Продукт1" msprop:Generator_ColumnPropNameInRow="Продукт1" msprop:Generator_ColumnPropNameInTable="Продукт1Column" msprop:Generator_ColumnVarNameInTable="columnПродукт1" msprop:Generator_UserColumnName="Продукт1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Цена_x0020_продукта1" msprop:Generator_ColumnPropNameInRow="Цена_продукта1" msprop:Generator_ColumnPropNameInTable="Цена_продукта1Column" msprop:Generator_ColumnVarNameInTable="columnЦена_продукта1" msprop:Generator_UserColumnName="Цена продукта1" type="xs:int" minOccurs="0" />
+              <xs:element name="Количество1" msprop:Generator_ColumnPropNameInRow="Количество1" msprop:Generator_ColumnPropNameInTable="Количество1Column" msprop:Generator_ColumnVarNameInTable="columnКоличество1" msprop:Generator_UserColumnName="Количество1" type="xs:int" minOccurs="0" />
+              <xs:element name="Продукт2" msprop:Generator_ColumnPropNameInRow="Продукт2" msprop:Generator_ColumnPropNameInTable="Продукт2Column" msprop:Generator_ColumnVarNameInTable="columnПродукт2" msprop:Generator_UserColumnName="Продукт2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Цена_x0020_продукта2" msprop:Generator_ColumnPropNameInRow="Цена_продукта2" msprop:Generator_ColumnPropNameInTable="Цена_продукта2Column" msprop:Generator_ColumnVarNameInTable="columnЦена_продукта2" msprop:Generator_UserColumnName="Цена продукта2" type="xs:int" minOccurs="0" />
+              <xs:element name="Количество2" msprop:Generator_ColumnPropNameInRow="Количество2" msprop:Generator_ColumnPropNameInTable="Количество2Column" msprop:Generator_ColumnVarNameInTable="columnКоличество2" msprop:Generator_UserColumnName="Количество2" type="xs:int" minOccurs="0" />
+              <xs:element name="Продукт3" msprop:Generator_ColumnPropNameInRow="Продукт3" msprop:Generator_ColumnPropNameInTable="Продукт3Column" msprop:Generator_ColumnVarNameInTable="columnПродукт3" msprop:Generator_UserColumnName="Продукт3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Цена_x0020_продукта3" msprop:Generator_ColumnPropNameInRow="Цена_продукта3" msprop:Generator_ColumnPropNameInTable="Цена_продукта3Column" msprop:Generator_ColumnVarNameInTable="columnЦена_продукта3" msprop:Generator_UserColumnName="Цена продукта3" type="xs:int" minOccurs="0" />
+              <xs:element name="Количество3" msprop:Generator_ColumnPropNameInRow="Количество3" msprop:Generator_ColumnPropNameInTable="Количество3Column" msprop:Generator_ColumnVarNameInTable="columnКоличество3" msprop:Generator_UserColumnName="Количество3" type="xs:int" minOccurs="0" />
+              <xs:element name="Продукт4" msprop:Generator_ColumnPropNameInRow="Продукт4" msprop:Generator_ColumnPropNameInTable="Продукт4Column" msprop:Generator_ColumnVarNameInTable="columnПродукт4" msprop:Generator_UserColumnName="Продукт4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Цена_x0020_продукта4" msprop:Generator_ColumnPropNameInRow="Цена_продукта4" msprop:Generator_ColumnPropNameInTable="Цена_продукта4Column" msprop:Generator_ColumnVarNameInTable="columnЦена_продукта4" msprop:Generator_UserColumnName="Цена продукта4" type="xs:int" minOccurs="0" />
+              <xs:element name="Количество4" msprop:Generator_ColumnPropNameInRow="Количество4" msprop:Generator_ColumnPropNameInTable="Количество4Column" msprop:Generator_ColumnVarNameInTable="columnКоличество4" msprop:Generator_UserColumnName="Количество4" type="xs:int" minOccurs="0" />
+              <xs:element name="Итого" msprop:Generator_ColumnPropNameInRow="Итого" msprop:Generator_ColumnPropNameInTable="ИтогоColumn" msprop:Generator_ColumnVarNameInTable="columnИтого" msprop:Generator_UserColumnName="Итого" type="xs:int" minOccurs="0" />
+              <xs:element name="Способ_x0020_оплаты" msprop:Generator_ColumnPropNameInRow="Способ_оплаты" msprop:Generator_ColumnPropNameInTable="Способ_оплатыColumn" msprop:Generator_ColumnVarNameInTable="columnСпособ_оплаты" msprop:Generator_UserColumnName="Способ оплаты" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -1229,25 +1229,25 @@ SELECT Id, Id_Provider, Id_Product, Id_Employee, Count, Cost, Delivery_Date, Sta
       <xs:selector xpath=".//mstns:Orders_x002B_id" />
       <xs:field xpath="mstns:Код" />
     </xs:unique>
-    <xs:unique name="Sales_x002B_id_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Sales_x002B_id" />
-      <xs:field xpath="mstns:Код" />
-    </xs:unique>
     <xs:unique name="PurchaseOrders_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:PurchaseOrders" />
       <xs:field xpath="mstns:Id" />
     </xs:unique>
+    <xs:unique name="Sales_x002B_id_Constraint1" msdata:ConstraintName="Constraint1">
+      <xs:selector xpath=".//mstns:Sales_x002B_id" />
+      <xs:field xpath="mstns:Код" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Delivery_Client" msdata:parent="Clients" msdata:child="Delivery" msdata:parentkey="Id" msdata:childkey="Id_Client" msprop:Generator_UserParentTable="Clients" msprop:Generator_UserChildTable="Delivery" msprop:Generator_RelationVarName="relationFK_Delivery_Client" msprop:Generator_ChildPropName="GetDeliveryRows" msprop:Generator_UserRelationName="FK_Delivery_Client" msprop:Generator_ParentPropName="ClientsRow" />
-      <msdata:Relationship name="FK_Delivery_Employee" msdata:parent="Employees" msdata:child="Delivery" msdata:parentkey="Id" msdata:childkey="Id_Employee" msprop:Generator_UserParentTable="Employees" msprop:Generator_UserChildTable="Delivery" msprop:Generator_RelationVarName="relationFK_Delivery_Employee" msprop:Generator_ChildPropName="GetDeliveryRows" msprop:Generator_ParentPropName="EmployeesRow" msprop:Generator_UserRelationName="FK_Delivery_Employee" />
-      <msdata:Relationship name="FK_Delivery_Sale" msdata:parent="Sales" msdata:child="Delivery" msdata:parentkey="Id" msdata:childkey="Id_Sale" msprop:Generator_UserParentTable="Sales" msprop:Generator_UserChildTable="Delivery" msprop:Generator_RelationVarName="relationFK_Delivery_Sale" msprop:Generator_ChildPropName="GetDeliveryRows" msprop:Generator_ParentPropName="SalesRow" msprop:Generator_UserRelationName="FK_Delivery_Sale" />
-      <msdata:Relationship name="FK_Sale_Product" msdata:parent="Products" msdata:child="Sales" msdata:parentkey="Id" msdata:childkey="Id_Product" msprop:Generator_UserParentTable="Products" msprop:Generator_UserChildTable="Sales" msprop:Generator_RelationVarName="relationFK_Sale_Product" msprop:Generator_ChildPropName="GetSalesRows" msprop:Generator_UserRelationName="FK_Sale_Product" msprop:Generator_ParentPropName="ProductsRow" />
-      <msdata:Relationship name="FK_Sales_Employees" msdata:parent="Employees" msdata:child="Sales" msdata:parentkey="Id" msdata:childkey="Id_Employees" msprop:Generator_UserParentTable="Employees" msprop:Generator_UserChildTable="Sales" msprop:Generator_RelationVarName="relationFK_Sales_Employees" msprop:Generator_ChildPropName="GetSalesRows" msprop:Generator_ParentPropName="EmployeesRow" msprop:Generator_UserRelationName="FK_Sales_Employees" />
-      <msdata:Relationship name="FK_Delivery_x0020_request_Employee" msdata:parent="Employees" msdata:child="PurchaseOrders" msdata:parentkey="Id" msdata:childkey="Id_Employee" msprop:Generator_UserParentTable="Employees" msprop:Generator_UserChildTable="PurchaseOrders" msprop:Generator_RelationVarName="relationFK_Delivery_request_Employee" msprop:Generator_ChildPropName="GetPurchaseOrdersRows" msprop:Generator_ParentPropName="EmployeesRow" msprop:Generator_UserRelationName="FK_Delivery request_Employee" />
-      <msdata:Relationship name="FK_Delivery_x0020_request_Product" msdata:parent="Products" msdata:child="PurchaseOrders" msdata:parentkey="Id" msdata:childkey="Id_Product" msprop:Generator_UserParentTable="Products" msprop:Generator_UserChildTable="PurchaseOrders" msprop:Generator_RelationVarName="relationFK_Delivery_request_Product" msprop:Generator_ChildPropName="GetPurchaseOrdersRows" msprop:Generator_ParentPropName="ProductsRow" msprop:Generator_UserRelationName="FK_Delivery request_Product" />
-      <msdata:Relationship name="FK_Purchase_x0020_Orders_Suppliers" msdata:parent="Suppliers" msdata:child="PurchaseOrders" msdata:parentkey="Id" msdata:childkey="Id_Provider" msprop:Generator_UserParentTable="Suppliers" msprop:Generator_UserChildTable="PurchaseOrders" msprop:Generator_RelationVarName="relationFK_Purchase_Orders_Suppliers" msprop:Generator_ChildPropName="GetPurchaseOrdersRows" msprop:Generator_ParentPropName="SuppliersRow" msprop:Generator_UserRelationName="FK_Purchase Orders_Suppliers" />
+      <msdata:Relationship name="FK_Delivery_Client" msdata:parent="Clients" msdata:child="Delivery" msdata:parentkey="Id" msdata:childkey="Id_Client" msprop:Generator_UserParentTable="Clients" msprop:Generator_UserChildTable="Delivery" msprop:Generator_RelationVarName="relationFK_Delivery_Client" msprop:Generator_ChildPropName="GetDeliveryRows" msprop:Generator_ParentPropName="ClientsRow" msprop:Generator_UserRelationName="FK_Delivery_Client" />
+      <msdata:Relationship name="FK_Delivery_Employee" msdata:parent="Employees" msdata:child="Delivery" msdata:parentkey="Id" msdata:childkey="Id_Employee" msprop:Generator_UserParentTable="Employees" msprop:Generator_UserChildTable="Delivery" msprop:Generator_RelationVarName="relationFK_Delivery_Employee" msprop:Generator_ChildPropName="GetDeliveryRows" msprop:Generator_UserRelationName="FK_Delivery_Employee" msprop:Generator_ParentPropName="EmployeesRow" />
+      <msdata:Relationship name="FK_Delivery_Sale" msdata:parent="Sales" msdata:child="Delivery" msdata:parentkey="Id" msdata:childkey="Id_Sale" msprop:Generator_UserParentTable="Sales" msprop:Generator_UserChildTable="Delivery" msprop:Generator_RelationVarName="relationFK_Delivery_Sale" msprop:Generator_ChildPropName="GetDeliveryRows" msprop:Generator_UserRelationName="FK_Delivery_Sale" msprop:Generator_ParentPropName="SalesRow" />
+      <msdata:Relationship name="FK_Sale_Product" msdata:parent="Products" msdata:child="Sales" msdata:parentkey="Id" msdata:childkey="Id_Product" msprop:Generator_UserParentTable="Products" msprop:Generator_UserChildTable="Sales" msprop:Generator_RelationVarName="relationFK_Sale_Product" msprop:Generator_ChildPropName="GetSalesRows" msprop:Generator_ParentPropName="ProductsRow" msprop:Generator_UserRelationName="FK_Sale_Product" />
+      <msdata:Relationship name="FK_Sales_Employees" msdata:parent="Employees" msdata:child="Sales" msdata:parentkey="Id" msdata:childkey="Id_Employees" msprop:Generator_UserParentTable="Employees" msprop:Generator_UserChildTable="Sales" msprop:Generator_RelationVarName="relationFK_Sales_Employees" msprop:Generator_ChildPropName="GetSalesRows" msprop:Generator_UserRelationName="FK_Sales_Employees" msprop:Generator_ParentPropName="EmployeesRow" />
+      <msdata:Relationship name="FK_Delivery_x0020_request_Employee" msdata:parent="Employees" msdata:child="PurchaseOrders" msdata:parentkey="Id" msdata:childkey="Id_Employee" msprop:Generator_UserParentTable="Employees" msprop:Generator_UserChildTable="PurchaseOrders" msprop:Generator_RelationVarName="relationFK_Delivery_request_Employee" msprop:Generator_ChildPropName="GetPurchaseOrdersRows" msprop:Generator_UserRelationName="FK_Delivery request_Employee" msprop:Generator_ParentPropName="EmployeesRow" />
+      <msdata:Relationship name="FK_Delivery_x0020_request_Product" msdata:parent="Products" msdata:child="PurchaseOrders" msdata:parentkey="Id" msdata:childkey="Id_Product" msprop:Generator_UserParentTable="Products" msprop:Generator_UserChildTable="PurchaseOrders" msprop:Generator_RelationVarName="relationFK_Delivery_request_Product" msprop:Generator_ChildPropName="GetPurchaseOrdersRows" msprop:Generator_UserRelationName="FK_Delivery request_Product" msprop:Generator_ParentPropName="ProductsRow" />
+      <msdata:Relationship name="FK_Purchase_x0020_Orders_Suppliers" msdata:parent="Suppliers" msdata:child="PurchaseOrders" msdata:parentkey="Id" msdata:childkey="Id_Provider" msprop:Generator_UserParentTable="Suppliers" msprop:Generator_UserChildTable="PurchaseOrders" msprop:Generator_RelationVarName="relationFK_Purchase_Orders_Suppliers" msprop:Generator_ChildPropName="GetPurchaseOrdersRows" msprop:Generator_UserRelationName="FK_Purchase Orders_Suppliers" msprop:Generator_ParentPropName="SuppliersRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -23,9 +23,9 @@ namespace Курсовая_работа
 
         private void AddSales_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.Employees". При необходимости она может быть перемещена или удалена.
-            this.employeesTableAdapter.Fill(this.kursDataSet.Employees);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.Products". При необходимости она может быть перемещена или удалена.
+            this.productsTableAdapter.Fill(this.kursDataSet.Products);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.Employees". При необходимости она может быть перемещена или удалена.
             this.productsTableAdapter.Fill(this.kursDataSet.Products);
 
             Load_Product1();
@@ -38,13 +38,13 @@ namespace Курсовая_работа
         {
             using (SqlConnection connection = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True"))
             {
-                string query = "SELECT Name, Price FROM Products";
+                string query = "SELECT Id, Price FROM Products";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
 
-                productComboBox1.DisplayMember = "Name";
-                productComboBox1.ValueMember = "Name";
+                productComboBox1.DisplayMember = "Id";
+                productComboBox1.ValueMember = "Id";
                 productComboBox1.DataSource = dataTable;
 
                 // Set the price and quantity labels for the selected product
@@ -72,12 +72,12 @@ namespace Курсовая_работа
         {
             using (SqlConnection connection = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True"))
             {
-                string query = "SELECT Name, Price FROM Products";
+                string query = "SELECT Id, Price FROM Products";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
-                productComboBox2.DisplayMember = "Name";
-                productComboBox2.ValueMember = "Name";
+                productComboBox2.DisplayMember = "Id";
+                productComboBox2.ValueMember = "Id";
                 productComboBox2.DataSource = dataTable;
 
                 // Set the price and quantity labels for the selected product
@@ -105,12 +105,12 @@ namespace Курсовая_работа
         {
             using (SqlConnection connection = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True"))
             {
-                string query = "SELECT Name, Price FROM Products";
+                string query = "SELECT Id, Price FROM Products";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
-                productComboBox3.DisplayMember = "Name";
-                productComboBox3.ValueMember = "Name";
+                productComboBox3.DisplayMember = "Id";
+                productComboBox3.ValueMember = "Id";
                 productComboBox3.DataSource = dataTable;
 
                 // Set the price and quantity labels for the selected product
@@ -138,13 +138,13 @@ namespace Курсовая_работа
         {
             using (SqlConnection connection = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True"))
             {
-                string query = "SELECT Name, Price FROM Products";
+                string query = "SELECT Id, Price FROM Products";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
 
-                productComboBox4.DisplayMember = "Name";
-                productComboBox4.ValueMember = "Name";
+                productComboBox4.DisplayMember = "Id";
+                productComboBox4.ValueMember = "Id";
                 productComboBox4.DataSource = dataTable;
 
                 // Set the price and quantity labels for the selected product
@@ -210,7 +210,7 @@ namespace Курсовая_работа
         private void oneProduct(Int32 id)
         {            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = $"INSERT INTO Sales (Id_Employees, Data_of_Sale, Id_Product, Count, Id_Products1, Count1, Id_Products2, Count2, Id_Products3, Count3, Sale_Amount, Payment) VALUES ('" + textBox2.Text + "','" + dateTimePicker1.Value+ "', '" + productComboBox1.Text + "',  '" + textCount1.Text + "', '" + productComboBox2.Text + "', '" + textCount2.Text + "', '" + productComboBox3.Text+ "', '"+textCount3.Text+"', '"+productComboBox4.Text+"', '"+textCount4.Text+"', '"+textFinishCost.Text+"', '"+textBox17.Text+"')";
+            string insertQuery = $"INSERT INTO Sales (Id_Employees, Data_of_Sale, Id_Product, Count, Sale_Amount, Payment) VALUES ('" + textBox2.Text + "','" + dateTimePicker1.Value+ "', '" + productComboBox1.Text + "',  '" + textCount1.Text + "', '"+textFinishCost.Text+"', '"+textBox17.Text+"')";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
@@ -248,7 +248,7 @@ namespace Курсовая_работа
             int finalCountProduct2 = countProduct2 - Convert.ToInt32(textCount2.Text);
             int finalPriceProduct1 = priceProduct * Convert.ToInt32(textCount1.Text);
             int finalPriceProduct2 = priceProduct2 * Convert.ToInt32(textCount2.Text);
-            int finalPrice = finalCountProduct1 + finalCountProduct2;
+            int finalPrice = finalPriceProduct1 + finalPriceProduct2;
             textFinishCost.Text = Convert.ToString(finalPrice);
             SqlConnection connection = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection.Open();
@@ -459,6 +459,55 @@ namespace Курсовая_работа
             Sales sales = new Sales();
             sales.Enabled = true;
             this.Close();
+        }
+
+        private void drawing1_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "1")
+            {
+                int Id = Convert.ToInt32(productComboBox1.Text);
+                oneProduct(Id);
+            }
+            else if (comboBox1.Text == "2")
+            {
+                int Id1 = Convert.ToInt32(productComboBox1.Text);
+                int Id2 = Convert.ToInt32(productComboBox2.Text);
+                twoProduct(Id1, Id2);
+            }
+            else if (comboBox1.Text == "3")
+            {
+                int Id1 = Convert.ToInt32(productComboBox1.Text);
+                int Id2 = Convert.ToInt32(productComboBox2.Text);
+                int Id3 = Convert.ToInt32(productComboBox3.Text);
+                threeProduct(Id1, Id2, Id3);
+            }
+            else if (comboBox1.Text == "4")
+            {
+                int Id1 = Convert.ToInt32(productComboBox1.Text);
+                int Id2 = Convert.ToInt32(productComboBox2.Text);
+                int Id3 = Convert.ToInt32(productComboBox3.Text);
+                int Id4 = Convert.ToInt32(productComboBox4.Text);
+                fourProduct(Id1, Id2, Id3, Id4);
+            }
+            else
+            {
+                MessageBox.Show("Нет заполненых продуктов!");
+            }
+        }
+
+        private void drawing2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.productsTableAdapter.Fill(this.kursDataSet.Products);
         }
     }
 }

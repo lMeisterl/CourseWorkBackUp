@@ -78,7 +78,7 @@ namespace Курсовая_работа
             {
                 DataGridViewRow row = dataGridView1.Rows[selectedRow];
 
-                textEmp.Text = row.Cells[2].Value.ToString();
+                textEmp.Text = row.Cells[0].Value.ToString();
             }
         }
 
@@ -89,7 +89,7 @@ namespace Курсовая_работа
             {
                 DataGridViewRow row = dataGridView3.Rows[selectedRow];
 
-                textSupl.Text = row.Cells[7].Value.ToString();
+                textSupl.Text = row.Cells[0].Value.ToString();
             }
         }
 
@@ -100,8 +100,36 @@ namespace Курсовая_работа
             {
                 DataGridViewRow row = dataGridView2.Rows[selectedRow];
 
-                textProd.Text = row.Cells[1].Value.ToString();
+                textProd.Text = row.Cells[0].Value.ToString();
             }
+        }
+
+        private void drawing2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void drawing1_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            connection_new.Open();
+            string insertQuery = $"INSERT INTO PurchaseOrders (Id_Provider, Id_Product, Id_Employee, Count, Cost, Delivery_Date, Status) VALUES ('" + textSupl.Text + "','" + textProd.Text + "', '" + textEmp.Text + "',  '" + textCount.Text + "', '" + textPrice.Text + "', '" + textDate.Text + "', '" + textStatus + "')";
+            SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
+            sqlCommand.ExecuteNonQuery();
+            Int32 countProduct = getCountProduct(Convert.ToInt32(textProd.Text));
+            Int32 newCountProduct = countProduct + Convert.ToInt32(textCount.Text);
+            setCountproduct(newCountProduct, Convert.ToInt32(textProd.Text));
+            MessageBox.Show("Доставка успешно добавлена!");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -6,8 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
+using Курсовая_работа.KursDataSetTableAdapters;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using DocumentFormat.OpenXml.Office.CustomUI;
 
 namespace Курсовая_работа
 {
@@ -21,6 +25,8 @@ namespace Курсовая_работа
 
         private void Sales_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.Sales". При необходимости она может быть перемещена или удалена.
+            this.salesTableAdapter.Fill(this.kursDataSet.Sales);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Sales_id". При необходимости она может быть перемещена или удалена.
             this.sales_idTableAdapter.Fill(this.kursDataSet._Sales_id);
 
@@ -74,6 +80,178 @@ namespace Курсовая_работа
         private void button6_Click_1(object sender, EventArgs e)
         {
             this.sales_idTableAdapter.Fill(this.kursDataSet._Sales_id);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CurrencyManager CurMan = (CurrencyManager)dataGridView1.BindingContext[dataGridView1.DataSource];
+            if (CurMan.Count > 0)
+            {
+                CurMan.RemoveAt(CurMan.Position);
+                salesTableAdapter.Update(kursDataSet);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.sales_idTableAdapter.Fill(this.kursDataSet._Sales_id);
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox14_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox15_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox17_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox16_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void drawing2_Click(object sender, EventArgs e)
+        {
+            CurrencyManager CurMan = (CurrencyManager)dataGridView1.BindingContext[dataGridView1.DataSource];
+            if (CurMan.Count > 0)
+            {
+                CurMan.RemoveAt(CurMan.Position);
+                salesTableAdapter.Update(kursDataSet);
+            }
+        }
+
+        private void drawing3_Click(object sender, EventArgs e)
+        {
+            AddSales addSales = new AddSales();
+            addSales.Show();
+            this.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.sales_idTableAdapter.Fill(this.kursDataSet._Sales_id);
+        }
+
+        private void drawing4_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            connection_new.Open();
+            string insertQuery = "UPDATE Sales SET Id_Employees = '" + textBox2.Text + "', Data_of_Sale = '"+textBox3.Text+"', Id_Product = '" + textBox4.Text + "', Count = '" + textBox6.Text + "', Id_Products1 = '" + textBox7.Text + "', Count1 = '" + textBox9.Text + "', Id_Products2 = '" + textBox10.Text + "', Count2 = '" + textBox12.Text+ "', Id_Products3 = '" + textBox13.Text + "', Count3 = '" + textBox15.Text + "', Sale_Amount = '"+textBox16.Text+ "', Payment = '"+textBox17.Text+"'WHERE Id = '" + textBox1.Text + "'";
+            SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
+            sqlCommand.ExecuteNonQuery();
+            connection_new.Close();
+            this.salesTableAdapter.Fill(this.kursDataSet.Sales);
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            string searchValue = textBox18.Text.Trim();
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value.ToString().Equals(searchValue, StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Highlight the matching row and scroll to it
+                        row.Selected = true;
+                        dataGridView1.FirstDisplayedScrollingRowIndex = row.Index;
+                        break;
+                    }
+                }
+            }
         }
     }
 }

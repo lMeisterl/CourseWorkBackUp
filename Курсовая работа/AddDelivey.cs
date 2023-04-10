@@ -37,5 +37,30 @@ namespace Курсовая_работа
         {
             this.Close();
         }
+
+        private void drawing1_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            connection_new.Open();
+            string insertQuery = $"INSERT INTO Delivery (Id_Client, Id_Employee, Id_Sale, Date, Type, Price, Payment) VALUES ('" + textBox2.Text + "', '" + textBox3.Text + "','" + textBox1.Text + "', '" + maskedTextBox1.Text + "',  '" + textBox6.Text + "', '" + textBox7.Text + "', '" + comboBox1.Text + "')";
+            SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
+            sqlCommand.ExecuteNonQuery();
+            connection_new.Close();
+        }
+
+        private void drawing2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

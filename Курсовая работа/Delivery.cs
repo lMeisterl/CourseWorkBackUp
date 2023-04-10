@@ -112,5 +112,67 @@ namespace Курсовая_работа
         {
             Application.Exit();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.delivery_IdTableAdapter.Fill(this.kursDataSet._Delivery_Id);
+        }
+
+        private void drawing2_Click(object sender, EventArgs e)
+        {
+            CurrencyManager CurMan = (CurrencyManager)dataGridView1.BindingContext[dataGridView1.DataSource];
+            if (CurMan.Count > 0)
+            {
+                CurMan.RemoveAt(CurMan.Position);
+                deliveryTableAdapter.Update(kursDataSet);
+            }
+        }
+
+        private void drawing3_Click(object sender, EventArgs e)
+        {
+            AddDelivey addDelivey = new AddDelivey();
+            addDelivey.Show();
+            addDelivey.change(dataGridView1);
+        }
+
+        private void drawing4_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            connection_new.Open();
+            string insertQuery = "UPDATE Employees SET Id_Client = '" + textBox2.Text + "', Id_Employee = '" + textBox3.Text + "', Id_Sale = '" + textBox9.Text + "', Date = '" + textBox4.Text + "',Adress = '" + textBox5.Text + "' Type = '" + textBox6.Text + "', Price = '" + textBox7.Text + "', Payment = '" + comboBox1.Text + "' WHERE id = '" + textBox1.Text + "'";
+            SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
+            sqlCommand.ExecuteNonQuery();
+            connection_new.Close();
+            this.delivery_IdTableAdapter.Fill(this.kursDataSet._Delivery_Id);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string searchValue = textBox8.Text.Trim();
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value.ToString().Equals(searchValue, StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Highlight the matching row and scroll to it
+                        row.Selected = true;
+                        dataGridView1.FirstDisplayedScrollingRowIndex = row.Index;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

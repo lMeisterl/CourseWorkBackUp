@@ -53,5 +53,22 @@ namespace Курсовая_работа
         {
             this.employeesTableAdapter.Fill(this.kursDataSet.Employees);
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.employeesTableAdapter.Fill(this.kursDataSet.Employees);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3();
+            form3.Show();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

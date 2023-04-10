@@ -434,6 +434,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\search11.png" />
     <None Include="Resources\search1.png" />
     <None Include="Resources\bin1.png" />
     <None Include="Resources\add-user1.png" />
