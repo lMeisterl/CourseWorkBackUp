@@ -57,6 +57,7 @@ namespace Курсовая_работа
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
+            MessageBox.Show("Успешно изменено!");
             this.clientsTableAdapter.Fill(this.kursDataSet.Clients);
         }
 
@@ -68,6 +69,7 @@ namespace Курсовая_работа
                 CurMan.RemoveAt(CurMan.Position);
                 clientsTableAdapter.Update(kursDataSet);
             }
+            MessageBox.Show("Успешно удалено!");
         }
 
         private void button5_Click(object sender, EventArgs e)

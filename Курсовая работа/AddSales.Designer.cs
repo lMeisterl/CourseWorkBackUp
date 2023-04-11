@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSales));
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.textCount3 = new System.Windows.Forms.TextBox();
             this.textCount2 = new System.Windows.Forms.TextBox();
             this.textCount1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.productComboBox1 = new System.Windows.Forms.ComboBox();
             this.priceLabel1 = new System.Windows.Forms.Label();
             this.productComboBox2 = new System.Windows.Forms.ComboBox();
@@ -87,6 +87,7 @@
             this.drawing1 = new Курсовая_работа.Drawing();
             this.drawing3 = new Курсовая_работа.Drawing();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -329,15 +330,6 @@
             this.textCount1.Name = "textCount1";
             this.textCount1.Size = new System.Drawing.Size(100, 20);
             this.textCount1.TabIndex = 39;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(211)))));
-            this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(247, 89);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(172, 20);
-            this.textBox2.TabIndex = 35;
             // 
             // productComboBox1
             // 
@@ -749,12 +741,22 @@
             this.comboBox2.Size = new System.Drawing.Size(171, 21);
             this.comboBox2.TabIndex = 76;
             // 
+            // comboBox3
+            // 
+            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(211)))));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(247, 87);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 77;
+            // 
             // AddSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(938, 626);
+            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.drawing3);
             this.Controls.Add(this.drawing2);
@@ -770,13 +772,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textFinishCost);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddSales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddSales";
@@ -821,7 +823,6 @@
         private System.Windows.Forms.TextBox textCount3;
         private System.Windows.Forms.TextBox textCount2;
         private System.Windows.Forms.TextBox textCount1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox productComboBox1;
         private System.Windows.Forms.Label priceLabel1;
         private System.Windows.Forms.ComboBox productComboBox2;
@@ -858,5 +859,6 @@
         private Drawing drawing1;
         private Drawing drawing3;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

@@ -27,7 +27,7 @@ namespace Курсовая_работа
         {
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = $"INSERT INTO Delivery (Id_Client, Id_Employee, Id_Sale, Date, Type, Price, Payment) VALUES ('"+textBox2.Text+"', '"+textBox3.Text+"','"+textBox1.Text+"', '"+dateTimePicker1.Value+"',  '"+textBox6.Text+"', '"+textBox7.Text+"', '"+comboBox1.Text+"')";
+            string insertQuery = $"INSERT INTO Delivery (Id_Client, Id_Employee, Id_Sale, Date, Type) VALUES ('"+textBox2.Text+"', '"+textBox3.Text+"','"+textBox1.Text+"', '"+dateTimePicker1.Value+"',  '"+textBox6.Text+"')";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
@@ -42,10 +42,12 @@ namespace Курсовая_работа
         {
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = $"INSERT INTO Delivery (Id_Client, Id_Employee, Id_Sale, Date, Type, Price, Payment) VALUES ('" + textBox2.Text + "', '" + textBox3.Text + "','" + textBox1.Text + "', '" + dateTimePicker1.Value+ "',  '" + textBox6.Text + "', '" + textBox7.Text + "', '" + comboBox1.Text + "')";
+            string insertQuery = $"INSERT INTO Delivery (Id_Client, Id_Employee, Id_Sale, Date, Type) VALUES ('" + textBox2.Text + "', '" + textBox3.Text + "','" + textBox1.Text + "', '" + dateTimePicker1.Value+ "',  '" + textBox6.Text + "')";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
+            MessageBox.Show("Успешно добавлено!");
+            this.Close();
         }
 
         private void drawing2_Click(object sender, EventArgs e)

@@ -56,8 +56,7 @@ namespace Курсовая_работа
 
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
-            Suppliers sf = new Suppliers();
-            sf.Show();
+            MessageBox.Show("Успeшно добавлено!");
             this.Close();
         }
 

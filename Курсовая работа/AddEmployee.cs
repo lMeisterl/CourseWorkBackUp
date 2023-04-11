@@ -75,6 +75,7 @@ namespace Курсовая_работа
 
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
+            MessageBox.Show("Успешно добавлено!");
             this.Close();
         }
 

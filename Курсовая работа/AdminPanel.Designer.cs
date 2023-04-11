@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPanel));
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button10 = new System.Windows.Forms.Button();
@@ -107,7 +108,7 @@
             this.drawing6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing6.Location = new System.Drawing.Point(138, 643);
+            this.drawing6.Location = new System.Drawing.Point(138, 640);
             this.drawing6.Name = "drawing6";
             this.drawing6.Size = new System.Drawing.Size(269, 51);
             this.drawing6.TabIndex = 13;
@@ -301,13 +302,12 @@
             this.drawing10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing10.Image = global::Курсовая_работа.Properties.Resources.calendar;
             this.drawing10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.drawing10.Location = new System.Drawing.Point(421, 462);
+            this.drawing10.Location = new System.Drawing.Point(417, 713);
             this.drawing10.Name = "drawing10";
             this.drawing10.Size = new System.Drawing.Size(129, 51);
             this.drawing10.TabIndex = 17;
-            this.drawing10.Text = "Отпуск";
+            this.drawing10.Text = "Диаграмма";
             this.drawing10.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
             this.drawing10.UseVisualStyleBackColor = false;
             this.drawing10.Click += new System.EventHandler(this.drawing10_Click);
@@ -331,6 +331,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminPanel";

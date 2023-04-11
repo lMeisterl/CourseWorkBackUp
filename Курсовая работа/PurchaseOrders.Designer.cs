@@ -29,44 +29,39 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseOrders));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.сотрудникDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.поставщикDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.продуктDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.сотрудникDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.количествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ценаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.датаПоставкиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.статусDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ordersidBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kursDataSet = new Курсовая_работа.KursDataSet();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.textCount = new System.Windows.Forms.TextBox();
-            this.textStatus = new System.Windows.Forms.TextBox();
-            this.textPrice = new System.Windows.Forms.TextBox();
             this.textEmp = new System.Windows.Forms.TextBox();
             this.textProd = new System.Windows.Forms.TextBox();
             this.textSupl = new System.Windows.Forms.TextBox();
             this.textID = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.orders_idTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.Orders_idTableAdapter();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.purchaseOrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.purchaseOrdersTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.PurchaseOrdersTableAdapter();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.orders_idTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.Orders_idTableAdapter();
+            this.purchaseOrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.purchaseOrdersTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.PurchaseOrdersTableAdapter();
             this.drawing2 = new Курсовая_работа.Drawing();
             this.drawing3 = new Курсовая_работа.Drawing();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -93,13 +88,11 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.кодDataGridViewTextBoxColumn,
+            this.сотрудникDataGridViewTextBoxColumn,
             this.поставщикDataGridViewTextBoxColumn,
             this.продуктDataGridViewTextBoxColumn,
-            this.сотрудникDataGridViewTextBoxColumn,
             this.количествоDataGridViewTextBoxColumn,
-            this.ценаDataGridViewTextBoxColumn,
-            this.датаПоставкиDataGridViewTextBoxColumn,
-            this.статусDataGridViewTextBoxColumn});
+            this.датаПоставкиDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.ordersidBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 42);
             this.dataGridView1.MultiSelect = false;
@@ -119,6 +112,13 @@
             this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
             this.кодDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // сотрудникDataGridViewTextBoxColumn
+            // 
+            this.сотрудникDataGridViewTextBoxColumn.DataPropertyName = "Сотрудник";
+            this.сотрудникDataGridViewTextBoxColumn.HeaderText = "Сотрудник";
+            this.сотрудникDataGridViewTextBoxColumn.Name = "сотрудникDataGridViewTextBoxColumn";
+            this.сотрудникDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // поставщикDataGridViewTextBoxColumn
             // 
             this.поставщикDataGridViewTextBoxColumn.DataPropertyName = "Поставщик";
@@ -133,13 +133,6 @@
             this.продуктDataGridViewTextBoxColumn.Name = "продуктDataGridViewTextBoxColumn";
             this.продуктDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // сотрудникDataGridViewTextBoxColumn
-            // 
-            this.сотрудникDataGridViewTextBoxColumn.DataPropertyName = "Сотрудник";
-            this.сотрудникDataGridViewTextBoxColumn.HeaderText = "Сотрудник";
-            this.сотрудникDataGridViewTextBoxColumn.Name = "сотрудникDataGridViewTextBoxColumn";
-            this.сотрудникDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // количествоDataGridViewTextBoxColumn
             // 
             this.количествоDataGridViewTextBoxColumn.DataPropertyName = "Количество";
@@ -147,26 +140,12 @@
             this.количествоDataGridViewTextBoxColumn.Name = "количествоDataGridViewTextBoxColumn";
             this.количествоDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // ценаDataGridViewTextBoxColumn
-            // 
-            this.ценаDataGridViewTextBoxColumn.DataPropertyName = "Цена";
-            this.ценаDataGridViewTextBoxColumn.HeaderText = "Цена";
-            this.ценаDataGridViewTextBoxColumn.Name = "ценаDataGridViewTextBoxColumn";
-            this.ценаDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // датаПоставкиDataGridViewTextBoxColumn
             // 
             this.датаПоставкиDataGridViewTextBoxColumn.DataPropertyName = "Дата поставки";
             this.датаПоставкиDataGridViewTextBoxColumn.HeaderText = "Дата поставки";
             this.датаПоставкиDataGridViewTextBoxColumn.Name = "датаПоставкиDataGridViewTextBoxColumn";
             this.датаПоставкиDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // статусDataGridViewTextBoxColumn
-            // 
-            this.статусDataGridViewTextBoxColumn.DataPropertyName = "Статус";
-            this.статусDataGridViewTextBoxColumn.HeaderText = "Статус";
-            this.статусDataGridViewTextBoxColumn.Name = "статусDataGridViewTextBoxColumn";
-            this.статусDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ordersidBindingSource
             // 
@@ -184,29 +163,25 @@
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.textCount);
-            this.panel2.Controls.Add(this.textStatus);
-            this.panel2.Controls.Add(this.textPrice);
             this.panel2.Controls.Add(this.textEmp);
             this.panel2.Controls.Add(this.textProd);
             this.panel2.Controls.Add(this.textSupl);
             this.panel2.Controls.Add(this.textID);
-            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(49, 356);
+            this.panel2.Location = new System.Drawing.Point(170, 368);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1014, 181);
+            this.panel2.Size = new System.Drawing.Size(737, 181);
             this.panel2.TabIndex = 10;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(612, 76);
+            this.dateTimePicker1.Location = new System.Drawing.Point(612, 56);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(100, 20);
             this.dateTimePicker1.TabIndex = 17;
@@ -217,7 +192,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(766, 78);
+            this.label9.Location = new System.Drawing.Point(483, 91);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 18);
             this.label9.TabIndex = 16;
@@ -227,34 +202,16 @@
             // 
             this.textCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.textCount.ForeColor = System.Drawing.Color.Black;
-            this.textCount.Location = new System.Drawing.Point(886, 76);
+            this.textCount.Location = new System.Drawing.Point(612, 92);
             this.textCount.Name = "textCount";
             this.textCount.Size = new System.Drawing.Size(100, 20);
             this.textCount.TabIndex = 15;
-            // 
-            // textStatus
-            // 
-            this.textStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.textStatus.ForeColor = System.Drawing.Color.Black;
-            this.textStatus.Location = new System.Drawing.Point(886, 50);
-            this.textStatus.Name = "textStatus";
-            this.textStatus.Size = new System.Drawing.Size(100, 20);
-            this.textStatus.TabIndex = 14;
-            // 
-            // textPrice
-            // 
-            this.textPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.textPrice.ForeColor = System.Drawing.Color.Black;
-            this.textPrice.Location = new System.Drawing.Point(612, 50);
-            this.textPrice.Name = "textPrice";
-            this.textPrice.Size = new System.Drawing.Size(100, 20);
-            this.textPrice.TabIndex = 12;
             // 
             // textEmp
             // 
             this.textEmp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.textEmp.ForeColor = System.Drawing.Color.Black;
-            this.textEmp.Location = new System.Drawing.Point(353, 76);
+            this.textEmp.Location = new System.Drawing.Point(126, 92);
             this.textEmp.Name = "textEmp";
             this.textEmp.Size = new System.Drawing.Size(100, 20);
             this.textEmp.TabIndex = 11;
@@ -263,7 +220,7 @@
             // 
             this.textProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.textProd.ForeColor = System.Drawing.Color.Black;
-            this.textProd.Location = new System.Drawing.Point(353, 50);
+            this.textProd.Location = new System.Drawing.Point(353, 92);
             this.textProd.Name = "textProd";
             this.textProd.Size = new System.Drawing.Size(100, 20);
             this.textProd.TabIndex = 10;
@@ -272,7 +229,7 @@
             // 
             this.textSupl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.textSupl.ForeColor = System.Drawing.Color.Black;
-            this.textSupl.Location = new System.Drawing.Point(126, 79);
+            this.textSupl.Location = new System.Drawing.Point(353, 56);
             this.textSupl.Name = "textSupl";
             this.textSupl.Size = new System.Drawing.Size(100, 20);
             this.textSupl.TabIndex = 9;
@@ -281,50 +238,28 @@
             // 
             this.textID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.textID.ForeColor = System.Drawing.Color.Black;
-            this.textID.Location = new System.Drawing.Point(126, 53);
+            this.textID.Location = new System.Drawing.Point(126, 56);
             this.textID.Name = "textID";
             this.textID.Size = new System.Drawing.Size(100, 20);
             this.textID.TabIndex = 8;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(766, 49);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 18);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Статус";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(492, 75);
+            this.label7.Location = new System.Drawing.Point(483, 55);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(111, 18);
             this.label7.TabIndex = 6;
             this.label7.Text = "Дата поставки";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(492, 49);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 18);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Цена";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(251, 78);
+            this.label5.Location = new System.Drawing.Point(24, 91);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 18);
             this.label5.TabIndex = 4;
@@ -335,7 +270,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(251, 52);
+            this.label4.Location = new System.Drawing.Point(251, 91);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 18);
             this.label4.TabIndex = 3;
@@ -346,7 +281,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(24, 81);
+            this.label3.Location = new System.Drawing.Point(251, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 18);
             this.label3.TabIndex = 2;
@@ -373,10 +308,6 @@
             this.label1.Size = new System.Drawing.Size(177, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Управление записями";
-            // 
-            // orders_idTableAdapter
-            // 
-            this.orders_idTableAdapter.ClearBeforeFill = true;
             // 
             // panel3
             // 
@@ -434,20 +365,11 @@
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // purchaseOrdersBindingSource
-            // 
-            this.purchaseOrdersBindingSource.DataMember = "PurchaseOrders";
-            this.purchaseOrdersBindingSource.DataSource = this.kursDataSet;
-            // 
-            // purchaseOrdersTableAdapter
-            // 
-            this.purchaseOrdersTableAdapter.ClearBeforeFill = true;
-            // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(49, 313);
+            this.textBox1.Location = new System.Drawing.Point(101, 320);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(284, 31);
@@ -461,12 +383,25 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.Black;
             this.button1.Image = global::Курсовая_работа.Properties.Resources.search1;
-            this.button1.Location = new System.Drawing.Point(339, 313);
+            this.button1.Location = new System.Drawing.Point(391, 320);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(37, 31);
             this.button1.TabIndex = 75;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // orders_idTableAdapter
+            // 
+            this.orders_idTableAdapter.ClearBeforeFill = true;
+            // 
+            // purchaseOrdersBindingSource
+            // 
+            this.purchaseOrdersBindingSource.DataMember = "PurchaseOrders";
+            this.purchaseOrdersBindingSource.DataSource = this.kursDataSet;
+            // 
+            // purchaseOrdersTableAdapter
+            // 
+            this.purchaseOrdersTableAdapter.ClearBeforeFill = true;
             // 
             // drawing2
             // 
@@ -479,7 +414,7 @@
             this.drawing2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing2.ForeColor = System.Drawing.Color.White;
             this.drawing2.Image = global::Курсовая_работа.Properties.Resources.bin1;
-            this.drawing2.Location = new System.Drawing.Point(1013, 306);
+            this.drawing2.Location = new System.Drawing.Point(931, 315);
             this.drawing2.Name = "drawing2";
             this.drawing2.Size = new System.Drawing.Size(43, 40);
             this.drawing2.TabIndex = 74;
@@ -498,7 +433,7 @@
             this.drawing3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing3.ForeColor = System.Drawing.Color.Black;
-            this.drawing3.Location = new System.Drawing.Point(839, 306);
+            this.drawing3.Location = new System.Drawing.Point(757, 315);
             this.drawing3.Name = "drawing3";
             this.drawing3.Size = new System.Drawing.Size(150, 40);
             this.drawing3.TabIndex = 11;
@@ -521,6 +456,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PurchaseOrders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PurchaseOrders";
@@ -538,19 +474,14 @@
         }
 
         #endregion
-        private KursDataSet kursDataSet;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textStatus;
-        private System.Windows.Forms.TextBox textPrice;
         private System.Windows.Forms.TextBox textEmp;
         private System.Windows.Forms.TextBox textProd;
         private System.Windows.Forms.TextBox textSupl;
         private System.Windows.Forms.TextBox textID;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -558,26 +489,27 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textCount;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.BindingSource ordersidBindingSource;
-        private KursDataSetTableAdapters.Orders_idTableAdapter orders_idTableAdapter;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private Drawing drawing3;
         private Drawing drawing2;
-        private System.Windows.Forms.BindingSource purchaseOrdersBindingSource;
-        private KursDataSetTableAdapters.PurchaseOrdersTableAdapter purchaseOrdersTableAdapter;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn поставщикDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn продуктDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn сотрудникDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn количествоDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ценаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn датаПоставкиDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn статусDataGridViewTextBoxColumn;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private KursDataSet kursDataSet;
+        private System.Windows.Forms.BindingSource ordersidBindingSource;
+        private KursDataSetTableAdapters.Orders_idTableAdapter orders_idTableAdapter;
+        private System.Windows.Forms.BindingSource purchaseOrdersBindingSource;
+        private KursDataSetTableAdapters.PurchaseOrdersTableAdapter purchaseOrdersTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn сотрудникDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn поставщикDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn продуктDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn количествоDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn датаПоставкиDataGridViewTextBoxColumn;
     }
 }

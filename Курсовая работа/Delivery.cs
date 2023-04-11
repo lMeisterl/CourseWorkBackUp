@@ -22,6 +22,8 @@ namespace Курсовая_работа
 
         private void Delivery_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.Delivery". При необходимости она может быть перемещена или удалена.
+            this.deliveryTableAdapter.Fill(this.kursDataSet.Delivery);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Delivery_Id". При необходимости она может быть перемещена или удалена.
             this.delivery_IdTableAdapter.Fill(this.kursDataSet._Delivery_Id);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.Delivery". При необходимости она может быть перемещена или удалена.
@@ -54,10 +56,11 @@ namespace Курсовая_работа
         {
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = "UPDATE Employees SET Id_Client = '" + textBox2.Text + "', Id_Employee = '" + textBox3.Text + "', Id_Sale = '" + textBox9.Text + "', Date = '" +dateTimePicker1.Value+ "',Adress = '"+textBox5.Text+"' Type = '" + textBox6.Text + "', Price = '" + textBox7.Text + "', Payment = '"+comboBox1.Text+"' WHERE id = '"+textBox1.Text+"'";
+            string insertQuery = "UPDATE Employees SET Id_Client = '" + textBox2.Text + "', Id_Employee = '" + textBox3.Text + "', Id_Sale = '" + textBox9.Text + "', Date = '" +dateTimePicker1.Value+ "',Adress = '"+textBox5.Text+"' Type = '" + textBox6.Text + "' WHERE id = '"+textBox1.Text+"'";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
+            MessageBox.Show("Успешно изменено!");
             this.delivery_IdTableAdapter.Fill(this.kursDataSet._Delivery_Id);
         }
 
@@ -69,6 +72,7 @@ namespace Курсовая_работа
                 CurMan.RemoveAt(CurMan.Position);
                 deliveryTableAdapter.Update(kursDataSet);
             }
+            MessageBox.Show("Успешно удалено!");
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -82,11 +86,9 @@ namespace Курсовая_работа
                 textBox2.Text = row.Cells[1].Value.ToString();
                 textBox3.Text = row.Cells[2].Value.ToString();
                 textBox9.Text = row.Cells[3].Value.ToString();
-                dateTimePicker1.Text = row.Cells[4].Value.ToString();
+                textBox6.Text = row.Cells[4].Value.ToString();
                 textBox5.Text = row.Cells[5].Value.ToString();
-                textBox6.Text = row.Cells[6].Value.ToString();
-                textBox7.Text = row.Cells[7].Value.ToString();
-                comboBox1.Text = row.Cells[8].Value.ToString();
+                dateTimePicker1.Text = row.Cells[6].Value.ToString();
 
             }
         }
@@ -133,12 +135,13 @@ namespace Курсовая_работа
                 CurMan.RemoveAt(CurMan.Position);
                 deliveryTableAdapter.Update(kursDataSet);
             }
+            MessageBox.Show("Успешно удалено!");
         }
 
         private void drawing3_Click(object sender, EventArgs e)
         {
             AddDelivey addDelivey = new AddDelivey();
-            addDelivey.Show();
+            addDelivey.ShowDialog();
             addDelivey.change(dataGridView1);
         }
 
@@ -146,10 +149,11 @@ namespace Курсовая_работа
         {
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = "UPDATE Employees SET Id_Client = '" + textBox2.Text + "', Id_Employee = '" + textBox3.Text + "', Id_Sale = '" + textBox9.Text + "', Date = '" + dateTimePicker1.Text + "',Adress = '" + textBox5.Text + "' Type = '" + textBox6.Text + "', Price = '" + textBox7.Text + "', Payment = '" + comboBox1.Text + "' WHERE id = '" + textBox1.Text + "'";
+            string insertQuery = "UPDATE Employees SET Id_Client = '" + textBox2.Text + "', Id_Employee = '" + textBox3.Text + "', Id_Sale = '" + textBox9.Text + "', Date = '" + dateTimePicker1.Text + "',Adress = '" + textBox5.Text + "' Type = '" + textBox6.Text + "' WHERE id = '" + textBox1.Text + "'";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
+            MessageBox.Show("Успешно изменено!");
             this.delivery_IdTableAdapter.Fill(this.kursDataSet._Delivery_Id);
         }
 

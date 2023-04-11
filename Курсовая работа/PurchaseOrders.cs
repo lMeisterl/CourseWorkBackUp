@@ -26,6 +26,10 @@ namespace Курсовая_работа
             this.purchaseOrdersTableAdapter.Fill(this.kursDataSet.PurchaseOrders);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Orders_id". При необходимости она может быть перемещена или удалена.
             this.orders_idTableAdapter.Fill(this.kursDataSet._Orders_id);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.PurchaseOrders". При необходимости она может быть перемещена или удалена.
+            this.purchaseOrdersTableAdapter.Fill(this.kursDataSet.PurchaseOrders);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Orders_id". При необходимости она может быть перемещена или удалена.
+            this.orders_idTableAdapter.Fill(this.kursDataSet._Orders_id);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Orders_id". При необходимости она может быть перемещена или удалена.
             this.orders_idTableAdapter.Fill(this.kursDataSet._Orders_id);
 
@@ -84,9 +88,7 @@ namespace Курсовая_работа
                 textProd.Text = row.Cells[2].Value.ToString();
                 textEmp.Text = row.Cells[3].Value.ToString();
                 textCount.Text = row.Cells[4].Value.ToString();
-                textPrice.Text = row.Cells[5].Value.ToString();
-                dateTimePicker1.Text = row.Cells[6].Value.ToString();
-                textStatus.Text = row.Cells[7].Value.ToString();
+                dateTimePicker1.Text = row.Cells[5].Value.ToString();
 
             }
         }
@@ -131,11 +133,11 @@ namespace Курсовая_работа
         {
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = "UPDATE PurchaseOrders SET Id_Provider = '" + textSupl.Text + "', Id_Product = '" + textProd.Text + "', Id_Employee = '" + textEmp.Text + "', Count = '" + textCount.Text + "', Cost = '" + textPrice.Text + "', Delivery_Date = '" + dateTimePicker1.Value + "', Status = '" + textStatus.Text + "'";
+            string insertQuery = "UPDATE PurchaseOrders SET Id_Provider = '" + textSupl.Text + "', Id_Product = '" + textProd.Text + "', Id_Employee = '" + textEmp.Text + "', Count = '" + textCount.Text + "',Delivery_Date = '" + dateTimePicker1.Value + "'";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
-            this.purchaseOrdersTableAdapter.Fill(this.kursDataSet.PurchaseOrders);
+            
         }
 
         private void button1_Click_2(object sender, EventArgs e)

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(editingSales));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
@@ -67,10 +68,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.salesTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.SalesTableAdapter();
-            this.drawing1 = new Курсовая_работа.Drawing();
-            this.drawing3 = new Курсовая_работа.Drawing();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEmployeesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataofSaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,6 +81,10 @@
             this.count3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saleAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paymentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.salesTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.SalesTableAdapter();
+            this.drawing1 = new Курсовая_работа.Drawing();
+            this.drawing3 = new Курсовая_работа.Drawing();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
             this.panel2.SuspendLayout();
@@ -257,6 +258,7 @@
             this.button8.Size = new System.Drawing.Size(30, 31);
             this.button8.TabIndex = 70;
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -561,55 +563,6 @@
             this.dataGridView1.TabIndex = 74;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // salesBindingSource
-            // 
-            this.salesBindingSource.DataMember = "Sales";
-            this.salesBindingSource.DataSource = this.kursDataSet;
-            // 
-            // salesTableAdapter
-            // 
-            this.salesTableAdapter.ClearBeforeFill = true;
-            // 
-            // drawing1
-            // 
-            this.drawing1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.drawing1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.drawing1.BorderRadius = 40;
-            this.drawing1.BorderSize = 2;
-            this.drawing1.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.drawing1.FlatAppearance.BorderSize = 0;
-            this.drawing1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.drawing1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.drawing1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.drawing1.Location = new System.Drawing.Point(1069, 325);
-            this.drawing1.Name = "drawing1";
-            this.drawing1.Size = new System.Drawing.Size(141, 40);
-            this.drawing1.TabIndex = 82;
-            this.drawing1.Text = "Продукты";
-            this.drawing1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.drawing1.UseVisualStyleBackColor = false;
-            this.drawing1.Click += new System.EventHandler(this.drawing1_Click);
-            // 
-            // drawing3
-            // 
-            this.drawing3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.drawing3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.drawing3.BorderRadius = 40;
-            this.drawing3.BorderSize = 2;
-            this.drawing3.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.drawing3.FlatAppearance.BorderSize = 0;
-            this.drawing3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.drawing3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.drawing3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.drawing3.Location = new System.Drawing.Point(916, 325);
-            this.drawing3.Name = "drawing3";
-            this.drawing3.Size = new System.Drawing.Size(141, 40);
-            this.drawing3.TabIndex = 83;
-            this.drawing3.Text = "Сотрудники";
-            this.drawing3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.drawing3.UseVisualStyleBackColor = false;
-            this.drawing3.Click += new System.EventHandler(this.drawing3_Click);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -701,6 +654,55 @@
             this.paymentDataGridViewTextBoxColumn.Name = "paymentDataGridViewTextBoxColumn";
             this.paymentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // salesBindingSource
+            // 
+            this.salesBindingSource.DataMember = "Sales";
+            this.salesBindingSource.DataSource = this.kursDataSet;
+            // 
+            // salesTableAdapter
+            // 
+            this.salesTableAdapter.ClearBeforeFill = true;
+            // 
+            // drawing1
+            // 
+            this.drawing1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing1.BorderRadius = 40;
+            this.drawing1.BorderSize = 2;
+            this.drawing1.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.drawing1.FlatAppearance.BorderSize = 0;
+            this.drawing1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.drawing1.Location = new System.Drawing.Point(1069, 325);
+            this.drawing1.Name = "drawing1";
+            this.drawing1.Size = new System.Drawing.Size(141, 40);
+            this.drawing1.TabIndex = 82;
+            this.drawing1.Text = "Продукты";
+            this.drawing1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.drawing1.UseVisualStyleBackColor = false;
+            this.drawing1.Click += new System.EventHandler(this.drawing1_Click);
+            // 
+            // drawing3
+            // 
+            this.drawing3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing3.BorderRadius = 40;
+            this.drawing3.BorderSize = 2;
+            this.drawing3.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.drawing3.FlatAppearance.BorderSize = 0;
+            this.drawing3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.drawing3.Location = new System.Drawing.Point(916, 325);
+            this.drawing3.Name = "drawing3";
+            this.drawing3.Size = new System.Drawing.Size(141, 40);
+            this.drawing3.TabIndex = 83;
+            this.drawing3.Text = "Сотрудники";
+            this.drawing3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.drawing3.UseVisualStyleBackColor = false;
+            this.drawing3.Click += new System.EventHandler(this.drawing3_Click);
+            // 
             // editingSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -716,6 +718,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "editingSales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "editingEmployees";

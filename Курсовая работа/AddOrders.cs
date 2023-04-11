@@ -34,13 +34,14 @@ namespace Курсовая_работа
         {
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = $"INSERT INTO PurchaseOrders (Id_Provider, Id_Product, Id_Employee, Count, Cost, Delivery_Date, Status) VALUES ('" + textSupl.Text + "','" + textProd.Text + "', '" + textEmp.Text + "',  '" + textCount.Text + "', '" + textPrice.Text + "', '" + dateTimePicker1.Value+ "', '"+textStatus+"')";
+            string insertQuery = $"INSERT INTO PurchaseOrders (Id_Provider, Id_Product, Id_Employee, Count,Delivery_Date) VALUES ('" + textSupl.Text + "','" + textProd.Text + "', '" + textEmp.Text + "',  '" + textCount.Text + "', '" + dateTimePicker1.Value+ "')";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             Int32 countProduct = getCountProduct(Convert.ToInt32(textProd.Text));
             Int32 newCountProduct = countProduct + Convert.ToInt32(textCount.Text);
             setCountproduct(newCountProduct, Convert.ToInt32(textProd.Text));
-            MessageBox.Show("Доставка успешно добавлена!");
+            MessageBox.Show("Успeшно добавлено!");
+            connection_new.Close();
         }
         private int getCountProduct(Int32 Id)
         {
@@ -113,13 +114,14 @@ namespace Курсовая_работа
         {
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = $"INSERT INTO PurchaseOrders (Id_Provider, Id_Product, Id_Employee, Count, Cost, Delivery_Date, Status) VALUES ('" + textSupl.Text + "','" + textProd.Text + "', '" + textEmp.Text + "',  '" + textCount.Text + "', '" + textPrice.Text + "', '" + dateTimePicker1.Value+ "', '" + textStatus.Text + "')";
+            string insertQuery = $"INSERT INTO PurchaseOrders (Id_Provider, Id_Product, Id_Employee, Count,  Delivery_Date) VALUES ('" + textSupl.Text + "','" + textProd.Text + "', '" + textEmp.Text + "',  '" + textCount.Text + "',  '" + dateTimePicker1.Value+ "')";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             Int32 countProduct = getCountProduct(Convert.ToInt32(textProd.Text));
             Int32 newCountProduct = countProduct + Convert.ToInt32(textCount.Text);
             setCountproduct(newCountProduct, Convert.ToInt32(textProd.Text));
             MessageBox.Show("Доставка успешно добавлена!");
+            this.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)

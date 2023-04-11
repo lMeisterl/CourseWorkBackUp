@@ -26,6 +26,8 @@ namespace Курсовая_работа
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
+            MessageBox.Show("Успeшно добавлено!");
+            this.Close();
         }
 
         private void drawing2_Click(object sender, EventArgs e)

@@ -244,6 +244,7 @@ namespace Курсовая_работа
                 CurMan.RemoveAt(CurMan.Position);
                 employeesTableAdapter.Update(kursDataSet);
             }
+            MessageBox.Show("Успешно удалено!");
         }
 
         private void drawing3_Click(object sender, EventArgs e)
@@ -260,6 +261,7 @@ namespace Курсовая_работа
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
+            MessageBox.Show("Успешно изменено!");
             this.employeesTableAdapter.Fill(this.kursDataSet.Employees);
         }
         private string GetCellValue(SpreadsheetDocument document, Cell cell)

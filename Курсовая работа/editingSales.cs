@@ -51,6 +51,7 @@ namespace Курсовая_работа
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
+            MessageBox.Show("Успешно изменено!");
             this.salesTableAdapter.Fill(this.kursDataSet.Sales);
         }
 
@@ -62,6 +63,7 @@ namespace Курсовая_работа
                 CurMan.RemoveAt(CurMan.Position);
                 salesTableAdapter.Update(kursDataSet);
             }
+            MessageBox.Show("Успешно удалено!");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -123,6 +125,11 @@ namespace Курсовая_работа
 
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"Data_of_Sale LIKE '%{textBox18.Text}%'";
             connection_new.Close();*/
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.salesTableAdapter.Fill(this.kursDataSet.Sales);
         }
     }
 }

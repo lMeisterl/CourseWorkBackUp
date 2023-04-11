@@ -117,6 +117,7 @@ namespace Курсовая_работа
                 CurMan.RemoveAt(CurMan.Position);
                 suppliersTableAdapter.Update(kursDataSet);
             }
+            MessageBox.Show("Успешно удалено!");
         }
 
         private void drawing1_Click(object sender, EventArgs e)

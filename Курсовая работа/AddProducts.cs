@@ -66,6 +66,7 @@ namespace Курсовая_работа
             sqlCommand.Parameters.AddWithValue("@count", textBox7.Text);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
+            MessageBox.Show("Успешно добавлено!");
             this.Close();
         }
 

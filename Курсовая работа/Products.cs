@@ -204,6 +204,8 @@ namespace Курсовая_работа
             sqlCommand.ExecuteNonQuery();
             this.productsTableAdapter.Fill(this.kursDataSet.Products);
             connection_new.Close();
+            MessageBox.Show("Успешно изменено!");
+
         }
 
         private void drawing3_Click(object sender, EventArgs e)
@@ -220,6 +222,7 @@ namespace Курсовая_работа
                 CurMan.RemoveAt(CurMan.Position);
                 productsTableAdapter.Update(kursDataSet);
             }
+            MessageBox.Show("Успешно удалено!");
         }
 
         private void button1_Click_1(object sender, EventArgs e)

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Suppliers));
             this.suppliersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kursDataSet = new Курсовая_работа.KursDataSet();
             this.suppliersTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.SuppliersTableAdapter();
@@ -136,7 +137,7 @@
             this.maskedTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.maskedTextBox1.ForeColor = System.Drawing.Color.Black;
             this.maskedTextBox1.Location = new System.Drawing.Point(405, 43);
-            this.maskedTextBox1.Mask = "+7(999) 000-0000";
+            this.maskedTextBox1.Mask = "+7(999) 000-00-00";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(137, 20);
             this.maskedTextBox1.TabIndex = 18;
@@ -563,6 +564,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Suppliers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Suppliers";

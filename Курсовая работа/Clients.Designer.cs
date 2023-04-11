@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clients));
             this.panel3 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -53,6 +54,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.drawing4 = new Курсовая_работа.Drawing();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
@@ -70,7 +72,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.drawing2 = new Курсовая_работа.Drawing();
             this.drawing1 = new Курсовая_работа.Drawing();
-            this.drawing4 = new Курсовая_работа.Drawing();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
@@ -320,6 +321,26 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "E-mail";
             // 
+            // drawing4
+            // 
+            this.drawing4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing4.BorderRadius = 40;
+            this.drawing4.BorderSize = 1;
+            this.drawing4.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing4.FlatAppearance.BorderSize = 0;
+            this.drawing4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing4.Location = new System.Drawing.Point(714, 189);
+            this.drawing4.Name = "drawing4";
+            this.drawing4.Size = new System.Drawing.Size(150, 40);
+            this.drawing4.TabIndex = 27;
+            this.drawing4.Text = "Сохранить";
+            this.drawing4.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing4.UseVisualStyleBackColor = false;
+            this.drawing4.Click += new System.EventHandler(this.drawing4_Click);
+            // 
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.Color.White;
@@ -519,26 +540,6 @@
             this.drawing1.UseVisualStyleBackColor = false;
             this.drawing1.Click += new System.EventHandler(this.drawing1_Click);
             // 
-            // drawing4
-            // 
-            this.drawing4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
-            this.drawing4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
-            this.drawing4.BorderRadius = 40;
-            this.drawing4.BorderSize = 1;
-            this.drawing4.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing4.FlatAppearance.BorderSize = 0;
-            this.drawing4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.drawing4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.drawing4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing4.Location = new System.Drawing.Point(714, 189);
-            this.drawing4.Name = "drawing4";
-            this.drawing4.Size = new System.Drawing.Size(150, 40);
-            this.drawing4.TabIndex = 27;
-            this.drawing4.Text = "Сохранить";
-            this.drawing4.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing4.UseVisualStyleBackColor = false;
-            this.drawing4.Click += new System.EventHandler(this.drawing4_Click);
-            // 
             // Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -553,6 +554,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Clients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clients";

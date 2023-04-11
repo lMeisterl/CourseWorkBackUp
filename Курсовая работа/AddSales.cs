@@ -32,7 +32,31 @@ namespace Курсовая_работа
             Load_Product2();
             Load_Product3();
             Load_Product4();
+            Load_Employees();
 
+        }
+        private void Load_Employees()
+        {
+            using (SqlConnection connection = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True"))
+            {
+                string query = "SELECT Id, Surname FROM Employees";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+
+                comboBox3.DisplayMember = "Id";
+                comboBox3.ValueMember = "Id";
+                comboBox3.DataSource = dataTable;
+                comboBox3.SelectedIndexChanged += new EventHandler(comboBox3_SelectedIndexChanged);
+                comboBox3_SelectedIndexChanged(null, null);
+            }
+        }
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox3.SelectedValue != null)
+            {
+                DataRowView row = comboBox3.SelectedItem as DataRowView;
+            }
         }
         private void Load_Product1()
         {
@@ -441,11 +465,12 @@ namespace Курсовая_работа
         {
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = $"INSERT INTO Sales (Id_Employees, Data_of_Sale, Id_Product, Count, Id_Products1, Count1, Id_Products2, Count2, Id_Products3, Count3, Sale_Amount, Payment) VALUES ('" + textBox2.Text + "','" + dateTimePicker1.Value + "', '" + productComboBox1.Text + "',  '" + textCount1.Text + "', '" + productComboBox2.Text + "', '" + textCount2.Text + "', '" + productComboBox3.Text + "', '" + textCount3.Text + "', '" + productComboBox4.Text + "', '" + textCount4.Text + "', '" + textFinishCost.Text + "', '" + comboBox1.Text + "')";
+            string insertQuery = $"INSERT INTO Sales (Id_Employees, Data_of_Sale, Id_Product, Count, Id_Products1, Count1, Id_Products2, Count2, Id_Products3, Count3, Sale_Amount, Payment) VALUES ('" + comboBox3.Text + "','" + dateTimePicker1.Value + "', '" + productComboBox1.Text + "',  '" + textCount1.Text + "', '" + productComboBox2.Text + "', '" + textCount2.Text + "', '" + productComboBox3.Text + "', '" + textCount3.Text + "', '" + productComboBox4.Text + "', '" + textCount4.Text + "', '" + textFinishCost.Text + "', '" + comboBox1.Text + "')";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
-            MessageBox.Show("Доставка успешно добавлена!");
+            MessageBox.Show("Продажа прошла!");
+            this.Close();
             
         }
 
