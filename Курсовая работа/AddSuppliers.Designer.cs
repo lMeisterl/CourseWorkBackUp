@@ -47,9 +47,8 @@
             this.drawing1 = new Курсовая_работа.Drawing();
             this.drawing2 = new Курсовая_работа.Drawing();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -259,40 +258,11 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
             this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button9);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(441, 38);
             this.panel1.TabIndex = 22;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(233)))), ((int)(((byte)(210)))));
-            this.button7.Image = global::Курсовая_работа.Properties.Resources.reload;
-            this.button7.Location = new System.Drawing.Point(361, 4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(30, 31);
-            this.button7.TabIndex = 72;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(233)))), ((int)(((byte)(210)))));
-            this.button9.Image = global::Курсовая_работа.Properties.Resources.remove;
-            this.button9.Location = new System.Drawing.Point(397, 4);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(30, 31);
-            this.button9.TabIndex = 71;
-            this.button9.UseVisualStyleBackColor = false;
             // 
             // button8
             // 
@@ -307,6 +277,22 @@
             this.button8.Size = new System.Drawing.Size(39, 31);
             this.button8.TabIndex = 69;
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(233)))), ((int)(((byte)(210)))));
+            this.button9.Image = global::Курсовая_работа.Properties.Resources.remove;
+            this.button9.Location = new System.Drawing.Point(397, 4);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(30, 31);
+            this.button9.TabIndex = 71;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // AddSuppliers
             // 
@@ -365,7 +351,6 @@
         private Drawing drawing1;
         private Drawing drawing2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
     }

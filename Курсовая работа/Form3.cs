@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Spreadsheet;
+using Excel = Microsoft.Office.Interop.Excel;
 
 
 namespace Курсовая_работа
@@ -58,8 +64,6 @@ namespace Курсовая_работа
 
         private void button4_Click(object sender, EventArgs e)
         {
-            AdminPanel g = new AdminPanel();
-            g.Show();
             this.Close();
         }
 
@@ -169,27 +173,10 @@ namespace Курсовая_работа
 
             }
         }
-        private void Search(DataGridView dgw)
-        {
-            /*SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
-
-            string searchString = $"select * from Employees where concat (Id, First_Name, Surname, Middle_Name, Passport, Gender, Job_Title, Education, ) like '%" + textBox1.Text + "%'";
-            SqlCommand com = new SqlCommand(searchString, connection_new);
-
-            connection_new.Open();
-
-            SqlDataReader read = com.ExecuteReader();
-
-            while (read.Read())
-            {
-                //ReadSingleRow(dgw, read);
-            }
-            read.Close();
-            connection_new.Close();*/
-        }
+        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            Search(dataGridView1);
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -238,8 +225,7 @@ namespace Курсовая_работа
         private void drawing1_Click(object sender, EventArgs e)
         {
             AddEmployee sa = new AddEmployee();
-            sa.Show();
-            this.Close();
+            sa.ShowDialog();
         }
 
         private void drawing2_Click(object sender, EventArgs e)
@@ -255,8 +241,7 @@ namespace Курсовая_работа
         private void drawing3_Click(object sender, EventArgs e)
         {
             AddLogin addLogin = new AddLogin();
-            addLogin.Show();
-            this.Close();
+            addLogin.ShowDialog();
         }
 
         private void drawing4_Click(object sender, EventArgs e)
@@ -268,6 +253,115 @@ namespace Курсовая_работа
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
             this.employeesTableAdapter.Fill(this.kursDataSet.Employees);
+        }
+        private string GetCellValue(SpreadsheetDocument document, Cell cell)
+        {
+            SharedStringTablePart stringTablePart = document.WorkbookPart.SharedStringTablePart;
+            if (cell.CellValue == null)
+            {
+                return "";
+            }
+            string cellValue = cell.CellValue.InnerXml;
+            if (cell.DataType != null && cell.DataType.Value == CellValues.SharedString)
+            {
+                return stringTablePart.SharedStringTable.ChildElements[int.Parse(cellValue)].InnerText;
+            }
+            else
+            {
+                return cellValue;
+            }
+        }
+
+        private void drawing5_Click(object sender, EventArgs e)
+        {
+            /*// Открыть диалог выбора файла Excel
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
+            if (openFileDialog.ShowDialog() != DialogResult.OK)
+            {
+                return; // Если файл не выбран, выйти из метода
+            }
+
+            // Получить путь к файлу Excel
+            string filePath = openFileDialog.FileName;
+
+            // Подключиться к БД
+            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            connection_new.Open();
+
+            // Создать объект для работы с Excel
+            using (OleDbConnection excelConnection = new OleDbConnection($"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={filePath};Extended Properties='Excel 12.0 Xml;HDR=YES'"))
+            {
+                excelConnection.Open();
+
+                // Получить данные из листа Excel
+                OleDbCommand excelCommand = new OleDbCommand("SELECT * FROM [Лист1$]", excelConnection);
+                OleDbDataReader excelReader = excelCommand.ExecuteReader();
+
+                // Заполнить таблицу в БД данными из Excel
+                while (excelReader.Read())
+                {
+                    SqlCommand insertCommand = new SqlCommand("INSERT INTO Employees (Id, First_Name, Surname, Middle_Name, Passport, Gender, Job_Title, Education, Experience, Login, Password, is_admin) VALUES (@value1, @value2, @value3), @value4, @value5, @value6, @value7, @value8, @value9, @value10, @value11, @value12, @value13", connection_new);
+                    insertCommand.Parameters.AddWithValue("@value1", excelReader.GetString(0));
+                    insertCommand.Parameters.AddWithValue("@value2", excelReader.GetString(1));
+                    insertCommand.Parameters.AddWithValue("@value3", excelReader.GetString(2));
+                    insertCommand.Parameters.AddWithValue("@value4", excelReader.GetString(3));
+                    insertCommand.Parameters.AddWithValue("@value5", excelReader.GetString(4));
+                    insertCommand.Parameters.AddWithValue("@value6", excelReader.GetString(5));
+                    insertCommand.Parameters.AddWithValue("@value7", excelReader.GetString(6));
+                    insertCommand.Parameters.AddWithValue("@value8", excelReader.GetString(7));
+                    insertCommand.Parameters.AddWithValue("@value9", excelReader.GetString(8));
+                    insertCommand.Parameters.AddWithValue("@value10", excelReader.GetString(9));
+                    insertCommand.Parameters.AddWithValue("@value11", excelReader.GetString(10));
+                    insertCommand.Parameters.AddWithValue("@value12", excelReader.GetString(11));
+                    insertCommand.Parameters.AddWithValue("@value13", excelReader.GetString(12));
+                    insertCommand.ExecuteNonQuery();
+                }
+
+                excelReader.Close();
+            }
+
+            connection_new.Close();
+
+
+            MessageBox.Show("Данные загружены в базу данных.");*/
+        }
+
+        private void drawing6_Click(object sender, EventArgs e)
+        {
+            Excel.Application excel = new Excel.Application();
+            Excel.Workbook workbook = excel.Workbooks.Add();
+            Excel.Worksheet sheet = workbook.Sheets[1];
+
+            // Копирование заголовков столбцов
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+            {
+                sheet.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText;
+            }
+
+            // Копирование данных из DataGridView
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                {
+                    sheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+
+            // Сохранение файла Excel
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
+            saveFileDialog.RestoreDirectory = true;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                workbook.SaveAs(saveFileDialog.FileName);
+                MessageBox.Show("Данные успешно экспортированы в Excel!");
+            }
+
+            excel.Quit();
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(excel);
+            excel = null;
         }
     }
 }

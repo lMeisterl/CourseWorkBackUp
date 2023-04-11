@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +13,18 @@ namespace Курсовая_работа
 {
     public partial class AdminPanel : Form
     {
+        //private readonly chekUser _user;
         private const string V = "186; 231; 96";
 
-        public AdminPanel()
+        public AdminPanel(/*chekUser user*/)
         {
+            //user = _user;
             InitializeComponent();
         }
+        /*private void IsAdmin()
+        {
+            
+        }*/
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -26,43 +33,43 @@ namespace Курсовая_работа
 
         private void AdminPanel_Load(object sender, EventArgs e)
         {
-            
+            //textBox1.Text = $"{_user.login}:{_user.IsAdmin}";
         }
 
         private void drawing1_Click(object sender, EventArgs e)
         {
             Sales sales = new Sales();
-            sales.Show();
+            sales.ShowDialog();
         }
 
         private void drawing2_Click(object sender, EventArgs e)
         {
             Products products = new Products();
-            products.Show();
+            products.ShowDialog();
         }
 
         private void drawing3_Click(object sender, EventArgs e)
         {
             PurchaseOrders purchaseOrders = new PurchaseOrders();
-            purchaseOrders.Show();
+            purchaseOrders.ShowDialog();
         }
 
         private void drawing4_Click(object sender, EventArgs e)
         {
             Delivery delivery = new Delivery();
-            delivery.Show();
+            delivery.ShowDialog();
         }
 
         private void drawing5_Click(object sender, EventArgs e)
         {
             Suppliers suppliers = new Suppliers();
-            suppliers.Show();
+            suppliers.ShowDialog();
         }
 
         private void drawing6_Click(object sender, EventArgs e)
         {
             Form3 form3 = new Form3();
-            form3.Show();
+            form3.ShowDialog();
         }
 
         private void drawing8_Click(object sender, EventArgs e)

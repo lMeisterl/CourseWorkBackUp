@@ -48,8 +48,6 @@ namespace Курсовая_работа
 
         private void drawing2_Click(object sender, EventArgs e)
         {
-            Products sa = new Products();
-            sa.Show();
             this.Close();
         }
 
@@ -68,9 +66,17 @@ namespace Курсовая_работа
             sqlCommand.Parameters.AddWithValue("@count", textBox7.Text);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
-            Products sf = new Products();
-            sf.Show();
             this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

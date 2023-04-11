@@ -75,13 +75,6 @@ namespace Курсовая_работа
             connection_new.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            AdminPanel hg = new AdminPanel();
-            hg.Show();
-            this.Close();
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -236,8 +229,7 @@ namespace Курсовая_работа
         private void drawing3_Click(object sender, EventArgs e)
         {
             AddProducts gh = new AddProducts();
-            gh.Show();
-            this.Close();
+            gh.ShowDialog();
         }
 
         private void drawing2_Click(object sender, EventArgs e)

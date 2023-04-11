@@ -60,7 +60,7 @@ namespace Курсовая_работа
         {
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = "INSERT INTO Employees (First_Name, Surname, Middle_Name, Telephone, Passport, Gender, Date_of_Birth, Job_Title, Education) VALUES (@name, @surname, @MidleName, @Telephone, @Passport, @Gender, @DataBirth, @Post, @Education)";
+            string insertQuery = "INSERT INTO Employees (First_Name, Surname, Middle_Name, Telephone, Passport, Gender, Date_of_Birth, Job_Title, Education, Experience) VALUES (@name, @surname, @MidleName, @Telephone, @Passport, @Gender, @DataBirth, @Post, @Education, @Experience)";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.Parameters.AddWithValue("@name", tbName.Text);
             sqlCommand.Parameters.AddWithValue("@surname", tbSurname.Text);
@@ -71,17 +71,15 @@ namespace Курсовая_работа
             sqlCommand.Parameters.AddWithValue("@DataBirth", tbDataBirth.Value);
             sqlCommand.Parameters.AddWithValue("@Post", tbPost.Text);
             sqlCommand.Parameters.AddWithValue("@Education", tbEducation.Text);
+            sqlCommand.Parameters.AddWithValue("@Experience", textExp.Text);
+
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
-            Form3 sf = new Form3();
-            sf.Show();
             this.Close();
         }
 
         private void drawing2_Click(object sender, EventArgs e)
         {
-            Form3 fs = new Form3();
-            fs.Show();
             this.Close();
         }
 
@@ -92,8 +90,6 @@ namespace Курсовая_работа
 
         private void button8_Click(object sender, EventArgs e)
         {
-            Form3 fs = new Form3();
-            fs.Show();
             this.Close();
         }
     }

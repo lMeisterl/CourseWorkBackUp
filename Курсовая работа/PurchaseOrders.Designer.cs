@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.поставщикDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.продуктDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.сотрудникDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,17 +38,13 @@
             this.ценаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.датаПоставкиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.статусDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ordersidBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kursDataSet = new Курсовая_работа.KursDataSet();
-            this.drawing2 = new Курсовая_работа.Drawing();
-            this.drawing3 = new Курсовая_работа.Drawing();
-            this.drawing1 = new Курсовая_работа.Drawing();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.textCount = new System.Windows.Forms.TextBox();
             this.textStatus = new System.Windows.Forms.TextBox();
-            this.textDate = new System.Windows.Forms.TextBox();
             this.textPrice = new System.Windows.Forms.TextBox();
             this.textEmp = new System.Windows.Forms.TextBox();
             this.textProd = new System.Windows.Forms.TextBox();
@@ -68,8 +65,10 @@
             this.button9 = new System.Windows.Forms.Button();
             this.purchaseOrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.purchaseOrdersTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.PurchaseOrdersTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.drawing2 = new Курсовая_работа.Drawing();
+            this.drawing3 = new Курсовая_работа.Drawing();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersidBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
@@ -93,14 +92,14 @@
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.кодDataGridViewTextBoxColumn,
             this.поставщикDataGridViewTextBoxColumn,
             this.продуктDataGridViewTextBoxColumn,
             this.сотрудникDataGridViewTextBoxColumn,
             this.количествоDataGridViewTextBoxColumn,
             this.ценаDataGridViewTextBoxColumn,
             this.датаПоставкиDataGridViewTextBoxColumn,
-            this.статусDataGridViewTextBoxColumn,
-            this.кодDataGridViewTextBoxColumn});
+            this.статусDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.ordersidBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 42);
             this.dataGridView1.MultiSelect = false;
@@ -112,6 +111,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(1086, 260);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // кодDataGridViewTextBoxColumn
+            // 
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
+            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // поставщикDataGridViewTextBoxColumn
             // 
@@ -162,13 +168,6 @@
             this.статусDataGridViewTextBoxColumn.Name = "статусDataGridViewTextBoxColumn";
             this.статусDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // кодDataGridViewTextBoxColumn
-            // 
-            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
-            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
-            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
-            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // ordersidBindingSource
             // 
             this.ordersidBindingSource.DataMember = "Orders+id";
@@ -179,75 +178,15 @@
             this.kursDataSet.DataSetName = "KursDataSet";
             this.kursDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // drawing2
-            // 
-            this.drawing2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.drawing2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.drawing2.BorderRadius = 40;
-            this.drawing2.BorderSize = 0;
-            this.drawing2.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing2.FlatAppearance.BorderSize = 0;
-            this.drawing2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.drawing2.ForeColor = System.Drawing.Color.White;
-            this.drawing2.Image = global::Курсовая_работа.Properties.Resources.bin1;
-            this.drawing2.Location = new System.Drawing.Point(1013, 306);
-            this.drawing2.Name = "drawing2";
-            this.drawing2.Size = new System.Drawing.Size(43, 40);
-            this.drawing2.TabIndex = 74;
-            this.drawing2.TextColor = System.Drawing.Color.White;
-            this.drawing2.UseVisualStyleBackColor = false;
-            this.drawing2.Click += new System.EventHandler(this.drawing2_Click);
-            // 
-            // drawing3
-            // 
-            this.drawing3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.drawing3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.drawing3.BorderRadius = 40;
-            this.drawing3.BorderSize = 2;
-            this.drawing3.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.drawing3.FlatAppearance.BorderSize = 0;
-            this.drawing3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.drawing3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.drawing3.ForeColor = System.Drawing.Color.Black;
-            this.drawing3.Location = new System.Drawing.Point(818, 306);
-            this.drawing3.Name = "drawing3";
-            this.drawing3.Size = new System.Drawing.Size(150, 40);
-            this.drawing3.TabIndex = 11;
-            this.drawing3.Text = "Добавить";
-            this.drawing3.TextColor = System.Drawing.Color.Black;
-            this.drawing3.UseVisualStyleBackColor = false;
-            this.drawing3.Click += new System.EventHandler(this.drawing3_Click);
-            // 
-            // drawing1
-            // 
-            this.drawing1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
-            this.drawing1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
-            this.drawing1.BorderRadius = 40;
-            this.drawing1.BorderSize = 1;
-            this.drawing1.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing1.FlatAppearance.BorderSize = 0;
-            this.drawing1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.drawing1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.drawing1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing1.Location = new System.Drawing.Point(848, 120);
-            this.drawing1.Name = "drawing1";
-            this.drawing1.Size = new System.Drawing.Size(150, 40);
-            this.drawing1.TabIndex = 9;
-            this.drawing1.Text = "Сохранить";
-            this.drawing1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing1.UseVisualStyleBackColor = false;
-            this.drawing1.Click += new System.EventHandler(this.drawing1_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(211)))));
+            this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.textCount);
             this.panel2.Controls.Add(this.textStatus);
-            this.panel2.Controls.Add(this.textDate);
             this.panel2.Controls.Add(this.textPrice);
             this.panel2.Controls.Add(this.textEmp);
-            this.panel2.Controls.Add(this.drawing1);
             this.panel2.Controls.Add(this.textProd);
             this.panel2.Controls.Add(this.textSupl);
             this.panel2.Controls.Add(this.textID);
@@ -263,6 +202,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1014, 181);
             this.panel2.TabIndex = 10;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(612, 76);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(100, 20);
+            this.dateTimePicker1.TabIndex = 17;
+            this.dateTimePicker1.Value = new System.DateTime(2023, 4, 11, 0, 0, 0, 0);
             // 
             // label9
             // 
@@ -292,15 +240,6 @@
             this.textStatus.Name = "textStatus";
             this.textStatus.Size = new System.Drawing.Size(100, 20);
             this.textStatus.TabIndex = 14;
-            // 
-            // textDate
-            // 
-            this.textDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.textDate.ForeColor = System.Drawing.Color.Black;
-            this.textDate.Location = new System.Drawing.Point(612, 76);
-            this.textDate.Name = "textDate";
-            this.textDate.Size = new System.Drawing.Size(100, 20);
-            this.textDate.TabIndex = 13;
             // 
             // textPrice
             // 
@@ -504,6 +443,16 @@
             // 
             this.purchaseOrdersTableAdapter.ClearBeforeFill = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.ForeColor = System.Drawing.Color.Black;
+            this.textBox1.Location = new System.Drawing.Point(49, 313);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(284, 31);
+            this.textBox1.TabIndex = 76;
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
@@ -517,16 +466,46 @@
             this.button1.Size = new System.Drawing.Size(37, 31);
             this.button1.TabIndex = 75;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
-            // textBox1
+            // drawing2
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(49, 313);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(284, 31);
-            this.textBox1.TabIndex = 76;
+            this.drawing2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.drawing2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.drawing2.BorderRadius = 40;
+            this.drawing2.BorderSize = 0;
+            this.drawing2.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing2.FlatAppearance.BorderSize = 0;
+            this.drawing2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing2.ForeColor = System.Drawing.Color.White;
+            this.drawing2.Image = global::Курсовая_работа.Properties.Resources.bin1;
+            this.drawing2.Location = new System.Drawing.Point(1013, 306);
+            this.drawing2.Name = "drawing2";
+            this.drawing2.Size = new System.Drawing.Size(43, 40);
+            this.drawing2.TabIndex = 74;
+            this.drawing2.TextColor = System.Drawing.Color.White;
+            this.drawing2.UseVisualStyleBackColor = false;
+            this.drawing2.Click += new System.EventHandler(this.drawing2_Click);
+            // 
+            // drawing3
+            // 
+            this.drawing3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing3.BorderRadius = 40;
+            this.drawing3.BorderSize = 2;
+            this.drawing3.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.drawing3.FlatAppearance.BorderSize = 0;
+            this.drawing3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing3.ForeColor = System.Drawing.Color.Black;
+            this.drawing3.Location = new System.Drawing.Point(839, 306);
+            this.drawing3.Name = "drawing3";
+            this.drawing3.Size = new System.Drawing.Size(150, 40);
+            this.drawing3.TabIndex = 11;
+            this.drawing3.Text = "Добавить";
+            this.drawing3.TextColor = System.Drawing.Color.Black;
+            this.drawing3.UseVisualStyleBackColor = false;
+            this.drawing3.Click += new System.EventHandler(this.drawing3_Click);
             // 
             // PurchaseOrders
             // 
@@ -543,6 +522,7 @@
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PurchaseOrders";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PurchaseOrders";
             this.Load += new System.EventHandler(this.PurchaseOrders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -563,7 +543,6 @@
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textStatus;
-        private System.Windows.Forms.TextBox textDate;
         private System.Windows.Forms.TextBox textPrice;
         private System.Windows.Forms.TextBox textEmp;
         private System.Windows.Forms.TextBox textProd;
@@ -586,10 +565,12 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private Drawing drawing3;
-        private Drawing drawing1;
         private Drawing drawing2;
         private System.Windows.Forms.BindingSource purchaseOrdersBindingSource;
         private KursDataSetTableAdapters.PurchaseOrdersTableAdapter purchaseOrdersTableAdapter;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn поставщикDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn продуктDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn сотрудникDataGridViewTextBoxColumn;
@@ -597,8 +578,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ценаDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn датаПоставкиDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn статусDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn кодDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

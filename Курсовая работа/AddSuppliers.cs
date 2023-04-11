@@ -65,5 +65,15 @@ namespace Курсовая_работа
         {
 
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

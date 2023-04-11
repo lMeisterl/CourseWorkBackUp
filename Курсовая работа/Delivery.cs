@@ -54,7 +54,7 @@ namespace Курсовая_работа
         {
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = "UPDATE Employees SET Id_Client = '" + textBox2.Text + "', Id_Employee = '" + textBox3.Text + "', Id_Sale = '" + textBox9.Text + "', Date = '" + textBox4.Text + "',Adress = '"+textBox5.Text+"' Type = '" + textBox6.Text + "', Price = '" + textBox7.Text + "', Payment = '"+comboBox1.Text+"' WHERE id = '"+textBox1.Text+"'";
+            string insertQuery = "UPDATE Employees SET Id_Client = '" + textBox2.Text + "', Id_Employee = '" + textBox3.Text + "', Id_Sale = '" + textBox9.Text + "', Date = '" +dateTimePicker1.Value+ "',Adress = '"+textBox5.Text+"' Type = '" + textBox6.Text + "', Price = '" + textBox7.Text + "', Payment = '"+comboBox1.Text+"' WHERE id = '"+textBox1.Text+"'";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
@@ -82,7 +82,7 @@ namespace Курсовая_работа
                 textBox2.Text = row.Cells[1].Value.ToString();
                 textBox3.Text = row.Cells[2].Value.ToString();
                 textBox9.Text = row.Cells[3].Value.ToString();
-                textBox4.Text = row.Cells[4].Value.ToString();
+                dateTimePicker1.Text = row.Cells[4].Value.ToString();
                 textBox5.Text = row.Cells[5].Value.ToString();
                 textBox6.Text = row.Cells[6].Value.ToString();
                 textBox7.Text = row.Cells[7].Value.ToString();
@@ -146,7 +146,7 @@ namespace Курсовая_работа
         {
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = "UPDATE Employees SET Id_Client = '" + textBox2.Text + "', Id_Employee = '" + textBox3.Text + "', Id_Sale = '" + textBox9.Text + "', Date = '" + textBox4.Text + "',Adress = '" + textBox5.Text + "' Type = '" + textBox6.Text + "', Price = '" + textBox7.Text + "', Payment = '" + comboBox1.Text + "' WHERE id = '" + textBox1.Text + "'";
+            string insertQuery = "UPDATE Employees SET Id_Client = '" + textBox2.Text + "', Id_Employee = '" + textBox3.Text + "', Id_Sale = '" + textBox9.Text + "', Date = '" + dateTimePicker1.Text + "',Adress = '" + textBox5.Text + "' Type = '" + textBox6.Text + "', Price = '" + textBox7.Text + "', Payment = '" + comboBox1.Text + "' WHERE id = '" + textBox1.Text + "'";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
@@ -180,6 +180,11 @@ namespace Курсовая_работа
         private void button8_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

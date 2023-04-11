@@ -45,7 +45,6 @@
             this.labelProduct4 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
             this.textFinishCost = new System.Windows.Forms.TextBox();
             this.textCount4 = new System.Windows.Forms.TextBox();
             this.textCount3 = new System.Windows.Forms.TextBox();
@@ -86,6 +85,8 @@
             this.countDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drawing2 = new Курсовая_работа.Drawing();
             this.drawing1 = new Курсовая_работа.Drawing();
+            this.drawing3 = new Курсовая_работа.Drawing();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -280,15 +281,6 @@
             this.label17.Size = new System.Drawing.Size(143, 18);
             this.label17.TabIndex = 29;
             this.label17.Text = "Способы оплаты";
-            // 
-            // textBox17
-            // 
-            this.textBox17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(211)))));
-            this.textBox17.ForeColor = System.Drawing.Color.Black;
-            this.textBox17.Location = new System.Drawing.Point(247, 550);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(172, 20);
-            this.textBox17.TabIndex = 50;
             // 
             // textFinishCost
             // 
@@ -696,7 +688,7 @@
             this.drawing2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing2.ForeColor = System.Drawing.Color.White;
-            this.drawing2.Location = new System.Drawing.Point(559, 527);
+            this.drawing2.Location = new System.Drawing.Point(579, 527);
             this.drawing2.Name = "drawing2";
             this.drawing2.Size = new System.Drawing.Size(135, 43);
             this.drawing2.TabIndex = 74;
@@ -725,12 +717,46 @@
             this.drawing1.UseVisualStyleBackColor = false;
             this.drawing1.Click += new System.EventHandler(this.drawing1_Click);
             // 
+            // drawing3
+            // 
+            this.drawing3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing3.BorderRadius = 40;
+            this.drawing3.BorderSize = 2;
+            this.drawing3.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.drawing3.FlatAppearance.BorderSize = 0;
+            this.drawing3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing3.Location = new System.Drawing.Point(425, 503);
+            this.drawing3.Name = "drawing3";
+            this.drawing3.Size = new System.Drawing.Size(129, 30);
+            this.drawing3.TabIndex = 75;
+            this.drawing3.Text = "Посчитать";
+            this.drawing3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing3.UseVisualStyleBackColor = false;
+            this.drawing3.Click += new System.EventHandler(this.drawing3_Click);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(211)))));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Наличными",
+            "Безналичными "});
+            this.comboBox2.Location = new System.Drawing.Point(248, 550);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(171, 21);
+            this.comboBox2.TabIndex = 76;
+            // 
             // AddSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(938, 626);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.drawing3);
             this.Controls.Add(this.drawing2);
             this.Controls.Add(this.drawing1);
             this.Controls.Add(this.dataGridView1);
@@ -743,7 +769,6 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox17);
             this.Controls.Add(this.textFinishCost);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label18);
@@ -791,7 +816,6 @@
         private System.Windows.Forms.Label labelProduct4;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.TextBox textFinishCost;
         private System.Windows.Forms.TextBox textCount4;
         private System.Windows.Forms.TextBox textCount3;
@@ -832,5 +856,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn countDataGridViewTextBoxColumn;
         private Drawing drawing2;
         private Drawing drawing1;
+        private Drawing drawing3;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

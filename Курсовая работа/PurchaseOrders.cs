@@ -85,7 +85,7 @@ namespace Курсовая_работа
                 textEmp.Text = row.Cells[3].Value.ToString();
                 textCount.Text = row.Cells[4].Value.ToString();
                 textPrice.Text = row.Cells[5].Value.ToString();
-                textDate.Text = row.Cells[6].Value.ToString();
+                dateTimePicker1.Text = row.Cells[6].Value.ToString();
                 textStatus.Text = row.Cells[7].Value.ToString();
 
             }
@@ -131,11 +131,30 @@ namespace Курсовая_работа
         {
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = "UPDATE PurchaseOrders SET Id_Provider = '" + textSupl.Text + "', Id_Product = '" + textProd.Text + "', Id_Employee = '" + textEmp.Text + "', Count = '" + textCount.Text + "', Cost = '" + textPrice.Text + "', Delivery_Date = '" + textDate.Text + "', Status = '" + textStatus.Text + "'";
+            string insertQuery = "UPDATE PurchaseOrders SET Id_Provider = '" + textSupl.Text + "', Id_Product = '" + textProd.Text + "', Id_Employee = '" + textEmp.Text + "', Count = '" + textCount.Text + "', Cost = '" + textPrice.Text + "', Delivery_Date = '" + dateTimePicker1.Value + "', Status = '" + textStatus.Text + "'";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
             this.purchaseOrdersTableAdapter.Fill(this.kursDataSet.PurchaseOrders);
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            string searchValue = textBox1.Text.Trim();
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value.ToString().Equals(searchValue, StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Highlight the matching row and scroll to it
+                        row.Selected = true;
+                        dataGridView1.FirstDisplayedScrollingRowIndex = row.Index;
+                        break;
+                    }
+                }
+            }
         }
     }
 }

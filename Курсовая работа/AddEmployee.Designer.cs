@@ -47,10 +47,12 @@
             this.tbDataBirth = new System.Windows.Forms.DateTimePicker();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.drawing2 = new Курсовая_работа.Drawing();
             this.drawing1 = new Курсовая_работа.Drawing();
-            this.button8 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textExp = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -243,6 +245,21 @@
             this.panel1.Size = new System.Drawing.Size(508, 42);
             this.panel1.TabIndex = 25;
             // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(233)))), ((int)(((byte)(210)))));
+            this.button8.Image = global::Курсовая_работа.Properties.Resources.arrow_2;
+            this.button8.Location = new System.Drawing.Point(2, 2);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(39, 31);
+            this.button8.TabIndex = 73;
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
@@ -269,7 +286,7 @@
             this.drawing2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing2.ForeColor = System.Drawing.Color.White;
-            this.drawing2.Location = new System.Drawing.Point(87, 398);
+            this.drawing2.Location = new System.Drawing.Point(87, 424);
             this.drawing2.Name = "drawing2";
             this.drawing2.Size = new System.Drawing.Size(150, 40);
             this.drawing2.TabIndex = 72;
@@ -289,7 +306,7 @@
             this.drawing1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing1.ForeColor = System.Drawing.Color.Black;
-            this.drawing1.Location = new System.Drawing.Point(269, 398);
+            this.drawing1.Location = new System.Drawing.Point(269, 424);
             this.drawing1.Name = "drawing1";
             this.drawing1.Size = new System.Drawing.Size(150, 40);
             this.drawing1.TabIndex = 71;
@@ -298,20 +315,25 @@
             this.drawing1.UseVisualStyleBackColor = false;
             this.drawing1.Click += new System.EventHandler(this.drawing1_Click);
             // 
-            // button8
+            // label10
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(233)))), ((int)(((byte)(210)))));
-            this.button8.Image = global::Курсовая_работа.Properties.Resources.arrow_2;
-            this.button8.Location = new System.Drawing.Point(2, 2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(39, 31);
-            this.button8.TabIndex = 73;
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(85, 371);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(102, 18);
+            this.label10.TabIndex = 73;
+            this.label10.Text = "Опыт работы";
+            // 
+            // textExp
+            // 
+            this.textExp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(211)))));
+            this.textExp.ForeColor = System.Drawing.Color.Black;
+            this.textExp.Location = new System.Drawing.Point(249, 369);
+            this.textExp.Name = "textExp";
+            this.textExp.Size = new System.Drawing.Size(170, 20);
+            this.textExp.TabIndex = 74;
             // 
             // AddEmployee
             // 
@@ -319,6 +341,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(499, 489);
+            this.Controls.Add(this.textExp);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.drawing2);
             this.Controls.Add(this.drawing1);
             this.Controls.Add(this.panel1);
@@ -376,5 +400,7 @@
         private Drawing drawing2;
         private Drawing drawing1;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textExp;
     }
 }

@@ -16,5 +16,53 @@ namespace Курсовая_работа
         {
             InitializeComponent();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void drawing1_Click(object sender, EventArgs e)
+        {
+            Sales sales = new Sales();
+            sales.ShowDialog();
+        }
+
+        private void drawing2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void drawing3_Click(object sender, EventArgs e)
+        {
+            PurchaseOrders purchaseOrders = new PurchaseOrders();
+            purchaseOrders.ShowDialog();
+        }
+
+        private void drawing4_Click(object sender, EventArgs e)
+        {
+            Delivery delivery = new Delivery();
+            delivery.ShowDialog();
+        }
+
+        private void drawing5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void drawing6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void drawing8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void drawing7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

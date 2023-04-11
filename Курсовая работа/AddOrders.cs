@@ -34,7 +34,7 @@ namespace Курсовая_работа
         {
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = $"INSERT INTO PurchaseOrders (Id_Provider, Id_Product, Id_Employee, Count, Cost, Delivery_Date, Status) VALUES ('" + textSupl.Text + "','" + textProd.Text + "', '" + textEmp.Text + "',  '" + textCount.Text + "', '" + textPrice.Text + "', '" + textDate.Text + "', '"+textStatus+"')";
+            string insertQuery = $"INSERT INTO PurchaseOrders (Id_Provider, Id_Product, Id_Employee, Count, Cost, Delivery_Date, Status) VALUES ('" + textSupl.Text + "','" + textProd.Text + "', '" + textEmp.Text + "',  '" + textCount.Text + "', '" + textPrice.Text + "', '" + dateTimePicker1.Value+ "', '"+textStatus+"')";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             Int32 countProduct = getCountProduct(Convert.ToInt32(textProd.Text));
@@ -113,7 +113,7 @@ namespace Курсовая_работа
         {
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = $"INSERT INTO PurchaseOrders (Id_Provider, Id_Product, Id_Employee, Count, Cost, Delivery_Date, Status) VALUES ('" + textSupl.Text + "','" + textProd.Text + "', '" + textEmp.Text + "',  '" + textCount.Text + "', '" + textPrice.Text + "', '" + textDate.Text + "', '" + textStatus + "')";
+            string insertQuery = $"INSERT INTO PurchaseOrders (Id_Provider, Id_Product, Id_Employee, Count, Cost, Delivery_Date, Status) VALUES ('" + textSupl.Text + "','" + textProd.Text + "', '" + textEmp.Text + "',  '" + textCount.Text + "', '" + textPrice.Text + "', '" + dateTimePicker1.Value+ "', '" + textStatus.Text + "')";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             Int32 countProduct = getCountProduct(Convert.ToInt32(textProd.Text));

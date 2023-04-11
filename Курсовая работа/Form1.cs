@@ -25,43 +25,6 @@ namespace Курсовая_работа
             pictureBox3.Visible = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var loginuser = textBox1.Text;
-            var passworduser = textBox2.Text;
-            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable dataTable = new DataTable();
-
-            string querystring = $"select Id, Login, Password, is_admin from Employees where login = '{loginuser}' and password = '{passworduser}'";
-            SqlCommand command = new SqlCommand(querystring, connection_new);
-            adapter.SelectCommand = command;
-            adapter.Fill(dataTable);
-
-            if (dataTable.Rows.Count == 1)
-            {
-                if (Convert.ToBoolean(dataTable.Rows[0].ItemArray[3]) == true)
-                {
-                    AdminPanel adminPanel = new AdminPanel();
-                    adminPanel.Show();
-                    this.Hide();
-                    MessageBox.Show("Вы успешно вошли!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    Form2 form2 = new Form2();
-                    form2.Show();
-                    this.Hide();
-                }
-            }
-            else MessageBox.Show("Неверный логин или пароль");
-        }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             
@@ -72,11 +35,11 @@ namespace Курсовая_работа
             var loginuser = textBox1.Text;
             var passworduser = textBox2.Text;
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable dataTable = new DataTable();
 
             string querystring = $"select Id, Login, Password, is_admin from Employees where login = '{loginuser}' and password = '{passworduser}'";
             SqlCommand command = new SqlCommand(querystring, connection_new);
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable dataTable = new DataTable();
             adapter.SelectCommand = command;
             adapter.Fill(dataTable);
 
@@ -87,7 +50,6 @@ namespace Курсовая_работа
                     AdminPanel adminPanel = new AdminPanel();
                     adminPanel.Show();
                     this.Hide();
-                    MessageBox.Show("Вы успешно вошли!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

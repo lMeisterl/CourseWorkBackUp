@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using Курсовая_работа.KursDataSetTableAdapters;
 using System.Xml.Linq;
 using DocumentFormat.OpenXml.Office.CustomUI;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Reflection;
 
 namespace Курсовая_работа
 {
@@ -21,13 +23,17 @@ namespace Курсовая_работа
         {
             InitializeComponent();
         }
-
+        
         private void Sales_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.Sales". При необходимости она может быть перемещена или удалена.
             this.salesTableAdapter.Fill(this.kursDataSet.Sales);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet._Sales_id". При необходимости она может быть перемещена или удалена.
             this.sales_idTableAdapter.Fill(this.kursDataSet._Sales_id);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.Sales". При необходимости она может быть перемещена или удалена.
+            this.salesTableAdapter.Fill(this.kursDataSet.Sales);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kursDataSet.Sales". При необходимости она может быть перемещена или удалена.
+            this.salesTableAdapter.Fill(this.kursDataSet.Sales);
 
             ToolTip d = new ToolTip();
             d.SetToolTip(drawing2, "Удалить");
@@ -55,14 +61,14 @@ namespace Курсовая_работа
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*selectedRow = e.RowIndex;
+            selectedRow = e.RowIndex;
             if (selectedRow >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[selectedRow];
 
                 textBox1.Text = row.Cells[0].Value.ToString();
                 textBox2.Text = row.Cells[1].Value.ToString();
-                textBox3.Text = row.Cells[2].Value.ToString();
+                dateTimePicker1.Text = row.Cells[2].Value.ToString();
                 textBox4.Text = row.Cells[3].Value.ToString();
                 textBox5.Text = row.Cells[4].Value.ToString();
                 textBox6.Text = row.Cells[5].Value.ToString();
@@ -76,9 +82,9 @@ namespace Курсовая_работа
                 textBox14.Text = row.Cells[13].Value.ToString();
                 textBox15.Text = row.Cells[14].Value.ToString();
                 textBox16.Text = row.Cells[15].Value.ToString();
-                textBox17.Text = row.Cells[16].Value.ToString();
+                comboBox1.Text = row.Cells[16].Value.ToString();
 
-            }*/
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -88,7 +94,7 @@ namespace Курсовая_работа
 
         private void button6_Click_1(object sender, EventArgs e)
         {
-            this.sales_idTableAdapter.Fill(this.kursDataSet._Sales_id);
+            this.salesTableAdapter.Fill(this.kursDataSet.Sales);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -103,7 +109,7 @@ namespace Курсовая_работа
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.sales_idTableAdapter.Fill(this.kursDataSet._Sales_id);
+            this.salesTableAdapter.Fill(this.kursDataSet.Sales);
         }
 
         private void textBox13_TextChanged(object sender, EventArgs e)
@@ -224,8 +230,7 @@ namespace Курсовая_работа
         private void drawing3_Click(object sender, EventArgs e)
         {
             AddSales addSales = new AddSales();
-            addSales.Show();
-            this.Close();
+            addSales.ShowDialog();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -237,7 +242,7 @@ namespace Курсовая_работа
         {
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = "UPDATE Sales SET Id_Employees = '" + textBox2.Text + "', Data_of_Sale = '"+textBox3.Text+"', Id_Product = '" + textBox4.Text + "', Count = '" + textBox6.Text + "', Id_Products1 = '" + textBox7.Text + "', Count1 = '" + textBox9.Text + "', Id_Products2 = '" + textBox10.Text + "', Count2 = '" + textBox12.Text+ "', Id_Products3 = '" + textBox13.Text + "', Count3 = '" + textBox15.Text + "', Sale_Amount = '"+textBox16.Text+ "', Payment = '"+textBox17.Text+"'WHERE Id = '" + textBox1.Text + "'";
+            string insertQuery = "UPDATE Sales SET Id_Employees = '" + textBox2.Text + "', Data_of_Sale = '"+dateTimePicker1.Text+"', Id_Product = '" + textBox4.Text + "', Count = '" + textBox6.Text + "', Id_Products1 = '" + textBox7.Text + "', Count1 = '" + textBox9.Text + "', Id_Products2 = '" + textBox10.Text + "', Count2 = '" + textBox12.Text+ "', Id_Products3 = '" + textBox13.Text + "', Count3 = '" + textBox15.Text + "', Sale_Amount = '"+textBox16.Text+ "', Payment = '"+comboBox1.Text+"'WHERE Id = '" + textBox1.Text + "'";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
@@ -261,6 +266,49 @@ namespace Курсовая_работа
                     }
                 }
             }
+        }
+
+        private void drawing1_Click(object sender, EventArgs e)
+        {
+            Excel.Application excel = new Excel.Application();
+            Excel.Workbook workbook = excel.Workbooks.Add();
+            Excel.Worksheet sheet = workbook.Sheets[1];
+
+            // Копирование заголовков столбцов
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+            {
+                sheet.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText;
+            }
+
+            // Копирование данных из DataGridView
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                {
+                    sheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+
+            // Сохранение файла Excel
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
+            saveFileDialog.RestoreDirectory = true;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                workbook.SaveAs(saveFileDialog.FileName);
+                MessageBox.Show("Данные успешно экспортированы в Excel!");
+            }
+
+            excel.Quit();
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(excel);
+            excel = null;
+        }
+
+        private void drawing4_Click_1(object sender, EventArgs e)
+        {
+            editingSales editingSales = new editingSales();
+            editingSales.ShowDialog();
         }
     }
 }

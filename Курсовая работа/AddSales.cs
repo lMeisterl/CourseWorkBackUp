@@ -174,48 +174,8 @@ namespace Курсовая_работа
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (comboBox1.Text == "1")
-            {
-                int Id = Convert.ToInt32(productComboBox1.Text);
-                oneProduct(Id);
-            }
-            else if (comboBox1.Text == "2")
-            {
-                int Id1 = Convert.ToInt32(productComboBox1.Text);
-                int Id2 = Convert.ToInt32(productComboBox2.Text);
-                twoProduct(Id1, Id2);
-            }
-            else if (comboBox1.Text == "3")
-            {
-                int Id1 = Convert.ToInt32(productComboBox1.Text);
-                int Id2 = Convert.ToInt32(productComboBox2.Text);
-                int Id3 = Convert.ToInt32(productComboBox3.Text);
-                threeProduct(Id1, Id2, Id3);
-            }
-            else if (comboBox1.Text == "4")
-            {
-                int Id1 = Convert.ToInt32(productComboBox1.Text);
-                int Id2 = Convert.ToInt32(productComboBox2.Text);
-                int Id3 = Convert.ToInt32(productComboBox3.Text);
-                int Id4 = Convert.ToInt32(productComboBox4.Text);
-                fourProduct(Id1, Id2, Id3, Id4);
-            }
-            else
-            {
-                MessageBox.Show("Нет заполненых продуктов!");
-            }
-        }
         private void oneProduct(Int32 id)
-        {            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
-            connection_new.Open();
-            string insertQuery = $"INSERT INTO Sales (Id_Employees, Data_of_Sale, Id_Product, Count, Sale_Amount, Payment) VALUES ('" + textBox2.Text + "','" + dateTimePicker1.Value+ "', '" + productComboBox1.Text + "',  '" + textCount1.Text + "', '"+textFinishCost.Text+"', '"+textBox17.Text+"')";
-            SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
-            sqlCommand.ExecuteNonQuery();
-            connection_new.Close();
-            MessageBox.Show("Доставка успешно добавлена!");
-
+        { 
             int countProduct = getCountProduct(id);
             int priceProduct = getPriceProduct(id);
             int finalCount = countProduct - Convert.ToInt32(textCount1.Text);
@@ -232,13 +192,6 @@ namespace Курсовая_работа
         }
         private void twoProduct(int Id1, int Id2)
         {
-            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
-            connection_new.Open();
-            string insertQuery = $"INSERT INTO Sales (Id_Employees, Data_of_Sale, Id_Product, Count, Id_Products1, Count1, Id_Products2, Count2, Id_Products3, Count3, Sale_Amount, Payment) VALUES ('" + textBox2.Text + "','" + dateTimePicker1.Value + "', '" + productComboBox1.Text + "',  '" + textCount1.Text + "', '" + productComboBox2.Text + "', '" + textCount2.Text + "', '" + productComboBox3.Text + "', '" + textCount3.Text + "', '" + productComboBox4.Text + "', '" + textCount4.Text + "', '" + textFinishCost.Text + "', '" + textBox17.Text + "')";
-            SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
-            sqlCommand.ExecuteNonQuery();
-            connection_new.Close();
-            MessageBox.Show("Доставка успешно добавлена!");
 
             int countProduct = getCountProduct(Id1);
             int priceProduct = getPriceProduct(Id1);
@@ -265,14 +218,6 @@ namespace Курсовая_работа
         }
         private void threeProduct(int Id1, int Id2, int Id3)
         {
-            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
-            connection_new.Open();
-            string insertQuery = $"INSERT INTO Sales (Id_Employees, Data_of_Sale, Id_Product, Count, Id_Products1, Count1, Id_Products2, Count2, Id_Products3, Count3, Sale_Amount, Payment) VALUES ('" + textBox2.Text + "','" + dateTimePicker1.Value + "', '" + productComboBox1.Text + "',  '" + textCount1.Text + "', '" + productComboBox2.Text + "', '" + textCount2.Text + "', '" + productComboBox3.Text + "', '" + textCount3.Text + "', '" + productComboBox4.Text + "', '" + textCount4.Text + "', '" + textFinishCost.Text + "', '" + textBox17.Text + "')";
-            SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
-            sqlCommand.ExecuteNonQuery();
-            connection_new.Close();
-            MessageBox.Show("Доставка успешно добавлена!");
-
             int countProduct = getCountProduct(Id1);
             int priceProduct = getPriceProduct(Id1);
             int countProduct2 = getCountProduct(Id2);
@@ -309,14 +254,6 @@ namespace Курсовая_работа
 
         private void fourProduct (int Id1, int Id2, int Id3, int Id4) 
         {
-            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
-            connection_new.Open();
-            string insertQuery = $"INSERT INTO Sales (Id_Employees, Data_of_Sale, Id_Product, Count, Id_Products1, Count1, Id_Products2, Count2, Id_Products3, Count3, Sale_Amount, Payment) VALUES ('" + textBox2.Text + "','" + dateTimePicker1.Value + "', '" + productComboBox1.Text + "',  '" + textCount1.Text + "', '" + productComboBox2.Text + "', '" + textCount2.Text + "', '" + productComboBox3.Text + "', '" + textCount3.Text + "', '" + productComboBox4.Text + "', '" + textCount4.Text + "', '" + textFinishCost.Text + "', '" + textBox17.Text + "')";
-            SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
-            sqlCommand.ExecuteNonQuery();
-            connection_new.Close();
-            MessageBox.Show("Доставка успешно добавлена!");
-
             int countProduct = getCountProduct(Id1);
             int priceProduct = getPriceProduct(Id1);
             int countProduct2 = getCountProduct(Id2);
@@ -401,6 +338,26 @@ namespace Курсовая_работа
             {
                 case 0:
                     // Действия, если выбрано значение "1"
+                    labelProduct2.Visible = false;
+                    productComboBox2.Visible = false;
+                    labelPrice2.Visible = false;
+                    textCount2.Visible = false;
+                    priceLabel2.Visible = false;
+                    labelCount2.Visible = false;
+
+                    labelProduct3.Visible = false;
+                    productComboBox3.Visible = false;
+                    labelPrice3.Visible = false;
+                    textCount3.Visible = false;
+                    priceLabel3.Visible = false;
+                    labelCount3.Visible = false;
+
+                    labelProduct4.Visible = false;
+                    productComboBox4.Visible = false;
+                    labelPrice4.Visible = false;
+                    textCount4.Visible = false;
+                    priceLabel4.Visible = false;
+                    labelCount4.Visible = false;
                     break;
                 case 1:
                     labelProduct2.Visible = true;
@@ -409,6 +366,20 @@ namespace Курсовая_работа
                     textCount2.Visible = true;
                     priceLabel2.Visible = true;
                     labelCount2.Visible = true;
+
+                    labelProduct3.Visible = false;
+                    productComboBox3.Visible = false;
+                    labelPrice3.Visible = false;
+                    textCount3.Visible = false;
+                    priceLabel3.Visible = false;
+                    labelCount3.Visible = false;
+
+                    labelProduct4.Visible = false;
+                    productComboBox4.Visible = false;
+                    labelPrice4.Visible = false;
+                    textCount4.Visible = false;
+                    priceLabel4.Visible = false;
+                    labelCount4.Visible = false;
 
                     break;
                 case 2:
@@ -425,6 +396,13 @@ namespace Курсовая_работа
                     textCount3.Visible = true;
                     priceLabel3.Visible = true;
                     labelCount3.Visible = true;
+
+                    labelProduct4.Visible = false;
+                    productComboBox4.Visible = false;
+                    labelPrice4.Visible = false;
+                    textCount4.Visible = false;
+                    priceLabel4.Visible = false;
+                    labelCount4.Visible = false;
                     break;
                 case 3:
                     labelProduct2.Visible = true;
@@ -456,12 +434,37 @@ namespace Курсовая_работа
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Sales sales = new Sales();
-            sales.Enabled = true;
             this.Close();
         }
 
         private void drawing1_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            connection_new.Open();
+            string insertQuery = $"INSERT INTO Sales (Id_Employees, Data_of_Sale, Id_Product, Count, Id_Products1, Count1, Id_Products2, Count2, Id_Products3, Count3, Sale_Amount, Payment) VALUES ('" + textBox2.Text + "','" + dateTimePicker1.Value + "', '" + productComboBox1.Text + "',  '" + textCount1.Text + "', '" + productComboBox2.Text + "', '" + textCount2.Text + "', '" + productComboBox3.Text + "', '" + textCount3.Text + "', '" + productComboBox4.Text + "', '" + textCount4.Text + "', '" + textFinishCost.Text + "', '" + comboBox1.Text + "')";
+            SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
+            sqlCommand.ExecuteNonQuery();
+            connection_new.Close();
+            MessageBox.Show("Доставка успешно добавлена!");
+            
+        }
+
+        private void drawing2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.productsTableAdapter.Fill(this.kursDataSet.Products);
+        }
+
+        private void drawing3_Click(object sender, EventArgs e)
         {
             if (comboBox1.Text == "1")
             {
@@ -493,21 +496,6 @@ namespace Курсовая_работа
             {
                 MessageBox.Show("Нет заполненых продуктов!");
             }
-        }
-
-        private void drawing2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            this.productsTableAdapter.Fill(this.kursDataSet.Products);
         }
     }
 }

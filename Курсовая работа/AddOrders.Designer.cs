@@ -32,7 +32,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textCount = new System.Windows.Forms.TextBox();
             this.textStatus = new System.Windows.Forms.TextBox();
-            this.textDate = new System.Windows.Forms.TextBox();
             this.textPrice = new System.Windows.Forms.TextBox();
             this.textEmp = new System.Windows.Forms.TextBox();
             this.textProd = new System.Windows.Forms.TextBox();
@@ -94,6 +93,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.drawing1 = new Курсовая_работа.Drawing();
             this.drawing2 = new Курсовая_работа.Drawing();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
@@ -132,15 +132,6 @@
             this.textStatus.Name = "textStatus";
             this.textStatus.Size = new System.Drawing.Size(100, 20);
             this.textStatus.TabIndex = 30;
-            // 
-            // textDate
-            // 
-            this.textDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.textDate.ForeColor = System.Drawing.Color.Black;
-            this.textDate.Location = new System.Drawing.Point(162, 245);
-            this.textDate.Name = "textDate";
-            this.textDate.Size = new System.Drawing.Size(100, 20);
-            this.textDate.TabIndex = 29;
             // 
             // textPrice
             // 
@@ -697,12 +688,22 @@
             this.drawing2.UseVisualStyleBackColor = false;
             this.drawing2.Click += new System.EventHandler(this.drawing2_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(162, 241);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(100, 20);
+            this.dateTimePicker1.TabIndex = 71;
+            this.dateTimePicker1.Value = new System.DateTime(2023, 4, 11, 0, 0, 0, 0);
+            // 
             // AddOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(901, 553);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.drawing2);
             this.Controls.Add(this.drawing1);
             this.Controls.Add(this.panel1);
@@ -715,7 +716,6 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textCount);
             this.Controls.Add(this.textStatus);
-            this.Controls.Add(this.textDate);
             this.Controls.Add(this.textPrice);
             this.Controls.Add(this.textEmp);
             this.Controls.Add(this.textProd);
@@ -731,6 +731,7 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddOrders";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddOrders";
             this.Load += new System.EventHandler(this.AddOrders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -751,7 +752,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textCount;
         private System.Windows.Forms.TextBox textStatus;
-        private System.Windows.Forms.TextBox textDate;
         private System.Windows.Forms.TextBox textPrice;
         private System.Windows.Forms.TextBox textEmp;
         private System.Windows.Forms.TextBox textProd;
@@ -813,5 +813,6 @@
         private System.Windows.Forms.Button button5;
         private Drawing drawing1;
         private Drawing drawing2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
