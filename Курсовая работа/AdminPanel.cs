@@ -83,5 +83,11 @@ namespace Курсовая_работа
             ReportOtpuck reportOtpuck = new ReportOtpuck();
             reportOtpuck.ShowDialog();
         }
+
+        private void drawing9_Click(object sender, EventArgs e)
+        {
+            Clients clients = new Clients();
+            clients.ShowDialog();
+        }
     }
 }

@@ -750,6 +750,7 @@
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(284, 31);
             this.textBox18.TabIndex = 70;
+            this.textBox18.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
             // 
             // button3
             // 

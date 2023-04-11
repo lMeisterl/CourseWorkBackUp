@@ -83,34 +83,14 @@ namespace Курсовая_работа
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            connection_new.Open();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM Products", connection_new);
+            DataSet db = new DataSet();
+            dataAdapter.Fill(db);
+            dataGridView1.DataSource = db.Tables[0];
 
-            //Search(dataGridView1);
-            /*connection_new.Open();
-            string searchString = $"select * from Products where Name LIKE '%" + textBox1.Text + "%'";
-            connection_new.Close();*/
-
-            /*SqlCommand command = new SqlCommand(searchString, connection_new);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable bt = new DataTable();
-            adapter.Fill(bt);
-            dataGridView1.DataSource = bt;
-            connection_new.Close();*/
-            /*dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            try
-            {
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    if (row.Cells[1].Value.ToString().Equals(textBox1.Text))
-                    {
-                        dataGridView1.CurrentCell = row.Cells[1];
-                        break;
-                    }
-                }
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-            }*/
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"Name LIKE '%{textBox1.Text}%'";
+            connection_new.Close();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

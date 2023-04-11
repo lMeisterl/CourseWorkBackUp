@@ -176,7 +176,15 @@ namespace Курсовая_работа
         
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            connection_new.Open();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM Employees", connection_new);
+            DataSet db = new DataSet();
+            dataAdapter.Fill(db);
+            dataGridView1.DataSource = db.Tables[0];
+
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"Surname LIKE '%{textBox1.Text}%'";
+            connection_new.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -205,7 +213,7 @@ namespace Курсовая_работа
 
         private void button8_Click(object sender, EventArgs e)
         {
-            string searchValue = textBox1.Text.Trim();
+            /*string searchValue = textBox1.Text.Trim();
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
@@ -219,7 +227,7 @@ namespace Курсовая_работа
                         break;
                     }
                 }
-            }
+            }*/
         }
 
         private void drawing1_Click(object sender, EventArgs e)

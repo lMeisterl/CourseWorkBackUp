@@ -86,5 +86,18 @@ namespace Курсовая_работа
         {
             this.Close();
         }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            connection_new.Open();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM Employees", connection_new);
+            DataSet db = new DataSet();
+            dataAdapter.Fill(db);
+            employeesDataGridView.DataSource = db.Tables[0];
+
+            (employeesDataGridView.DataSource as DataTable).DefaultView.RowFilter = $"Surname LIKE '%{textBox5.Text}%'";
+            connection_new.Close();
+        }
     }
 }

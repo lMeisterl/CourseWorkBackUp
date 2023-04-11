@@ -67,6 +67,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.salesTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.SalesTableAdapter();
+            this.drawing1 = new Курсовая_работа.Drawing();
+            this.drawing3 = new Курсовая_работа.Drawing();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idEmployeesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataofSaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,10 +84,6 @@
             this.count3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saleAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paymentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.salesTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.SalesTableAdapter();
-            this.drawing1 = new Курсовая_работа.Drawing();
-            this.drawing3 = new Курсовая_работа.Drawing();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
             this.panel2.SuspendLayout();
@@ -297,6 +297,7 @@
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(284, 31);
             this.textBox18.TabIndex = 79;
+            this.textBox18.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
             // 
             // kursDataSet
             // 
@@ -560,97 +561,6 @@
             this.dataGridView1.TabIndex = 74;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idEmployeesDataGridViewTextBoxColumn
-            // 
-            this.idEmployeesDataGridViewTextBoxColumn.DataPropertyName = "Id_Employees";
-            this.idEmployeesDataGridViewTextBoxColumn.HeaderText = "Id_Employees";
-            this.idEmployeesDataGridViewTextBoxColumn.Name = "idEmployeesDataGridViewTextBoxColumn";
-            this.idEmployeesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataofSaleDataGridViewTextBoxColumn
-            // 
-            this.dataofSaleDataGridViewTextBoxColumn.DataPropertyName = "Data_of_Sale";
-            this.dataofSaleDataGridViewTextBoxColumn.HeaderText = "Data_of_Sale";
-            this.dataofSaleDataGridViewTextBoxColumn.Name = "dataofSaleDataGridViewTextBoxColumn";
-            this.dataofSaleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idProductDataGridViewTextBoxColumn
-            // 
-            this.idProductDataGridViewTextBoxColumn.DataPropertyName = "Id_Product";
-            this.idProductDataGridViewTextBoxColumn.HeaderText = "Id_Product";
-            this.idProductDataGridViewTextBoxColumn.Name = "idProductDataGridViewTextBoxColumn";
-            this.idProductDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // countDataGridViewTextBoxColumn
-            // 
-            this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
-            this.countDataGridViewTextBoxColumn.HeaderText = "Count";
-            this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
-            this.countDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idProducts1DataGridViewTextBoxColumn
-            // 
-            this.idProducts1DataGridViewTextBoxColumn.DataPropertyName = "Id_Products1";
-            this.idProducts1DataGridViewTextBoxColumn.HeaderText = "Id_Products1";
-            this.idProducts1DataGridViewTextBoxColumn.Name = "idProducts1DataGridViewTextBoxColumn";
-            this.idProducts1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // count1DataGridViewTextBoxColumn
-            // 
-            this.count1DataGridViewTextBoxColumn.DataPropertyName = "Count1";
-            this.count1DataGridViewTextBoxColumn.HeaderText = "Count1";
-            this.count1DataGridViewTextBoxColumn.Name = "count1DataGridViewTextBoxColumn";
-            this.count1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idProducts2DataGridViewTextBoxColumn
-            // 
-            this.idProducts2DataGridViewTextBoxColumn.DataPropertyName = "Id_Products2";
-            this.idProducts2DataGridViewTextBoxColumn.HeaderText = "Id_Products2";
-            this.idProducts2DataGridViewTextBoxColumn.Name = "idProducts2DataGridViewTextBoxColumn";
-            this.idProducts2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // count2DataGridViewTextBoxColumn
-            // 
-            this.count2DataGridViewTextBoxColumn.DataPropertyName = "Count2";
-            this.count2DataGridViewTextBoxColumn.HeaderText = "Count2";
-            this.count2DataGridViewTextBoxColumn.Name = "count2DataGridViewTextBoxColumn";
-            this.count2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idProducts3DataGridViewTextBoxColumn
-            // 
-            this.idProducts3DataGridViewTextBoxColumn.DataPropertyName = "Id_Products3";
-            this.idProducts3DataGridViewTextBoxColumn.HeaderText = "Id_Products3";
-            this.idProducts3DataGridViewTextBoxColumn.Name = "idProducts3DataGridViewTextBoxColumn";
-            this.idProducts3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // count3DataGridViewTextBoxColumn
-            // 
-            this.count3DataGridViewTextBoxColumn.DataPropertyName = "Count3";
-            this.count3DataGridViewTextBoxColumn.HeaderText = "Count3";
-            this.count3DataGridViewTextBoxColumn.Name = "count3DataGridViewTextBoxColumn";
-            this.count3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // saleAmountDataGridViewTextBoxColumn
-            // 
-            this.saleAmountDataGridViewTextBoxColumn.DataPropertyName = "Sale_Amount";
-            this.saleAmountDataGridViewTextBoxColumn.HeaderText = "Sale_Amount";
-            this.saleAmountDataGridViewTextBoxColumn.Name = "saleAmountDataGridViewTextBoxColumn";
-            this.saleAmountDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // paymentDataGridViewTextBoxColumn
-            // 
-            this.paymentDataGridViewTextBoxColumn.DataPropertyName = "Payment";
-            this.paymentDataGridViewTextBoxColumn.HeaderText = "Payment";
-            this.paymentDataGridViewTextBoxColumn.Name = "paymentDataGridViewTextBoxColumn";
-            this.paymentDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // salesBindingSource
             // 
             this.salesBindingSource.DataMember = "Sales";
@@ -699,6 +609,97 @@
             this.drawing3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.drawing3.UseVisualStyleBackColor = false;
             this.drawing3.Click += new System.EventHandler(this.drawing3_Click);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idEmployeesDataGridViewTextBoxColumn
+            // 
+            this.idEmployeesDataGridViewTextBoxColumn.DataPropertyName = "Id_Employees";
+            this.idEmployeesDataGridViewTextBoxColumn.HeaderText = "Код сотрудника";
+            this.idEmployeesDataGridViewTextBoxColumn.Name = "idEmployeesDataGridViewTextBoxColumn";
+            this.idEmployeesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataofSaleDataGridViewTextBoxColumn
+            // 
+            this.dataofSaleDataGridViewTextBoxColumn.DataPropertyName = "Data_of_Sale";
+            this.dataofSaleDataGridViewTextBoxColumn.HeaderText = "Дата продажи";
+            this.dataofSaleDataGridViewTextBoxColumn.Name = "dataofSaleDataGridViewTextBoxColumn";
+            this.dataofSaleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idProductDataGridViewTextBoxColumn
+            // 
+            this.idProductDataGridViewTextBoxColumn.DataPropertyName = "Id_Product";
+            this.idProductDataGridViewTextBoxColumn.HeaderText = "Код продукта 1";
+            this.idProductDataGridViewTextBoxColumn.Name = "idProductDataGridViewTextBoxColumn";
+            this.idProductDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // countDataGridViewTextBoxColumn
+            // 
+            this.countDataGridViewTextBoxColumn.DataPropertyName = "Count";
+            this.countDataGridViewTextBoxColumn.HeaderText = "Кол-во";
+            this.countDataGridViewTextBoxColumn.Name = "countDataGridViewTextBoxColumn";
+            this.countDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idProducts1DataGridViewTextBoxColumn
+            // 
+            this.idProducts1DataGridViewTextBoxColumn.DataPropertyName = "Id_Products1";
+            this.idProducts1DataGridViewTextBoxColumn.HeaderText = "Код продукта 2";
+            this.idProducts1DataGridViewTextBoxColumn.Name = "idProducts1DataGridViewTextBoxColumn";
+            this.idProducts1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // count1DataGridViewTextBoxColumn
+            // 
+            this.count1DataGridViewTextBoxColumn.DataPropertyName = "Count1";
+            this.count1DataGridViewTextBoxColumn.HeaderText = "Кол-во ";
+            this.count1DataGridViewTextBoxColumn.Name = "count1DataGridViewTextBoxColumn";
+            this.count1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idProducts2DataGridViewTextBoxColumn
+            // 
+            this.idProducts2DataGridViewTextBoxColumn.DataPropertyName = "Id_Products2";
+            this.idProducts2DataGridViewTextBoxColumn.HeaderText = "Код продукта 3";
+            this.idProducts2DataGridViewTextBoxColumn.Name = "idProducts2DataGridViewTextBoxColumn";
+            this.idProducts2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // count2DataGridViewTextBoxColumn
+            // 
+            this.count2DataGridViewTextBoxColumn.DataPropertyName = "Count2";
+            this.count2DataGridViewTextBoxColumn.HeaderText = "Кол-во";
+            this.count2DataGridViewTextBoxColumn.Name = "count2DataGridViewTextBoxColumn";
+            this.count2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idProducts3DataGridViewTextBoxColumn
+            // 
+            this.idProducts3DataGridViewTextBoxColumn.DataPropertyName = "Id_Products3";
+            this.idProducts3DataGridViewTextBoxColumn.HeaderText = "Код продукта 4";
+            this.idProducts3DataGridViewTextBoxColumn.Name = "idProducts3DataGridViewTextBoxColumn";
+            this.idProducts3DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // count3DataGridViewTextBoxColumn
+            // 
+            this.count3DataGridViewTextBoxColumn.DataPropertyName = "Count3";
+            this.count3DataGridViewTextBoxColumn.HeaderText = "Кол-во";
+            this.count3DataGridViewTextBoxColumn.Name = "count3DataGridViewTextBoxColumn";
+            this.count3DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // saleAmountDataGridViewTextBoxColumn
+            // 
+            this.saleAmountDataGridViewTextBoxColumn.DataPropertyName = "Sale_Amount";
+            this.saleAmountDataGridViewTextBoxColumn.HeaderText = "Итог";
+            this.saleAmountDataGridViewTextBoxColumn.Name = "saleAmountDataGridViewTextBoxColumn";
+            this.saleAmountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // paymentDataGridViewTextBoxColumn
+            // 
+            this.paymentDataGridViewTextBoxColumn.DataPropertyName = "Payment";
+            this.paymentDataGridViewTextBoxColumn.HeaderText = "Способ оплаты";
+            this.paymentDataGridViewTextBoxColumn.Name = "paymentDataGridViewTextBoxColumn";
+            this.paymentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // editingSales
             // 
@@ -770,6 +771,9 @@
         private Drawing drawing4;
         private System.Windows.Forms.BindingSource salesBindingSource;
         private KursDataSetTableAdapters.SalesTableAdapter salesTableAdapter;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private Drawing drawing1;
+        private Drawing drawing3;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEmployeesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataofSaleDataGridViewTextBoxColumn;
@@ -783,8 +787,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn count3DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn saleAmountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paymentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private Drawing drawing1;
-        private Drawing drawing3;
     }
 }

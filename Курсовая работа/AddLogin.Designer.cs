@@ -65,6 +65,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.drawing1 = new Курсовая_работа.Drawing();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
@@ -348,7 +350,7 @@
             this.panel2.Controls.Add(this.drawing1);
             this.panel2.Controls.Add(this.textBox4);
             this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Location = new System.Drawing.Point(63, 308);
+            this.panel2.Location = new System.Drawing.Point(63, 357);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(517, 175);
             this.panel2.TabIndex = 12;
@@ -443,12 +445,32 @@
             this.drawing1.UseVisualStyleBackColor = false;
             this.drawing1.Click += new System.EventHandler(this.drawing1_Click);
             // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(63, 318);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(204, 24);
+            this.textBox5.TabIndex = 13;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.Image = global::Курсовая_работа.Properties.Resources.search11;
+            this.button1.Location = new System.Drawing.Point(272, 314);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(36, 33);
+            this.button1.TabIndex = 14;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // AddLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(645, 507);
+            this.ClientSize = new System.Drawing.Size(645, 559);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.employeesDataGridView);
@@ -464,6 +486,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -505,5 +528,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Drawing drawing2;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button button1;
     }
 }

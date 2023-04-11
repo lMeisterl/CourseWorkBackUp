@@ -111,5 +111,18 @@ namespace Курсовая_работа
             Prod prod = new Prod();
             prod.Show();
         }
+
+        private void textBox18_TextChanged(object sender, EventArgs e)
+        {
+            /*SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            connection_new.Open();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM Sales", connection_new);
+            DataSet db = new DataSet();
+            dataAdapter.Fill(db);
+            dataGridView1.DataSource = db.Tables[0];
+
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"Data_of_Sale LIKE '%{textBox18.Text}%'";
+            connection_new.Close();*/
+        }
     }
 }
