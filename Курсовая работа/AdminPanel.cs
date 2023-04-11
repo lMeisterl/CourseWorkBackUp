@@ -89,5 +89,11 @@ namespace Курсовая_работа
             Clients clients = new Clients();
             clients.ShowDialog();
         }
+
+        private void drawing10_Click(object sender, EventArgs e)
+        {
+            Diagram diagram = new Diagram();
+            diagram.ShowDialog();
+        }
     }
 }

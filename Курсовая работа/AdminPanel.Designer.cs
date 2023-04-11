@@ -42,6 +42,7 @@
             this.drawing7 = new Курсовая_работа.Drawing();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.drawing9 = new Курсовая_работа.Drawing();
+            this.drawing10 = new Курсовая_работа.Drawing();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -289,12 +290,35 @@
             this.drawing9.UseVisualStyleBackColor = false;
             this.drawing9.Click += new System.EventHandler(this.drawing9_Click);
             // 
+            // drawing10
+            // 
+            this.drawing10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing10.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing10.BorderRadius = 20;
+            this.drawing10.BorderSize = 2;
+            this.drawing10.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing10.FlatAppearance.BorderSize = 0;
+            this.drawing10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing10.Image = global::Курсовая_работа.Properties.Resources.calendar;
+            this.drawing10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.drawing10.Location = new System.Drawing.Point(421, 462);
+            this.drawing10.Name = "drawing10";
+            this.drawing10.Size = new System.Drawing.Size(129, 51);
+            this.drawing10.TabIndex = 17;
+            this.drawing10.Text = "Отпуск";
+            this.drawing10.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing10.UseVisualStyleBackColor = false;
+            this.drawing10.Click += new System.EventHandler(this.drawing10_Click);
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(550, 789);
+            this.Controls.Add(this.drawing10);
             this.Controls.Add(this.drawing9);
             this.Controls.Add(this.drawing8);
             this.Controls.Add(this.drawing7);
@@ -334,5 +358,6 @@
         private Drawing drawing8;
         private System.Windows.Forms.TextBox textBox1;
         private Drawing drawing9;
+        private Drawing drawing10;
     }
 }
