@@ -19,7 +19,7 @@ namespace Курсовая_работа
 {
     public partial class ReportPremium : Form
     {
-        public readonly string TemplateFileName = @"C:\Users\Meister\Desktop\Курсовая\CourseWorkBackUp\premia.docx";
+        public readonly string TemplateFileName = @"C:\Users\shtok\Desktop\CourseWorkBackUp\premia.docx";
         public ReportPremium()
         {
             InitializeComponent();
@@ -76,9 +76,9 @@ namespace Курсовая_работа
                 ReplaceWordStub("{osnov}", osnov, wordDocument);
 
 
-                wordDocument.SaveAs(@"C:\Users\Meister\Desktop\Курсовая\CourseWorkBackUp\'" + textBox8.Text + "'.docx");
+                wordDocument.SaveAs(@"C:\Users\shtok\Desktop\CourseWorkBackUp\'" + textBox8.Text + "'.docx");
                 wordDocument.Close();
-                Process.Start(@"C:\Users\Meister\Desktop\Курсовая\CourseWorkBackUp\'" + textBox8.Text + "'.docx");
+                Process.Start(@"C:\Users\shtok\Desktop\CourseWorkBackUp\'" + textBox8.Text + "'.docx");
 
             }
             catch

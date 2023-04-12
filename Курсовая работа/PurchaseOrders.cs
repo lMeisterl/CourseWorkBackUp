@@ -158,5 +158,18 @@ namespace Курсовая_работа
                 }
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            connection_new.Open();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM [Orders+id]", connection_new);
+            DataSet db = new DataSet();
+            dataAdapter.Fill(db);
+            dataGridView1.DataSource = db.Tables[0];
+
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"[Сотрудник] LIKE '%{textBox1.Text}%'";
+            connection_new.Close();
+        }
     }
 }

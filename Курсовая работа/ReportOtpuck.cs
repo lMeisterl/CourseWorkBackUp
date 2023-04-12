@@ -15,7 +15,7 @@ namespace Курсовая_работа
     public partial class ReportOtpuck : Form
     {
 
-        public readonly string TemplateFileName = @"C:\Users\Meister\Desktop\Курсовая\CourseWorkBackUp\otpusk.docx";
+        public readonly string TemplateFileName = @"C:\Users\shtok\Desktop\CourseWorkBackUp\otpusk.docx";
         public ReportOtpuck()
         {
             InitializeComponent();
@@ -101,9 +101,9 @@ namespace Курсовая_работа
 
 
 
-                wordDocument.SaveAs(@"C:\Users\Meister\Desktop\'" + textBox12.Text + "'.docx");
+                wordDocument.SaveAs(@"C:\Users\shtok\Desktop\'" + textBox12.Text + "'.docx");
                 wordDocument.Close();
-                Process.Start(@"C:\Users\Meister\Desktop\'" + textBox12.Text + "'.docx");
+                Process.Start(@"C:\Users\shtok\Desktop\'" + textBox12.Text + "'.docx");
 
             }
             catch

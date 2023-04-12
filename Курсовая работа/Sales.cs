@@ -96,17 +96,6 @@ namespace Курсовая_работа
         {
             this.salesTableAdapter.Fill(this.kursDataSet.Sales);
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            CurrencyManager CurMan = (CurrencyManager)dataGridView1.BindingContext[dataGridView1.DataSource];
-            if (CurMan.Count > 0)
-            {
-                CurMan.RemoveAt(CurMan.Position);
-                salesTableAdapter.Update(kursDataSet);
-            }
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             this.salesTableAdapter.Fill(this.kursDataSet.Sales);
@@ -219,11 +208,51 @@ namespace Курсовая_работа
 
         private void drawing2_Click(object sender, EventArgs e)
         {
-            CurrencyManager CurMan = (CurrencyManager)dataGridView1.BindingContext[dataGridView1.DataSource];
-            if (CurMan.Count > 0)
+            // Проверяем, что пользователь выделил строку в DataGridView
+            if (dataGridView1.SelectedRows.Count == 0)
             {
-                CurMan.RemoveAt(CurMan.Position);
-                salesTableAdapter.Update(kursDataSet);
+                MessageBox.Show("Пожалуйста, выделите строку для удаления.");
+                return;
+            }
+
+            // Получаем ID строки, которую нужно удалить
+            int rowId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+
+            // Создаем подключение к базе данных
+            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+
+            try
+            {
+                
+                    // Открываем подключение
+                    connection_new.Open();
+
+                    // Создаем команду для удаления строки из таблицы
+                    SqlCommand command = new SqlCommand("DELETE FROM Sales WHERE Id = @Id", connection_new);
+
+                    // Добавляем параметр для ID строки
+                    command.Parameters.AddWithValue("@Id", rowId);
+
+                    // Выполняем команду и получаем количество удаленных строк
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    // Если удалено 0 или более 1 строк, выводим сообщение об ошибке
+                    if (rowsAffected != 1)
+                    {
+                        MessageBox.Show("Ошибка при удалении строки.");
+                        return;
+                    }
+
+                    // Удаляем строку из DataGridView
+                    dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
+
+                    // Выводим сообщение об успешном удалении строки
+                    MessageBox.Show("Строка удалена.");
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при удалении строки из базы данных: " + ex.Message);
             }
         }
 
@@ -313,15 +342,15 @@ namespace Курсовая_работа
 
         private void textBox18_TextChanged(object sender, EventArgs e)
         {
-            /*SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM Sales", connection_new);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM [Sales+id]", connection_new);
             DataSet db = new DataSet();
             dataAdapter.Fill(db);
             dataGridView1.DataSource = db.Tables[0];
 
-            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"Id_Employees LIKE '%{textBox18.Text}%'";
-            connection_new.Close();*/
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"[Сотрудник] LIKE '%{textBox18.Text}%'";
+            connection_new.Close();
         }
     }
 }

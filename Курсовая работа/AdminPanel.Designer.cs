@@ -104,8 +104,8 @@
             this.pictureBox1.Image = global::Курсовая_работа.Properties.Resources._1;
             this.pictureBox1.Location = new System.Drawing.Point(0, 37);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(550, 176);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.Size = new System.Drawing.Size(550, 151);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -121,7 +121,7 @@
             this.drawing10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
             this.drawing10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.drawing10.Location = new System.Drawing.Point(211, 693);
+            this.drawing10.Location = new System.Drawing.Point(211, 623);
             this.drawing10.Name = "drawing10";
             this.drawing10.Size = new System.Drawing.Size(129, 36);
             this.drawing10.TabIndex = 17;
@@ -141,7 +141,7 @@
             this.drawing9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing9.Location = new System.Drawing.Point(139, 564);
+            this.drawing9.Location = new System.Drawing.Point(139, 494);
             this.drawing9.Name = "drawing9";
             this.drawing9.Size = new System.Drawing.Size(269, 51);
             this.drawing9.TabIndex = 16;
@@ -163,7 +163,7 @@
             this.drawing8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
             this.drawing8.Image = global::Курсовая_работа.Properties.Resources.trusted;
             this.drawing8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.drawing8.Location = new System.Drawing.Point(139, 735);
+            this.drawing8.Location = new System.Drawing.Point(139, 665);
             this.drawing8.Name = "drawing8";
             this.drawing8.Size = new System.Drawing.Size(122, 36);
             this.drawing8.TabIndex = 15;
@@ -185,7 +185,7 @@
             this.drawing7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
             this.drawing7.Image = global::Курсовая_работа.Properties.Resources.calendar;
             this.drawing7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.drawing7.Location = new System.Drawing.Point(279, 735);
+            this.drawing7.Location = new System.Drawing.Point(279, 665);
             this.drawing7.Name = "drawing7";
             this.drawing7.Size = new System.Drawing.Size(129, 36);
             this.drawing7.TabIndex = 14;
@@ -205,7 +205,7 @@
             this.drawing6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing6.Location = new System.Drawing.Point(139, 633);
+            this.drawing6.Location = new System.Drawing.Point(139, 563);
             this.drawing6.Name = "drawing6";
             this.drawing6.Size = new System.Drawing.Size(269, 51);
             this.drawing6.TabIndex = 13;
@@ -225,7 +225,7 @@
             this.drawing5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing5.Location = new System.Drawing.Point(139, 494);
+            this.drawing5.Location = new System.Drawing.Point(139, 434);
             this.drawing5.Name = "drawing5";
             this.drawing5.Size = new System.Drawing.Size(269, 51);
             this.drawing5.TabIndex = 12;
@@ -245,7 +245,7 @@
             this.drawing4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing4.Location = new System.Drawing.Point(139, 427);
+            this.drawing4.Location = new System.Drawing.Point(139, 374);
             this.drawing4.Name = "drawing4";
             this.drawing4.Size = new System.Drawing.Size(269, 51);
             this.drawing4.TabIndex = 11;
@@ -265,7 +265,7 @@
             this.drawing3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing3.Location = new System.Drawing.Point(139, 360);
+            this.drawing3.Location = new System.Drawing.Point(139, 315);
             this.drawing3.Name = "drawing3";
             this.drawing3.Size = new System.Drawing.Size(269, 51);
             this.drawing3.TabIndex = 10;
@@ -285,7 +285,7 @@
             this.drawing2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing2.Location = new System.Drawing.Point(139, 294);
+            this.drawing2.Location = new System.Drawing.Point(139, 256);
             this.drawing2.Name = "drawing2";
             this.drawing2.Size = new System.Drawing.Size(269, 51);
             this.drawing2.TabIndex = 9;
@@ -305,7 +305,7 @@
             this.drawing1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing1.Location = new System.Drawing.Point(139, 229);
+            this.drawing1.Location = new System.Drawing.Point(139, 197);
             this.drawing1.Name = "drawing1";
             this.drawing1.Size = new System.Drawing.Size(269, 51);
             this.drawing1.TabIndex = 8;
@@ -319,7 +319,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(550, 789);
+            this.ClientSize = new System.Drawing.Size(550, 725);
             this.Controls.Add(this.drawing10);
             this.Controls.Add(this.drawing9);
             this.Controls.Add(this.drawing8);
@@ -342,7 +342,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

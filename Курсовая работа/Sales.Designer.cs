@@ -31,6 +31,23 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.сотрудникDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датаПродажиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.товар1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.цена1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.колво1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.товар2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.цена2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.колво2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.товар3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.цена3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.колво3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.товар4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.цена4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.колво4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.итогоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.способОплатыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salesidBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kursDataSet = new Курсовая_работа.KursDataSet();
             this.label1 = new System.Windows.Forms.Label();
@@ -82,23 +99,6 @@
             this.sales_idTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.Sales_idTableAdapter();
             this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.salesTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.SalesTableAdapter();
-            this.кодDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.сотрудникDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.датаПродажиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.товар1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.цена1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.колво1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.товар2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.цена2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.колво2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.товар3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.цена3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.колво3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.товар4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.цена4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.колво4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.итогоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.способОплатыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesidBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
@@ -143,10 +143,128 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(1275, 279);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // кодDataGridViewTextBoxColumn
+            // 
+            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
+            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
+            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
+            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // сотрудникDataGridViewTextBoxColumn
+            // 
+            this.сотрудникDataGridViewTextBoxColumn.DataPropertyName = "Сотрудник";
+            this.сотрудникDataGridViewTextBoxColumn.HeaderText = "Сотрудник";
+            this.сотрудникDataGridViewTextBoxColumn.Name = "сотрудникDataGridViewTextBoxColumn";
+            this.сотрудникDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // датаПродажиDataGridViewTextBoxColumn
+            // 
+            this.датаПродажиDataGridViewTextBoxColumn.DataPropertyName = "Дата продажи";
+            this.датаПродажиDataGridViewTextBoxColumn.HeaderText = "Дата продажи";
+            this.датаПродажиDataGridViewTextBoxColumn.Name = "датаПродажиDataGridViewTextBoxColumn";
+            this.датаПродажиDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // товар1DataGridViewTextBoxColumn
+            // 
+            this.товар1DataGridViewTextBoxColumn.DataPropertyName = "Товар 1";
+            this.товар1DataGridViewTextBoxColumn.HeaderText = "Товар 1";
+            this.товар1DataGridViewTextBoxColumn.Name = "товар1DataGridViewTextBoxColumn";
+            this.товар1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // цена1DataGridViewTextBoxColumn
+            // 
+            this.цена1DataGridViewTextBoxColumn.DataPropertyName = "Цена 1";
+            this.цена1DataGridViewTextBoxColumn.HeaderText = "Цена 1";
+            this.цена1DataGridViewTextBoxColumn.Name = "цена1DataGridViewTextBoxColumn";
+            this.цена1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // колво1DataGridViewTextBoxColumn
+            // 
+            this.колво1DataGridViewTextBoxColumn.DataPropertyName = "Кол-во 1";
+            this.колво1DataGridViewTextBoxColumn.HeaderText = "Кол-во 1";
+            this.колво1DataGridViewTextBoxColumn.Name = "колво1DataGridViewTextBoxColumn";
+            this.колво1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // товар2DataGridViewTextBoxColumn
+            // 
+            this.товар2DataGridViewTextBoxColumn.DataPropertyName = "Товар 2";
+            this.товар2DataGridViewTextBoxColumn.HeaderText = "Товар 2";
+            this.товар2DataGridViewTextBoxColumn.Name = "товар2DataGridViewTextBoxColumn";
+            this.товар2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // цена2DataGridViewTextBoxColumn
+            // 
+            this.цена2DataGridViewTextBoxColumn.DataPropertyName = "Цена 2";
+            this.цена2DataGridViewTextBoxColumn.HeaderText = "Цена 2";
+            this.цена2DataGridViewTextBoxColumn.Name = "цена2DataGridViewTextBoxColumn";
+            this.цена2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // колво2DataGridViewTextBoxColumn
+            // 
+            this.колво2DataGridViewTextBoxColumn.DataPropertyName = "Кол-во 2";
+            this.колво2DataGridViewTextBoxColumn.HeaderText = "Кол-во 2";
+            this.колво2DataGridViewTextBoxColumn.Name = "колво2DataGridViewTextBoxColumn";
+            this.колво2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // товар3DataGridViewTextBoxColumn
+            // 
+            this.товар3DataGridViewTextBoxColumn.DataPropertyName = "Товар 3";
+            this.товар3DataGridViewTextBoxColumn.HeaderText = "Товар 3";
+            this.товар3DataGridViewTextBoxColumn.Name = "товар3DataGridViewTextBoxColumn";
+            this.товар3DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // цена3DataGridViewTextBoxColumn
+            // 
+            this.цена3DataGridViewTextBoxColumn.DataPropertyName = "Цена 3";
+            this.цена3DataGridViewTextBoxColumn.HeaderText = "Цена 3";
+            this.цена3DataGridViewTextBoxColumn.Name = "цена3DataGridViewTextBoxColumn";
+            this.цена3DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // колво3DataGridViewTextBoxColumn
+            // 
+            this.колво3DataGridViewTextBoxColumn.DataPropertyName = "Кол-во 3";
+            this.колво3DataGridViewTextBoxColumn.HeaderText = "Кол-во 3";
+            this.колво3DataGridViewTextBoxColumn.Name = "колво3DataGridViewTextBoxColumn";
+            this.колво3DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // товар4DataGridViewTextBoxColumn
+            // 
+            this.товар4DataGridViewTextBoxColumn.DataPropertyName = "Товар 4";
+            this.товар4DataGridViewTextBoxColumn.HeaderText = "Товар 4";
+            this.товар4DataGridViewTextBoxColumn.Name = "товар4DataGridViewTextBoxColumn";
+            this.товар4DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // цена4DataGridViewTextBoxColumn
+            // 
+            this.цена4DataGridViewTextBoxColumn.DataPropertyName = "Цена 4";
+            this.цена4DataGridViewTextBoxColumn.HeaderText = "Цена 4";
+            this.цена4DataGridViewTextBoxColumn.Name = "цена4DataGridViewTextBoxColumn";
+            this.цена4DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // колво4DataGridViewTextBoxColumn
+            // 
+            this.колво4DataGridViewTextBoxColumn.DataPropertyName = "Кол-во 4";
+            this.колво4DataGridViewTextBoxColumn.HeaderText = "Кол-во 4";
+            this.колво4DataGridViewTextBoxColumn.Name = "колво4DataGridViewTextBoxColumn";
+            this.колво4DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // итогоDataGridViewTextBoxColumn
+            // 
+            this.итогоDataGridViewTextBoxColumn.DataPropertyName = "Итого";
+            this.итогоDataGridViewTextBoxColumn.HeaderText = "Итого";
+            this.итогоDataGridViewTextBoxColumn.Name = "итогоDataGridViewTextBoxColumn";
+            this.итогоDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // способОплатыDataGridViewTextBoxColumn
+            // 
+            this.способОплатыDataGridViewTextBoxColumn.DataPropertyName = "Способ оплаты";
+            this.способОплатыDataGridViewTextBoxColumn.HeaderText = "Способ оплаты";
+            this.способОплатыDataGridViewTextBoxColumn.Name = "способОплатыDataGridViewTextBoxColumn";
+            this.способОплатыDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // salesidBindingSource
             // 
@@ -739,125 +857,6 @@
             // salesTableAdapter
             // 
             this.salesTableAdapter.ClearBeforeFill = true;
-            // 
-            // кодDataGridViewTextBoxColumn
-            // 
-            this.кодDataGridViewTextBoxColumn.DataPropertyName = "Код";
-            this.кодDataGridViewTextBoxColumn.HeaderText = "Код";
-            this.кодDataGridViewTextBoxColumn.Name = "кодDataGridViewTextBoxColumn";
-            this.кодDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // сотрудникDataGridViewTextBoxColumn
-            // 
-            this.сотрудникDataGridViewTextBoxColumn.DataPropertyName = "Сотрудник";
-            this.сотрудникDataGridViewTextBoxColumn.HeaderText = "Сотрудник";
-            this.сотрудникDataGridViewTextBoxColumn.Name = "сотрудникDataGridViewTextBoxColumn";
-            this.сотрудникDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // датаПродажиDataGridViewTextBoxColumn
-            // 
-            this.датаПродажиDataGridViewTextBoxColumn.DataPropertyName = "Дата продажи";
-            this.датаПродажиDataGridViewTextBoxColumn.HeaderText = "Дата продажи";
-            this.датаПродажиDataGridViewTextBoxColumn.Name = "датаПродажиDataGridViewTextBoxColumn";
-            this.датаПродажиDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // товар1DataGridViewTextBoxColumn
-            // 
-            this.товар1DataGridViewTextBoxColumn.DataPropertyName = "Товар 1";
-            this.товар1DataGridViewTextBoxColumn.HeaderText = "Товар 1";
-            this.товар1DataGridViewTextBoxColumn.Name = "товар1DataGridViewTextBoxColumn";
-            this.товар1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // цена1DataGridViewTextBoxColumn
-            // 
-            this.цена1DataGridViewTextBoxColumn.DataPropertyName = "Цена 1";
-            this.цена1DataGridViewTextBoxColumn.HeaderText = "Цена 1";
-            this.цена1DataGridViewTextBoxColumn.Name = "цена1DataGridViewTextBoxColumn";
-            this.цена1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // колво1DataGridViewTextBoxColumn
-            // 
-            this.колво1DataGridViewTextBoxColumn.DataPropertyName = "Кол-во 1";
-            this.колво1DataGridViewTextBoxColumn.HeaderText = "Кол-во 1";
-            this.колво1DataGridViewTextBoxColumn.Name = "колво1DataGridViewTextBoxColumn";
-            this.колво1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // товар2DataGridViewTextBoxColumn
-            // 
-            this.товар2DataGridViewTextBoxColumn.DataPropertyName = "Товар 2";
-            this.товар2DataGridViewTextBoxColumn.HeaderText = "Товар 2";
-            this.товар2DataGridViewTextBoxColumn.Name = "товар2DataGridViewTextBoxColumn";
-            this.товар2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // цена2DataGridViewTextBoxColumn
-            // 
-            this.цена2DataGridViewTextBoxColumn.DataPropertyName = "Цена 2";
-            this.цена2DataGridViewTextBoxColumn.HeaderText = "Цена 2";
-            this.цена2DataGridViewTextBoxColumn.Name = "цена2DataGridViewTextBoxColumn";
-            this.цена2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // колво2DataGridViewTextBoxColumn
-            // 
-            this.колво2DataGridViewTextBoxColumn.DataPropertyName = "Кол-во 2";
-            this.колво2DataGridViewTextBoxColumn.HeaderText = "Кол-во 2";
-            this.колво2DataGridViewTextBoxColumn.Name = "колво2DataGridViewTextBoxColumn";
-            this.колво2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // товар3DataGridViewTextBoxColumn
-            // 
-            this.товар3DataGridViewTextBoxColumn.DataPropertyName = "Товар 3";
-            this.товар3DataGridViewTextBoxColumn.HeaderText = "Товар 3";
-            this.товар3DataGridViewTextBoxColumn.Name = "товар3DataGridViewTextBoxColumn";
-            this.товар3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // цена3DataGridViewTextBoxColumn
-            // 
-            this.цена3DataGridViewTextBoxColumn.DataPropertyName = "Цена 3";
-            this.цена3DataGridViewTextBoxColumn.HeaderText = "Цена 3";
-            this.цена3DataGridViewTextBoxColumn.Name = "цена3DataGridViewTextBoxColumn";
-            this.цена3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // колво3DataGridViewTextBoxColumn
-            // 
-            this.колво3DataGridViewTextBoxColumn.DataPropertyName = "Кол-во 3";
-            this.колво3DataGridViewTextBoxColumn.HeaderText = "Кол-во 3";
-            this.колво3DataGridViewTextBoxColumn.Name = "колво3DataGridViewTextBoxColumn";
-            this.колво3DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // товар4DataGridViewTextBoxColumn
-            // 
-            this.товар4DataGridViewTextBoxColumn.DataPropertyName = "Товар 4";
-            this.товар4DataGridViewTextBoxColumn.HeaderText = "Товар 4";
-            this.товар4DataGridViewTextBoxColumn.Name = "товар4DataGridViewTextBoxColumn";
-            this.товар4DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // цена4DataGridViewTextBoxColumn
-            // 
-            this.цена4DataGridViewTextBoxColumn.DataPropertyName = "Цена 4";
-            this.цена4DataGridViewTextBoxColumn.HeaderText = "Цена 4";
-            this.цена4DataGridViewTextBoxColumn.Name = "цена4DataGridViewTextBoxColumn";
-            this.цена4DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // колво4DataGridViewTextBoxColumn
-            // 
-            this.колво4DataGridViewTextBoxColumn.DataPropertyName = "Кол-во 4";
-            this.колво4DataGridViewTextBoxColumn.HeaderText = "Кол-во 4";
-            this.колво4DataGridViewTextBoxColumn.Name = "колво4DataGridViewTextBoxColumn";
-            this.колво4DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // итогоDataGridViewTextBoxColumn
-            // 
-            this.итогоDataGridViewTextBoxColumn.DataPropertyName = "Итого";
-            this.итогоDataGridViewTextBoxColumn.HeaderText = "Итого";
-            this.итогоDataGridViewTextBoxColumn.Name = "итогоDataGridViewTextBoxColumn";
-            this.итогоDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // способОплатыDataGridViewTextBoxColumn
-            // 
-            this.способОплатыDataGridViewTextBoxColumn.DataPropertyName = "Способ оплаты";
-            this.способОплатыDataGridViewTextBoxColumn.HeaderText = "Способ оплаты";
-            this.способОплатыDataGridViewTextBoxColumn.Name = "способОплатыDataGridViewTextBoxColumn";
-            this.способОплатыDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Sales
             // 

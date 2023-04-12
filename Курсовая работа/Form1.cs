@@ -87,7 +87,7 @@ namespace Курсовая_работа
 
         private void button10_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("C:\\Users\\Meister\\Desktop\\Курсовая\\CourseWorkBackUp\\guide.docx");
+            System.Diagnostics.Process.Start("C:\\Users\\shtok\\Desktop\\CourseWorkBackUp\\guide.docx");
         }
     }
 }
