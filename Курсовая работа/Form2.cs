@@ -19,7 +19,7 @@ namespace Курсовая_работа
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void drawing1_Click(object sender, EventArgs e)
@@ -57,12 +57,19 @@ namespace Курсовая_работа
 
         private void drawing8_Click(object sender, EventArgs e)
         {
-
+            ReportPremium reportPremium = new ReportPremium();
+            reportPremium.ShowDialog();
         }
 
         private void drawing7_Click(object sender, EventArgs e)
         {
+            ReportOtpuck reportOtpuck = new ReportOtpuck();
+            reportOtpuck.ShowDialog();
+        }
 
+        private void button10_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("C:\\Users\\Meister\\Desktop\\Курсовая\\CourseWorkBackUp\\guide.docx");
         }
     }
 }

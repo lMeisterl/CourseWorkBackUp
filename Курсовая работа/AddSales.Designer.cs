@@ -88,6 +88,7 @@
             this.drawing3 = new Курсовая_работа.Drawing();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.drawing4 = new Курсовая_работа.Drawing();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -750,12 +751,33 @@
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 77;
             // 
+            // drawing4
+            // 
+            this.drawing4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(49)))), ((int)(((byte)(61)))));
+            this.drawing4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(49)))), ((int)(((byte)(61)))));
+            this.drawing4.BorderRadius = 40;
+            this.drawing4.BorderSize = 0;
+            this.drawing4.BortderColor = System.Drawing.Color.PaleVioletRed;
+            this.drawing4.FlatAppearance.BorderSize = 0;
+            this.drawing4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing4.ForeColor = System.Drawing.Color.White;
+            this.drawing4.Location = new System.Drawing.Point(579, 478);
+            this.drawing4.Name = "drawing4";
+            this.drawing4.Size = new System.Drawing.Size(135, 43);
+            this.drawing4.TabIndex = 78;
+            this.drawing4.Text = "Печать";
+            this.drawing4.TextColor = System.Drawing.Color.White;
+            this.drawing4.UseVisualStyleBackColor = false;
+            this.drawing4.Click += new System.EventHandler(this.drawing4_Click);
+            // 
             // AddSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(938, 626);
+            this.Controls.Add(this.drawing4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.drawing3);
@@ -860,5 +882,6 @@
         private Drawing drawing3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
+        private Drawing drawing4;
     }
 }

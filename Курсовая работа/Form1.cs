@@ -79,6 +79,16 @@ namespace Курсовая_работа
             pictureBox2.Visible = true;
             pictureBox3.Visible = false;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("C:\\Users\\Meister\\Desktop\\Курсовая\\CourseWorkBackUp\\guide.docx");
+        }
     }
 }
     

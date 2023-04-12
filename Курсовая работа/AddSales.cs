@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Drawing.Text;
 using System.Linq;
 using System.Text;
@@ -522,5 +523,98 @@ namespace Курсовая_работа
                 MessageBox.Show("Нет заполненых продуктов!");
             }
         }
+
+        private void drawing4_Click(object sender, EventArgs e)
+        {
+            // Создаем новый экземпляр класса PrintDocument
+            PrintDocument pd = new PrintDocument();
+
+            // Обработчик события PrintPage вызывается при каждой странице печати
+            pd.PrintPage += new PrintPageEventHandler(this.PrintReceipt);
+
+            // Устанавливаем принтер по умолчанию
+            pd.PrinterSettings.PrinterName = PrinterSettings.InstalledPrinters[0];
+
+            // Вызываем диалоговое окно настройки принтера
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = pd;
+
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Запускаем процесс печати
+                pd.Print();
+            }
+        }
+        private void PrintReceipt(object sender, PrintPageEventArgs e)
+        {
+            // Получаем графический контекст печати
+            Graphics g = e.Graphics;
+
+            // Устанавливаем шрифт для печати
+            Font font = new Font("Arial", 10);
+
+            // Задаем координаты для печати
+            int x = 10;
+            int y = 10;
+
+            // Выводим заголовок чека
+            g.DrawString("Чек", font, Brushes.Black, x, y);
+
+            // Увеличиваем координату y на высоту строки
+            y += (int)font.GetHeight();
+
+            g.DrawString("Сотрудник:" + comboBox3.Text, font, Brushes.Black, x, y);
+            y += (int)font.GetHeight();
+
+            g.DrawString("Количество товаров: " + comboBox1.Text, font, Brushes.Black, x, y);
+            y += (int)font.GetHeight();
+
+            g.DrawString("Дата продажи:" + dateTimePicker1.Text,font, Brushes.Black, x, y);
+            y += (int)font.GetHeight();
+
+            // Выводим данные из comboBox1, comboBox2, textBox1, textBox2 и label1
+            g.DrawString("Название товара: " + productComboBox1.Text, font, Brushes.Black, x, y);
+            y += (int)font.GetHeight();
+
+            g.DrawString("Количество: " + textCount1.Text, font, Brushes.Black, x, y);
+            y += (int)font.GetHeight();
+
+            g.DrawString("Цена: " + priceLabel1.Text, font, Brushes.Black, x, y);
+            y += (int)font.GetHeight();
+
+            g.DrawString("Название товара: " + productComboBox2.Text, font, Brushes.Black, x, y);
+            y += (int)font.GetHeight();
+
+            g.DrawString("Количество: " + textCount2.Text, font, Brushes.Black, x, y);
+            y += (int)font.GetHeight();
+
+            g.DrawString("Цена: " + priceLabel2.Text, font, Brushes.Black, x, y);
+            y += (int)font.GetHeight();
+
+            g.DrawString("Название товара: " + productComboBox3.Text, font, Brushes.Black, x, y);
+            y += (int)font.GetHeight();
+
+            g.DrawString("Количество: " + textCount3.Text, font, Brushes.Black, x, y);
+            y += (int)font.GetHeight();
+
+            g.DrawString("Цена: " + priceLabel3.Text, font, Brushes.Black, x, y);
+            y += (int)font.GetHeight();
+
+            g.DrawString("Название товара: " + productComboBox4.Text, font, Brushes.Black, x, y);
+            y += (int)font.GetHeight();
+
+            g.DrawString("Количество: " + textCount4.Text, font, Brushes.Black, x, y);
+            y += (int)font.GetHeight();
+
+            g.DrawString("Цена: " + priceLabel4.Text, font, Brushes.Black, x, y);
+            y += (int)font.GetHeight();
+
+            g.DrawString("Итого: " + textFinishCost.Text, font, Brushes.Black, x, y);
+            y += (int)font.GetHeight();
+
+            g.DrawString("Способ оплаты: " + comboBox2.Text, font, Brushes.Black, x, y);
+            y += (int)font.GetHeight();
+        }
+
     }
 }

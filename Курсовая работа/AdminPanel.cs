@@ -95,5 +95,15 @@ namespace Курсовая_работа
             Diagram diagram = new Diagram();
             diagram.ShowDialog();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("C:\\Users\\Meister\\Desktop\\Курсовая\\CourseWorkBackUp\\guide.docx");
+        }
     }
 }
