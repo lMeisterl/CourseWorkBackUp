@@ -121,7 +121,7 @@
             this.drawing10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
             this.drawing10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.drawing10.Location = new System.Drawing.Point(211, 623);
+            this.drawing10.Location = new System.Drawing.Point(211, 617);
             this.drawing10.Name = "drawing10";
             this.drawing10.Size = new System.Drawing.Size(129, 36);
             this.drawing10.TabIndex = 17;
@@ -163,7 +163,7 @@
             this.drawing8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
             this.drawing8.Image = global::Курсовая_работа.Properties.Resources.trusted;
             this.drawing8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.drawing8.Location = new System.Drawing.Point(139, 665);
+            this.drawing8.Location = new System.Drawing.Point(139, 659);
             this.drawing8.Name = "drawing8";
             this.drawing8.Size = new System.Drawing.Size(122, 36);
             this.drawing8.TabIndex = 15;
@@ -185,7 +185,7 @@
             this.drawing7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
             this.drawing7.Image = global::Курсовая_работа.Properties.Resources.calendar;
             this.drawing7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.drawing7.Location = new System.Drawing.Point(279, 665);
+            this.drawing7.Location = new System.Drawing.Point(279, 659);
             this.drawing7.Name = "drawing7";
             this.drawing7.Size = new System.Drawing.Size(129, 36);
             this.drawing7.TabIndex = 14;
@@ -205,7 +205,7 @@
             this.drawing6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing6.Location = new System.Drawing.Point(139, 563);
+            this.drawing6.Location = new System.Drawing.Point(139, 557);
             this.drawing6.Name = "drawing6";
             this.drawing6.Size = new System.Drawing.Size(269, 51);
             this.drawing6.TabIndex = 13;

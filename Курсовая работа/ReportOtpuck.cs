@@ -101,9 +101,9 @@ namespace Курсовая_работа
 
 
 
-                wordDocument.SaveAs(@"C:\Users\shtok\Desktop\'" + textBox12.Text + "'.docx");
+                wordDocument.SaveAs(@"C:\Users\shtok\OneDrive\Рабочий стол\'" + textBox12.Text + "'.docx");
                 wordDocument.Close();
-                Process.Start(@"C:\Users\shtok\Desktop\'" + textBox12.Text + "'.docx");
+                Process.Start(@"C:\Users\shtok\OneDrive\Рабочий стол\'" + textBox12.Text + "'.docx");
 
             }
             catch

@@ -76,9 +76,9 @@ namespace Курсовая_работа
                 ReplaceWordStub("{osnov}", osnov, wordDocument);
 
 
-                wordDocument.SaveAs(@"C:\Users\shtok\Desktop\CourseWorkBackUp\'" + textBox8.Text + "'.docx");
+                wordDocument.SaveAs(@"C:\Users\shtok\OneDrive\Рабочий стол\'" + textBox8.Text + "'.docx");
                 wordDocument.Close();
-                Process.Start(@"C:\Users\shtok\Desktop\CourseWorkBackUp\'" + textBox8.Text + "'.docx");
+                Process.Start(@"C:\Users\shtok\OneDrive\Рабочий стол\'" + textBox8.Text + "'.docx");
 
             }
             catch

@@ -299,7 +299,6 @@
             this.maskedTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.maskedTextBox1.ForeColor = System.Drawing.Color.Black;
             this.maskedTextBox1.Location = new System.Drawing.Point(202, 105);
-            this.maskedTextBox1.Mask = "000";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(50, 20);
             this.maskedTextBox1.TabIndex = 27;

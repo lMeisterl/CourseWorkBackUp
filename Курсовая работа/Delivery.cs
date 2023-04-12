@@ -129,13 +129,52 @@ namespace Курсовая_работа
 
         private void drawing2_Click(object sender, EventArgs e)
         {
-            CurrencyManager CurMan = (CurrencyManager)dataGridView1.BindingContext[dataGridView1.DataSource];
-            if (CurMan.Count > 0)
+            // Проверяем, что пользователь выделил строку в DataGridView
+            if (dataGridView1.SelectedRows.Count == 0)
             {
-                CurMan.RemoveAt(CurMan.Position);
-                deliveryTableAdapter.Update(kursDataSet);
+                MessageBox.Show("Пожалуйста, выделите строку для удаления.");
+                return;
             }
-            MessageBox.Show("Успешно удалено!");
+
+            // Получаем ID строки, которую нужно удалить
+            int rowId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+
+            // Создаем подключение к базе данных
+            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+
+            try
+            {
+
+                // Открываем подключение
+                connection_new.Open();
+
+                // Создаем команду для удаления строки из таблицы
+                SqlCommand command = new SqlCommand("DELETE FROM Delivery WHERE Id = @Id", connection_new);
+
+                // Добавляем параметр для ID строки
+                command.Parameters.AddWithValue("@Id", rowId);
+
+                // Выполняем команду и получаем количество удаленных строк
+                int rowsAffected = command.ExecuteNonQuery();
+
+                // Если удалено 0 или более 1 строк, выводим сообщение об ошибке
+                if (rowsAffected != 1)
+                {
+                    MessageBox.Show("Ошибка при удалении строки.");
+                    return;
+                }
+
+                // Удаляем строку из DataGridView
+                dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
+
+                // Выводим сообщение об успешном удалении строки
+                MessageBox.Show("Строка удалена.");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при удалении строки из базы данных: " + ex.Message);
+            }
         }
 
         private void drawing3_Click(object sender, EventArgs e)

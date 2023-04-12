@@ -466,7 +466,7 @@ namespace Курсовая_работа
         {
             SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             connection_new.Open();
-            string insertQuery = $"INSERT INTO Sales (Id_Employees, Data_of_Sale, Id_Product, Count, Id_Products1, Count1, Id_Products2, Count2, Id_Products3, Count3, Sale_Amount, Payment) VALUES ('" + comboBox3.Text + "','" + dateTimePicker1.Value + "', '" + productComboBox1.Text + "',  '" + textCount1.Text + "', '" + productComboBox2.Text + "', '" + textCount2.Text + "', '" + productComboBox3.Text + "', '" + textCount3.Text + "', '" + productComboBox4.Text + "', '" + textCount4.Text + "', '" + textFinishCost.Text + "', '" + comboBox1.Text + "')";
+            string insertQuery = $"INSERT INTO Sales (Id_Employees, Data_of_Sale, Id_Product, Count, Id_Products1, Count1, Id_Products2, Count2, Id_Products3, Count3, Sale_Amount, Payment) VALUES ('" + comboBox3.Text + "','" + dateTimePicker1.Value + "', '" + productComboBox1.Text + "',  '" + textCount1.Text + "', '" + productComboBox2.Text + "', '" + textCount2.Text + "', '" + productComboBox3.Text + "', '" + textCount3.Text + "', '" + productComboBox4.Text + "', '" + textCount4.Text + "', '" + textFinishCost.Text + "', '" + comboBox2.Text + "')";
             SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
             sqlCommand.ExecuteNonQuery();
             connection_new.Close();
