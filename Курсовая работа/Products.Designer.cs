@@ -50,6 +50,8 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picImg = new System.Windows.Forms.PictureBox();
+            this.drawing4 = new Курсовая_работа.Drawing();
             this.drawing1 = new Курсовая_работа.Drawing();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -74,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet1)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -84,8 +87,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -109,7 +111,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1082, 254);
+            this.dataGridView1.Size = new System.Drawing.Size(1082, 250);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -250,6 +252,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(211)))));
+            this.panel1.Controls.Add(this.picImg);
+            this.panel1.Controls.Add(this.drawing4);
             this.panel1.Controls.Add(this.drawing1);
             this.panel1.Controls.Add(this.maskedTextBox1);
             this.panel1.Controls.Add(this.label10);
@@ -271,8 +275,37 @@
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(233)))), ((int)(((byte)(210)))));
             this.panel1.Location = new System.Drawing.Point(26, 345);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1053, 182);
+            this.panel1.Size = new System.Drawing.Size(1053, 252);
             this.panel1.TabIndex = 17;
+            // 
+            // picImg
+            // 
+            this.picImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picImg.Location = new System.Drawing.Point(415, 105);
+            this.picImg.Name = "picImg";
+            this.picImg.Size = new System.Drawing.Size(157, 104);
+            this.picImg.TabIndex = 77;
+            this.picImg.TabStop = false;
+            // 
+            // drawing4
+            // 
+            this.drawing4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing4.BorderRadius = 40;
+            this.drawing4.BorderSize = 1;
+            this.drawing4.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing4.FlatAppearance.BorderSize = 0;
+            this.drawing4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing4.Location = new System.Drawing.Point(599, 169);
+            this.drawing4.Name = "drawing4";
+            this.drawing4.Size = new System.Drawing.Size(99, 40);
+            this.drawing4.TabIndex = 76;
+            this.drawing4.Text = "Выбрать";
+            this.drawing4.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing4.UseVisualStyleBackColor = false;
+            this.drawing4.Click += new System.EventHandler(this.drawing4_Click);
             // 
             // drawing1
             // 
@@ -285,7 +318,7 @@
             this.drawing1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing1.Location = new System.Drawing.Point(882, 115);
+            this.drawing1.Location = new System.Drawing.Point(871, 169);
             this.drawing1.Name = "drawing1";
             this.drawing1.Size = new System.Drawing.Size(150, 40);
             this.drawing1.TabIndex = 75;
@@ -532,7 +565,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1108, 562);
+            this.ClientSize = new System.Drawing.Size(1108, 623);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.drawing2);
             this.Controls.Add(this.drawing3);
@@ -551,6 +584,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -600,5 +634,7 @@
         private Drawing drawing2;
         private Drawing drawing3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox picImg;
+        private Drawing drawing4;
     }
 }

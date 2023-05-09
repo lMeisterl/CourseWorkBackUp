@@ -48,7 +48,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.picImg = new System.Windows.Forms.PictureBox();
+            this.drawing3 = new Курсовая_работа.Drawing();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImg)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -202,7 +205,7 @@
             this.drawing2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing2.ForeColor = System.Drawing.Color.White;
-            this.drawing2.Location = new System.Drawing.Point(69, 368);
+            this.drawing2.Location = new System.Drawing.Point(69, 473);
             this.drawing2.Name = "drawing2";
             this.drawing2.Size = new System.Drawing.Size(135, 43);
             this.drawing2.TabIndex = 76;
@@ -222,7 +225,7 @@
             this.drawing1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.drawing1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.drawing1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
-            this.drawing1.Location = new System.Drawing.Point(275, 368);
+            this.drawing1.Location = new System.Drawing.Point(275, 473);
             this.drawing1.Name = "drawing1";
             this.drawing1.Size = new System.Drawing.Size(135, 43);
             this.drawing1.TabIndex = 75;
@@ -271,12 +274,43 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // picImg
+            // 
+            this.picImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picImg.Location = new System.Drawing.Point(69, 316);
+            this.picImg.Name = "picImg";
+            this.picImg.Size = new System.Drawing.Size(157, 104);
+            this.picImg.TabIndex = 78;
+            this.picImg.TabStop = false;
+            // 
+            // drawing3
+            // 
+            this.drawing3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing3.BorderRadius = 40;
+            this.drawing3.BorderSize = 0;
+            this.drawing3.BortderColor = System.Drawing.Color.PaleVioletRed;
+            this.drawing3.FlatAppearance.BorderSize = 0;
+            this.drawing3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing3.Location = new System.Drawing.Point(238, 377);
+            this.drawing3.Name = "drawing3";
+            this.drawing3.Size = new System.Drawing.Size(104, 43);
+            this.drawing3.TabIndex = 79;
+            this.drawing3.Text = "Выбрать";
+            this.drawing3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing3.UseVisualStyleBackColor = false;
+            this.drawing3.Click += new System.EventHandler(this.drawing3_Click);
+            // 
             // AddProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(483, 469);
+            this.ClientSize = new System.Drawing.Size(483, 572);
+            this.Controls.Add(this.drawing3);
+            this.Controls.Add(this.picImg);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.drawing2);
             this.Controls.Add(this.drawing1);
@@ -301,6 +335,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddProducts";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,5 +362,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.PictureBox picImg;
+        private Drawing drawing3;
     }
 }

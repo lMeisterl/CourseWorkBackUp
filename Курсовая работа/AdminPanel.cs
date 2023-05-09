@@ -105,5 +105,11 @@ namespace Курсовая_работа
         {
             System.Diagnostics.Process.Start("C:\\Users\\shtok\\Desktop\\CourseWorkBackUp\\guide.pdf");
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            var url = "https://mysko.ru"; //адрес ссылки это значение свойства `Text`
+            System.Diagnostics.Process.Start(url);
+        }
     }
 }

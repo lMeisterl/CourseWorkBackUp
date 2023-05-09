@@ -92,13 +92,18 @@
             this.button10 = new System.Windows.Forms.Button();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.sales_idTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.Sales_idTableAdapter();
+            this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.salesTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.SalesTableAdapter();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.drawing4 = new Курсовая_работа.Drawing();
             this.drawing1 = new Курсовая_работа.Drawing();
             this.drawing2 = new Курсовая_работа.Drawing();
             this.drawing3 = new Курсовая_работа.Drawing();
-            this.sales_idTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.Sales_idTableAdapter();
-            this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.salesTableAdapter = new Курсовая_работа.KursDataSetTableAdapters.SalesTableAdapter();
+            this.drawing5 = new Курсовая_работа.Drawing();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesidBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
@@ -767,6 +772,37 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
+            // sales_idTableAdapter
+            // 
+            this.sales_idTableAdapter.ClearBeforeFill = true;
+            // 
+            // salesBindingSource
+            // 
+            this.salesBindingSource.DataMember = "Sales";
+            this.salesBindingSource.DataSource = this.kursDataSet;
+            // 
+            // salesTableAdapter
+            // 
+            this.salesTableAdapter.ClearBeforeFill = true;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(428, 331);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(81, 20);
+            this.dateTimePicker2.TabIndex = 75;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(545, 331);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(81, 20);
+            this.dateTimePicker3.TabIndex = 76;
+            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
+            // 
             // drawing4
             // 
             this.drawing4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
@@ -845,18 +881,45 @@
             this.drawing3.UseVisualStyleBackColor = false;
             this.drawing3.Click += new System.EventHandler(this.drawing3_Click);
             // 
-            // sales_idTableAdapter
+            // drawing5
             // 
-            this.sales_idTableAdapter.ClearBeforeFill = true;
+            this.drawing5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
+            this.drawing5.BorderRadius = 40;
+            this.drawing5.BorderSize = 2;
+            this.drawing5.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.drawing5.FlatAppearance.BorderSize = 0;
+            this.drawing5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing5.Location = new System.Drawing.Point(649, 322);
+            this.drawing5.Name = "drawing5";
+            this.drawing5.Size = new System.Drawing.Size(97, 40);
+            this.drawing5.TabIndex = 77;
+            this.drawing5.Text = "Очистить";
+            this.drawing5.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing5.UseVisualStyleBackColor = false;
+            this.drawing5.Click += new System.EventHandler(this.drawing5_Click);
             // 
-            // salesBindingSource
+            // label12
             // 
-            this.salesBindingSource.DataMember = "Sales";
-            this.salesBindingSource.DataSource = this.kursDataSet;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label12.Location = new System.Drawing.Point(406, 335);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(16, 16);
+            this.label12.TabIndex = 78;
+            this.label12.Text = "С";
             // 
-            // salesTableAdapter
+            // label19
             // 
-            this.salesTableAdapter.ClearBeforeFill = true;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.Location = new System.Drawing.Point(515, 335);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(25, 16);
+            this.label19.TabIndex = 79;
+            this.label19.Text = "По";
             // 
             // Sales
             // 
@@ -864,6 +927,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1299, 620);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.drawing5);
+            this.Controls.Add(this.dateTimePicker3);
+            this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.drawing4);
             this.Controls.Add(this.drawing1);
             this.Controls.Add(this.drawing2);
@@ -964,5 +1032,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn колво4DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn итогоDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn способОплатыDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private Drawing drawing5;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label19;
     }
 }

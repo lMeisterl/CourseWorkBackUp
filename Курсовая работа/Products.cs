@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace Курсовая_работа
     {
         SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
         int selectedRow;
+        string imgLoc = "";
 
         public Products()
         {
@@ -197,14 +199,27 @@ namespace Курсовая_работа
 
         private void drawing1_Click(object sender, EventArgs e)
         {
-            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
-            connection_new.Open();
-            string insertQuery = "UPDATE Products SET Name = '" + textBox3.Text + "', Price = '" + maskedTextBox1.Text + "', Type = '" + textBox5.Text + "', Manufacturer = '" + textBox6.Text + "', Producing_Сountry = '" + textBox7.Text + "', Date_of_Manufacture = '" + textBox8.Text + "', Count = '" + textBox9.Text + "' WHERE Id = '" + textBox2.Text + "'";
-            SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
-            sqlCommand.ExecuteNonQuery();
-            this.productsTableAdapter.Fill(this.kursDataSet.Products);
-            connection_new.Close();
-            MessageBox.Show("Успешно изменено!");
+            try
+            {
+                byte[] img = null;
+                FileStream fs = new FileStream(imgLoc, FileMode.Open, FileAccess.Read);
+                BinaryReader br = new BinaryReader(fs);
+                img = br.ReadBytes((int)fs.Length);
+                SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+                string insertQuery = "UPDATE Products SET Name = '" + textBox3.Text + "', Price = '" + maskedTextBox1.Text + "', Type = '" + textBox5.Text + "', Manufacturer = '" + textBox6.Text + "', Producing_Сountry = '" + textBox7.Text + "', Date_of_Manufacture = '" + textBox8.Text + "', Count = '" + textBox9.Text + "', Image = @img WHERE Id = '" + textBox2.Text + "'";
+                if (connection_new.State != ConnectionState.Open)
+                    connection_new.Open();
+                SqlCommand sqlCommand = new SqlCommand(insertQuery, connection_new);
+                sqlCommand.Parameters.Add(new SqlParameter("@img", img));
+                int x = sqlCommand.ExecuteNonQuery();
+                connection_new.Close();
+                MessageBox.Show(x.ToString() + "Успешно изменено!");
+                this.productsTableAdapter.Fill(this.kursDataSet.Products);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -241,6 +256,25 @@ namespace Курсовая_работа
                         break;
                     }
                 }
+            }
+        }
+
+        private void drawing4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog dlg = new OpenFileDialog();
+                dlg.Filter = "JPG Files(*.jpg|*.jpg|GIF Files(*.gif)|*.gif|All Files(*.*)|*.*)";
+                dlg.Title = "Select Films Image";
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    imgLoc = dlg.FileName.ToString();
+                    picImg.ImageLocation = imgLoc;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

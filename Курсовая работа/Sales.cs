@@ -13,6 +13,10 @@ using System.Xml.Linq;
 using DocumentFormat.OpenXml.Office.CustomUI;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
+using Microsoft.Office.Interop.Excel;
+using System.Data.OleDb;
+using DataTable = System.Data.DataTable;
+using DocumentFormat.OpenXml.VariantTypes;
 
 namespace Курсовая_работа
 {
@@ -203,7 +207,7 @@ namespace Курсовая_работа
 
         private void button10_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void drawing2_Click(object sender, EventArgs e)
@@ -351,6 +355,32 @@ namespace Курсовая_работа
 
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"[Сотрудник] LIKE '%{textBox18.Text}%'";
             connection_new.Close();
+        }
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            DateTime startDate = dateTimePicker2.Value.Date;
+            DateTime endDate = dateTimePicker3.Value.Date.AddDays(1).AddTicks(-1);
+
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGridView1.DataSource;
+            bs.Filter = string.Format("[Дата продажи] >= #{0:M/d/yyyy}# AND [Дата продажи] <= #{1:M/d/yyyy}#", startDate, endDate);
+            dataGridView1.DataSource = bs;
+        }
+
+        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+            btnFilter_Click(sender, e);
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            btnFilter_Click(sender, e);
+        }
+
+        private void drawing5_Click(object sender, EventArgs e)
+        {
+            dateTimePicker2.Text = "01.01.1999";
+            dateTimePicker3.Text = "01.01.2222";
         }
     }
 }

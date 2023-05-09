@@ -44,6 +44,7 @@
             this.drawing3 = new Курсовая_работа.Drawing();
             this.drawing2 = new Курсовая_работа.Drawing();
             this.drawing1 = new Курсовая_работа.Drawing();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -314,12 +315,25 @@
             this.drawing1.UseVisualStyleBackColor = false;
             this.drawing1.Click += new System.EventHandler(this.drawing1_Click);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.linkLabel1.Location = new System.Drawing.Point(467, 40);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(71, 17);
+            this.linkLabel1.TabIndex = 18;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Наш сайт";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(550, 725);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.drawing10);
             this.Controls.Add(this.drawing9);
             this.Controls.Add(this.drawing8);
@@ -342,6 +356,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -361,5 +376,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private Drawing drawing9;
         private Drawing drawing10;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
