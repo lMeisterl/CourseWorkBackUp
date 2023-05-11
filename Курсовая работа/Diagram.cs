@@ -61,10 +61,10 @@ namespace Курсовая_работа
             // Обновление диаграммы
             chart1.Invalidate();
 
-            /*chart1.Series.Clear();
-            chart1.Legends.Clear();
+            //chart1.Series.Clear();
+            //chart1.Legends.Clear();
 
-            SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
+            /*SqlConnection connection_new = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Kurs;Integrated Security=True");
             string query = "SELECT Name, COUNT(*) AS Count FROM [Sales+id] GROUP BY Name ORDER BY Count DESC";
             SqlDataAdapter adapter = new SqlDataAdapter(query, connection_new);
             DataTable dataTable = new DataTable();

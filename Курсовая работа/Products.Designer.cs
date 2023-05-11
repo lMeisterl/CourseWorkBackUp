@@ -72,6 +72,7 @@
             this.drawing2 = new Курсовая_работа.Drawing();
             this.drawing3 = new Курсовая_работа.Drawing();
             this.button1 = new System.Windows.Forms.Button();
+            this.drawing5 = new Курсовая_работа.Drawing();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kursDataSet)).BeginInit();
@@ -208,7 +209,7 @@
             // 
             this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.textBox3.ForeColor = System.Drawing.Color.Black;
-            this.textBox3.Location = new System.Drawing.Point(202, 78);
+            this.textBox3.Location = new System.Drawing.Point(202, 91);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(152, 20);
             this.textBox3.TabIndex = 10;
@@ -217,7 +218,7 @@
             // 
             this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.textBox5.ForeColor = System.Drawing.Color.Black;
-            this.textBox5.Location = new System.Drawing.Point(202, 130);
+            this.textBox5.Location = new System.Drawing.Point(202, 143);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(152, 20);
             this.textBox5.TabIndex = 12;
@@ -252,6 +253,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(211)))));
+            this.panel1.Controls.Add(this.drawing5);
             this.panel1.Controls.Add(this.picImg);
             this.panel1.Controls.Add(this.drawing4);
             this.panel1.Controls.Add(this.drawing1);
@@ -331,7 +333,7 @@
             // 
             this.maskedTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(252)))));
             this.maskedTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.maskedTextBox1.Location = new System.Drawing.Point(202, 105);
+            this.maskedTextBox1.Location = new System.Drawing.Point(202, 118);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(50, 20);
             this.maskedTextBox1.TabIndex = 27;
@@ -405,7 +407,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(27, 127);
+            this.label4.Location = new System.Drawing.Point(27, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 18);
             this.label4.TabIndex = 20;
@@ -416,7 +418,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(27, 101);
+            this.label3.Location = new System.Drawing.Point(27, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 18);
             this.label3.TabIndex = 19;
@@ -427,7 +429,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(27, 74);
+            this.label2.Location = new System.Drawing.Point(27, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 18);
             this.label2.TabIndex = 18;
@@ -559,6 +561,26 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // drawing5
+            // 
+            this.drawing5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(231)))), ((int)(((byte)(96)))));
+            this.drawing5.BorderRadius = 40;
+            this.drawing5.BorderSize = 1;
+            this.drawing5.BortderColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing5.FlatAppearance.BorderSize = 0;
+            this.drawing5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.drawing5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.drawing5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing5.Location = new System.Drawing.Point(280, 44);
+            this.drawing5.Name = "drawing5";
+            this.drawing5.Size = new System.Drawing.Size(85, 32);
+            this.drawing5.TabIndex = 78;
+            this.drawing5.Text = "Вывести";
+            this.drawing5.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(54)))), ((int)(((byte)(39)))));
+            this.drawing5.UseVisualStyleBackColor = false;
+            this.drawing5.Click += new System.EventHandler(this.drawing5_Click);
+            // 
             // Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -636,5 +658,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox picImg;
         private Drawing drawing4;
+        private Drawing drawing5;
     }
 }
